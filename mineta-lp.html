@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蕎麦処 みねた - とり中華が絶品の老舗</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Noto+Sans+JP:wght@400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noren-white: #f8f5ef;
+            --deep-indigo: #2c3a52;
+            --indigo: #3d5275;
+            --warm-beige: #d4b896;
+            --soba-brown: #7a6552;
+            --deep-brown: #4e3e2d;
+            --chicken-gold: #c49a45;
+            --light-gold: #e2b96a;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+        }
+
+        /* ── 画像プレースホルダー ── */
+        .img-slot {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border: 3px dashed rgba(255,255,255,0.5);
+        }
+
+        .img-slot-icon   { font-size: 3.5rem; margin-bottom: 0.8rem; }
+        .img-slot-title  { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; }
+        .img-slot-desc   { font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.9; line-height: 1.6; }
+        .img-slot-code   {
+            background: rgba(0,0,0,0.45);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        /* ── Base ── */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.85;
+            overflow-x: hidden;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            min-height: 100%;
+        }
+
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--deep-brown) 0%,
+                var(--soba-brown) 30%,
+                var(--deep-indigo) 65%,
+                var(--indigo) 100%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.42);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.65rem 2.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(196,154,69,0.45);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            letter-spacing: 0.5em;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(18px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            letter-spacing: 0.35em;
+            line-height: 1.25;
+            margin-bottom: 2rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-divider {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--chicken-gold), transparent);
+            margin: 2.5rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 640px;
+            margin: 0 auto 3.5rem;
+            font-weight: 300;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            padding: 0.55rem 1.7rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(196,154,69,0.35);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.65);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, bob 3s ease-in-out infinite;
+        }
+
+        @keyframes bob {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-down::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ── Layout ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section     { padding: 8rem 0; }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.55em;
+            color: var(--soba-brown);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .section-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.2em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--silver);
+            line-height: 2.2;
+            max-width: 680px;
+            margin: 0 auto 5rem;
+        }
+
+        /* ── About ── */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 860px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.12rem;
+            line-height: 2.6;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 67%, rgba(196,154,69,0.28) 67%);
+            font-weight: 700;
+            padding: 0 0.25em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.5rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2.8rem 2rem;
+            background: var(--cream);
+            border-radius: 6px;
+            border-top: 4px solid var(--indigo);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .feature:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,.09); }
+
+        .feature .fi { font-size: 2.8rem; display: block; margin-bottom: 1.4rem; }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+            color: var(--deep-indigo);
+        }
+
+        .feature p { font-size: 0.92rem; line-height: 2; color: var(--charcoal); }
+
+        /* ── Specialty ── */
+        .specialty { background: var(--cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .show-visual {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 28px 72px rgba(0,0,0,.22);
+        }
+
+        .show-detail h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.7rem;
+            font-weight: 900;
+            margin-bottom: 1.4rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.1em;
+            line-height: 1.65;
+        }
+
+        .show-detail .acc { color: var(--chicken-gold); }
+
+        .show-text {
+            font-size: 1rem;
+            line-height: 2.35;
+            margin-bottom: 1.8rem;
+            color: var(--charcoal);
+        }
+
+        .points { list-style: none; margin-top: 2.8rem; }
+
+        .point {
+            padding: 1.7rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.07);
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .point:last-child { border-bottom: none; }
+
+        .pt-num {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--chicken-gold);
+            min-width: 58px;
+        }
+
+        .pt-body h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            color: var(--deep-indigo);
+        }
+
+        .pt-body p { font-size: 0.9rem; line-height: 2.1; color: var(--silver); }
+
+        /* ── Gallery ── */
+        .gallery { background: white; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2rem;
+        }
+
+        .gal-item {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            transition: transform .3s;
+        }
+
+        .gal-item:hover { transform: translateY(-5px); }
+
+        /* ── Info ── */
+        .info { background: var(--deep-indigo); color: white; }
+        .info .section-label { color: var(--light-gold); }
+        .info .section-title  { color: white; }
+        .info .section-subtitle { color: rgba(255,255,255,.8); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,154,69,.15);
+            border-radius: 10px;
+            padding: 4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--chicken-gold);
+            color: var(--light-gold);
+        }
+
+        .irow {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.4rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .irow:last-child { border-bottom: none; }
+
+        .ilabel { font-weight: 700; color: var(--light-gold); font-size: 0.88rem; }
+
+        .ival { line-height: 2.05; font-size: 0.93rem; }
+
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.28);
+            transition: border-color .3s;
+        }
+
+        .ival a:hover { border-color: var(--light-gold); }
+
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.55); margin-top: .35rem; }
+
+        .info-alert {
+            background: rgba(196,154,69,.1);
+            border-left: 3px solid var(--chicken-gold);
+            border-radius: 6px;
+            padding: 1.6rem;
+            margin-top: 2rem;
+        }
+
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.6rem; }
+        .info-alert-text  { font-size: 0.9rem; line-height: 2; color: rgba(255,255,255,.88); }
+
+        /* map */
+        .map-section { margin-top: 3rem; }
+        .map-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.4rem; color: var(--light-gold); text-align: center; }
+        .map-wrap { border-radius: 6px; overflow: hidden; box-shadow: 0 8px 36px rgba(0,0,0,.35); margin-bottom: 1.4rem; }
+        .map-wrap iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--soba-brown);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+        }
+        .map-btn:hover { background: var(--warm-beige); color: var(--charcoal); transform: translateY(-2px); }
+
+        /* ── CTA ── */
+        .cta { background: linear-gradient(135deg, var(--soba-brown) 0%, var(--deep-brown) 100%); color: white; text-align: center; }
+        .cta .section-label { color: rgba(226,185,106,.9); }
+        .cta .section-title  { color: white; }
+
+        .cta-wrap { max-width: 680px; margin: 0 auto; }
+
+        .cta-text { font-size: 1.1rem; line-height: 2.5; margin-bottom: 3rem; }
+
+        .cta-btns { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.15em;
+            min-width: 240px;
+        }
+
+        .btn-w { background: white; color: var(--soba-brown); box-shadow: 0 12px 36px rgba(0,0,0,.28); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 18px 48px rgba(0,0,0,.38); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.22); font-size: 0.9rem; line-height: 2.2; }
+
+        /* ── Footer ── */
+        footer { background: var(--charcoal); color: white; padding: 4rem 2rem 2rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 1.9rem; font-weight: 900; letter-spacing: 0.35em; margin-bottom: 2rem; }
+        .foot-info { font-size: 0.9rem; line-height: 2.4; color: rgba(255,255,255,.78); margin-bottom: 2rem; }
+        .foot-hr   { width: 60px; height: 1px; background: rgba(196,154,69,.4); margin: 2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.45); }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .hero-title { font-size: 3.2rem; }
+            .section-title { font-size: 2.3rem; }
+            .hero-tags { flex-direction: column; gap: 1.2rem; }
+            .features, .gallery-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .info-wrap { padding: 3rem 1.5rem; }
+            .irow { grid-template-columns: 1fr; gap: .4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <!-- 📷 画像挿入箇所1: ヒーロー背景 -->
+    <div class="hero-bg hero-bg-fallback">
+        <!-- 画像に差し替える場合:
+             <img src="images/hero.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"> -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">山形駅西口から徒歩9分の老舗</div>
+        <h1 class="hero-title">蕎麦処<br>みねた</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-description">
+            山形の蕎麦屋ラーメン文化を支える、地元の名店。<br>
+            鶏もも肉の旨味が出た和風スープ、品よくまとまった一杯。<br>
+            とり中華730円、日常使いのコスパ最高。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">とり中華</div>
+            <div class="hero-tag">蕎麦屋ラーメン文化</div>
+            <div class="hero-tag">昼のみ営業</div>
+        </div>
+    </div>
+    <div class="scroll-down">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="container">
+        <div class="section-label">ABOUT</div>
+        <h2 class="section-title">みねたとは</h2>
+        <p class="section-subtitle">
+            山形市城西町、JR山形駅西口から徒歩約9分。<br>
+            昼のみ営業の昔ながらの町そば店。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">「山形の蕎麦屋ラーメン文化を支える地元の名店」</span><br>
+                として紹介されるそば・うどん・中華そばが揃う老舗。<br>
+                とり中華は「品よくまとまった和風ラーメンの秀作」と評されています。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="fi">🍜</span>
+                <h3>とり中華</h3>
+                <p>鶏もも肉の旨味が出た和風スープ。あっさり醤油の品の良い一杯。</p>
+            </div>
+            <div class="feature">
+                <span class="fi">🌾</span>
+                <h3>そば・うどんも</h3>
+                <p>もちろんそばやうどんも揃う。幅広いメニューで毎日来ても飽きない。</p>
+            </div>
+            <div class="feature">
+                <span class="fi">💰</span>
+                <h3>コスパ抜群</h3>
+                <p>らーめん570円、とり中華730円。ワンコイン感覚で楽しめる。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="specialty">
+    <div class="container">
+        <div class="section-label">SPECIALTY</div>
+        <h2 class="section-title">とり中華</h2>
+        <p class="section-subtitle">
+            鶏もも肉の旨味が出た和風スープ。<br>
+            蕎麦屋ラーメン文化を象徴する、品よくまとまった一杯。
+        </p>
+
+        <div class="showcase">
+            <!-- 📷 画像挿入箇所2: とり中華メイン -->
+            <div class="show-visual">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🍜</div>
+                    <div class="img-slot-title">とり中華</div>
+                    <div class="img-slot-desc">推奨: 透き通った和風スープに中華麺、鶏もも肉、ネギ、海苔の一杯</div>
+                    <div class="img-slot-code">images/tori-chuka.jpg</div>
+                </div>
+            </div>
+
+            <div class="show-detail">
+                <h3>
+                    とり中華<br>
+                    <span class="acc">蕎麦屋の秀作</span>
+                </h3>
+                <p class="show-text">
+                    ベースは蕎麦屋らしい和風だし。そこに鶏もも肉のコクが加わったあっさり系スープが特徴で、油っこさが少なく、出汁の香りと鶏の旨味がバランスよくまとまった「品の良い」中華そばとして紹介されています。
+                </p>
+                <p class="show-text">
+                    「山形の蕎麦屋ラーメン文化を支える地元の老舗の一軒」と書かれ、その代表メニューとしてとり中華が挙げられています。そばと並ぶ看板的ポジションとして長年親しまれています。
+                </p>
+
+                <ul class="points">
+                    <li class="point">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>鶏もも肉の旨味が出た和風スープ</h4>
+                            <p>蕎麦屋らしい和風だしに鶏もも肉のコク。油っこさが少なく、出汁と鶏のバランスが絶妙。</p>
+                        </div>
+                    </li>
+                    <li class="point">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>蕎麦屋ラーメン文化を象徴する一杯</h4>
+                            <p>"蕎麦屋なのにラーメンがうまい店"として紹介。そばと並ぶ看板的ポジションの名品。</p>
+                        </div>
+                    </li>
+                    <li class="point">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>730円、価格と満足度のバランスが抜群</h4>
+                            <p>らーめん570円、とり中華730円。ワンコイン感覚に近い気軽さで高クオリティの一杯を。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gallery">
+    <div class="container">
+        <div class="section-label">GALLERY</div>
+        <h2 class="section-title">ギャラリー</h2>
+        <p class="section-subtitle">
+            昔ながらの町そば屋の雰囲気。<br>
+            そば・うどん・中華そばが揃う。
+        </p>
+
+        <div class="gallery-grid">
+            <!-- 📷 画像挿入箇所3 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🏠</div>
+                    <div class="img-slot-title">店舗外観</div>
+                    <div class="img-slot-code">images/exterior.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所4 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🏮</div>
+                    <div class="img-slot-title">店内の様子</div>
+                    <div class="img-slot-code">images/interior.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所5 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🌾</div>
+                    <div class="img-slot-title">もりそば・うどん</div>
+                    <div class="img-slot-code">images/soba.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所6 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🍜</div>
+                    <div class="img-slot-title">中華そば</div>
+                    <div class="img-slot-code">images/chuka.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所7 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🍽️</div>
+                    <div class="img-slot-title">つけ麺</div>
+                    <div class="img-slot-code">images/tsukemen.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所8 -->
+            <div class="gal-item">
+                <div class="img-slot">
+                    <div class="img-slot-icon">🥢</div>
+                    <div class="img-slot-title">のれん・看板</div>
+                    <div class="img-slot-code">images/noren.jpg</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="container">
+        <div class="section-label">INFORMATION</div>
+        <h2 class="section-title">店舗情報</h2>
+        <p class="section-subtitle">
+            山形市城西町、JR山形駅西口から徒歩約9分。<br>
+            昼のみ営業、現金のみのご利用です。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="irow">
+                        <div class="ilabel">店名</div>
+                        <div class="ival">蕎麦処 みねた（蕎麥處みねた）</div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">営業時間</div>
+                        <div class="ival">
+                            11:30〜14:00<br>
+                            <span class="inote">※昼営業のみ</span>
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">定休日</div>
+                        <div class="ival">
+                            不定休<br>
+                            <span class="inote">※事前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">予算目安</div>
+                        <div class="ival">
+                            昼 〜999円<br>
+                            <span class="inote">らーめん570円 / とり中華730円</span>
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">ジャンル</div>
+                        <div class="ival">そば、うどん、中華そば<br>とり中華、つけ麺など</div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="irow">
+                        <div class="ilabel">住所</div>
+                        <div class="ival">
+                            〒990-0832<br>
+                            山形県山形市城西町２丁目１−４０
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">アクセス</div>
+                        <div class="ival">
+                            JR山形駅西口より徒歩約9分<br>
+                            <span class="inote">約670m</span>
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">電話番号</div>
+                        <div class="ival">
+                            <a href="tel:023-643-0252">023-643-0252</a>
+                        </div>
+                    </div>
+                    <div class="irow">
+                        <div class="ilabel">席</div>
+                        <div class="ival">テーブル席・座敷席</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💳 お支払いについて</div>
+                <p class="info-alert-text">
+                    当店は現金のみのご利用となります。<br>
+                    クレジットカード・電子マネー・QRコード決済はご利用いただけません。
+                </p>
+            </div>
+
+            <div class="map-section">
+                <h3 class="map-title">📍 アクセスマップ</h3>
+                <div class="map-wrap">
+                    <iframe src="https://www.google.com/maps?q=38.2503,140.3219&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市城西町2-1-40" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="container">
+        <div class="section-label">VISIT US</div>
+        <h2 class="section-title">ご来店お待ちしております</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-text">
+                山形の蕎麦屋ラーメン文化を支える、地元の名店。<br>
+                品よくまとまったとり中華730円。<br>
+                昼のみ営業、ぜひ足をお運びください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-643-0252" class="btn btn-w">
+                    <span style="margin-right:.7rem; font-size:1.15rem;">📞</span>
+                    電話でお問い合わせ
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 11:30〜14:00（昼営業のみ）<br>
+                ※定休日: 不定休（事前確認推奨）<br>
+                ※現金のみ
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">蕎麦処 みねた</div>
+        <div class="foot-info">
+            〒990-0832 山形県山形市城西町２丁目１−４０<br>
+            JR山形駅西口より徒歩約9分（約670m）<br>
+            TEL: 023-643-0252<br>
+            営業時間: 11:30〜14:00（昼のみ） / 定休日: 不定休<br>
+            現金のみ / そば・うどん・とり中華
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 蕎麦処 みねた All Rights Reserved.</div>
+    </div>
+</footer>
+
+<!-- 📸 画像挿入ガイドバナー（公開時に削除） -->
+<div style="position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:1.5rem;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.3);max-width:340px;z-index:9999;">
+    <h3 style="margin-bottom:.5rem;font-size:1.15rem;">📸 画像挿入箇所（全8か所）</h3>
+    <ul style="font-size:.85rem;line-height:1.8;padding-left:1rem;">
+        <li>① ヒーロー背景: hero.jpg</li>
+        <li>② とり中華: tori-chuka.jpg</li>
+        <li>③ 店舗外観: exterior.jpg</li>
+        <li>④ 店内: interior.jpg</li>
+        <li>⑤ そば: soba.jpg</li>
+        <li>⑥ 中華そば: chuka.jpg</li>
+        <li>⑦ つけ麺: tsukemen.jpg</li>
+        <li>⑧ のれん: noren.jpg</li>
+    </ul>
+    <p style="font-size:.8rem;margin-top:.8rem;opacity:.85;">※このバナーは公開前に削除してください</p>
+</div>
+
+</body>
+</html>

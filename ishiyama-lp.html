@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>すたんど割烹 いし山 - 七日町の隠れ家割烹</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Shippori+Mincho+B1:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-indigo: #1a2332;
+            --indigo: #2c3e52;
+            --slate: #3d5266;
+            --duck-brown: #6b4423;
+            --warm-brown: #8b6239;
+            --autumn-orange: #c4794f;
+            --light-orange: #d89668;
+            --sake-cream: #f5f0e8;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+            --gold: #b8935e;
+        }
+
+        /* ═══ 画像プレースホルダー ═══ */
+        .img-ph {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            border: 3px dashed rgba(255,255,255,0.5);
+            position: relative;
+        }
+
+        .ph-ico  { font-size: 3.8rem; margin-bottom: 1rem; }
+        .ph-tit  { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; }
+        .ph-desc { font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem; opacity: 0.95; }
+        .ph-code {
+            background: rgba(0,0,0,0.4);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        /* ═══ Base ═══ */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--charcoal);
+            background: var(--sake-cream);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 720px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-bg-grad {
+            background: linear-gradient(135deg,
+                var(--deep-indigo) 0%,
+                var(--indigo) 35%,
+                var(--duck-brown) 70%,
+                var(--warm-brown) 100%);
+        }
+
+        .hero-ov {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 2;
+        }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.8rem;
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(184,147,94,0.45);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.6em;
+            margin-bottom: 3.2rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1.1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(22px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            line-height: 1.3;
+            margin-bottom: 2.2rem;
+            animation: fadeUp 1.1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.4em;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-div {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2.8rem auto;
+            animation: fadeUp 1.1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.6;
+            max-width: 680px;
+            margin: 0 auto 3.8rem;
+            font-weight: 300;
+            animation: fadeUp 1.1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1.1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.88rem;
+            letter-spacing: 0.2em;
+            padding: 0.6rem 1.9rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(184,147,94,0.35);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            z-index: 3;
+            animation: fadeUp 1.1s ease-out 1s both, float 3.2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(12px); }
+        }
+
+        .scroll::after { content:'↓'; display:block; font-size:1.5rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.6em;
+            color: var(--warm-brown);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--indigo);
+            letter-spacing: 0.22em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--silver);
+            line-height: 2.3;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            font-weight: 300;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.7;
+            font-weight: 300;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 68%, rgba(196,121,79,0.28) 68%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.8rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 3rem 2.2rem;
+            background: var(--sake-cream);
+            border-radius: 6px;
+            border-top: 4px solid var(--autumn-orange);
+            transition: transform .35s, box-shadow .35s;
+        }
+
+        .feat:hover { transform: translateY(-10px); box-shadow: 0 20px 48px rgba(0,0,0,.1); }
+
+        .feat .fi { font-size: 3rem; display: block; margin-bottom: 1.6rem; }
+
+        .feat h3 {
+            font-size: 1.22rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--indigo);
+            letter-spacing: 0.05em;
+        }
+
+        .feat p { font-size: 0.9rem; line-height: 2.1; color: var(--charcoal); font-weight: 300; }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--sake-cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.5rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0,0,0,.24);
+        }
+
+        .show-det h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.7rem;
+            font-weight: 900;
+            margin-bottom: 1.6rem;
+            color: var(--indigo);
+            letter-spacing: 0.12em;
+            line-height: 1.7;
+        }
+
+        .show-det .acc { color: var(--autumn-orange); }
+
+        .show-txt {
+            font-size: 1rem;
+            line-height: 2.45;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .pts { list-style: none; margin-top: 3.2rem; }
+
+        .pt {
+            padding: 1.9rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .pt:last-child { border-bottom: none; }
+
+        .pt-num {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--autumn-orange);
+            min-width: 62px;
+        }
+
+        .pt-body h4 {
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--indigo);
+            letter-spacing: 0.02em;
+        }
+
+        .pt-body p { font-size: 0.9rem; line-height: 2.2; color: var(--silver); font-weight: 300; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.2rem;
+        }
+
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 32px rgba(0,0,0,.14);
+            transition: transform .35s;
+        }
+
+        .gal-it:hover { transform: translateY(-6px); }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--indigo); color: white; }
+        .info .lab { color: var(--light-orange); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(184,147,94,.18);
+            border-radius: 10px;
+            padding: 4.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 2.2rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 2px solid var(--gold);
+            color: var(--light-orange);
+            letter-spacing: 0.08em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 125px 1fr;
+            gap: 1.5rem;
+            padding: 1.35rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .ir:last-child { border-bottom: none; }
+
+        .ilab { font-weight: 700; color: var(--light-orange); font-size: 0.88rem; }
+
+        .ival { line-height: 2.1; font-size: 0.92rem; }
+
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+            transition: border-color .3s;
+        }
+
+        .ival a:hover { border-color: var(--gold); }
+
+        .inote { font-size: 0.78rem; color: rgba(255,255,255,.55); margin-top: .4rem; }
+
+        /* map */
+        .map { margin-top: 3.5rem; }
+        .map-tit { font-size: 1.28rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--light-orange); text-align: center; letter-spacing: 0.08em; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.38); margin-bottom: 1.5rem; }
+        .map-box iframe { width: 100%; height: 450px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1.05rem 2.2rem;
+            background: var(--warm-brown);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            transition: all .35s;
+            font-size: 0.92rem;
+        }
+        .map-btn:hover { background: var(--autumn-orange); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--duck-brown) 0%, var(--deep-indigo) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(216,150,104,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 720px; margin: 0 auto; }
+
+        .cta-txt { font-size: 1.12rem; line-height: 2.6; margin-bottom: 3.5rem; font-weight: 300; }
+
+        .cta-btns { display: flex; gap: 2.2rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.6rem 3.2rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .35s;
+            letter-spacing: 0.18em;
+            min-width: 260px;
+        }
+
+        .btn-w { background: white; color: var(--duck-brown); box-shadow: 0 14px 40px rgba(0,0,0,.32); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 52px rgba(0,0,0,.42); }
+
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--duck-brown); }
+
+        .cta-note { margin-top: 3.5rem; padding-top: 2.2rem; border-top: 1px solid rgba(255,255,255,.24); font-size: 0.92rem; line-height: 2.3; font-weight: 300; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--charcoal); color: white; padding: 4.5rem 2rem 2.5rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 1.95rem; font-weight: 900; letter-spacing: 0.38em; margin-bottom: 2.2rem; }
+        .foot-info { font-size: 0.9rem; line-height: 2.5; color: rgba(255,255,255,.78); margin-bottom: 2.2rem; font-weight: 300; }
+        .foot-hr { width: 65px; height: 1px; background: rgba(184,147,94,.42); margin: 2.2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.48); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 968px) {
+            .hero-tit { font-size: 3.2rem; }
+            .tit { font-size: 2.4rem; }
+            .hero-tags { flex-direction: column; gap: 1.2rem; }
+            .features, .gal-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .info-wrap { padding: 3.5rem 2rem; }
+            .ir { grid-template-columns: 1fr; gap: .5rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <!-- 📷 画像挿入箇所1: ヒーロー背景 -->
+    <div class="hero-bg hero-bg-grad">
+        <!-- 画像に差し替える場合:
+             <img src="images/hero.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"> -->
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">七日町の隠れ家割烹</div>
+        <h1 class="hero-tit">
+            すたんど割烹<br>いし山
+            <small>STAND KAPPO ISHIYAMA</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            カウンター中心の小さな割烹で、鴨鍋コースと季節料理。<br>
+            前菜から〆のうどんまで、日本酒と共に愉しむ大人の夜。<br>
+            接待・会食・会社の飲み会に。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">鴨鍋コース</div>
+            <div class="hero-tag">大人の割烹</div>
+            <div class="hero-tag">夜のみ営業</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">いし山とは</h2>
+        <p class="sub">
+            七日町2丁目、カウンター中心の小さな割烹。<br>
+            落ち着いた大人向けの空間で、料理と日本酒をゆっくりと。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">新鮮な魚介を使った刺身や季節料理が充実</span>、<br>
+                鴨鍋コースなど鍋料理も評判の隠れ家的割烹。<br>
+                会社の飲み会や接待・会食での利用が多く、<br>
+                <span class="hl">料理と日本酒をゆっくり楽しみたい"大人の晩酌処"</span>として支持されています。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🦆</span>
+                <h3>鴨鍋コース</h3>
+                <p>前菜・刺身付き、〆のうどんまで楽しめる本格コース。接待・会食に。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🐟</span>
+                <h3>季節料理と刺身</h3>
+                <p>新鮮な魚介を使った刺身、季節の小鉢。割烹らしい一品一品。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>カウンター文化</h3>
+                <p>カウンター中心の落ち着いた空間。大人がゆっくり過ごせる。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">鴨鍋コース</h2>
+        <p class="sub">
+            鴨の旨味たっぷりの出汁、前菜・刺身付きの本格コース。<br>
+            〆のうどんまで、最初から最後まで一気通貫で楽しめる。
+        </p>
+
+        <div class="showcase">
+            <!-- 📷 画像挿入箇所2: 鴨鍋コースメイン -->
+            <div class="show-vis">
+                <div class="img-ph">
+                    <div class="ph-ico">🦆</div>
+                    <div class="ph-tit">鴨鍋コース</div>
+                    <div class="ph-desc">推奨: 鴨肉と野菜がたっぷりの鍋、前菜・刺身の小鉢が並ぶテーブル</div>
+                    <div class="ph-code">images/kamo-nabe-course.jpg</div>
+                </div>
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    鴨鍋コース<br>
+                    <span class="acc">前菜から〆まで</span>
+                </h3>
+                <p class="show-txt">
+                    鴨の旨味がしっかり出た出汁をベースに、鴨肉とたっぷりの野菜を合わせた鍋で、「〆までおいしかった」と評されています。鴨から出るコクと脂がほどよく溶け込んだスープが特徴で、日本酒との相性も良い"割烹らしい鍋料理"です。
+                </p>
+                <p class="show-txt">
+                    鴨鍋だけでなく、「前菜やお刺身等も充実」と口コミにあり、鍋の前に季節の小鉢や新鮮な刺身を楽しめる構成。一品一品のクオリティが高く、接待や会社の会食にも使いやすい"鍋付き会席"のような満足感があります。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>旨味たっぷりの鴨と出汁を味わう鍋</h4>
+                            <p>鴨のコクと脂がほどよく溶け込んだスープ。日本酒との相性抜群の割烹らしい鍋。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>前菜・刺身付きの"ちゃんとしたコース"</h4>
+                            <p>季節の小鉢や新鮮な刺身。一品一品のクオリティが高く、接待・会食にも。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>〆のうどんまで楽しめる完結型メニュー</h4>
+                            <p>鴨の旨味が凝縮したスープを吸ったうどん。最初から最後まで一気通貫で満足。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">ギャラリー</h2>
+        <p class="sub">
+            隠れ家的な雰囲気、カウンター中心の落ち着いた空間。<br>
+            鴨鍋、刺身、季節料理をご紹介。
+        </p>
+
+        <div class="gal-grid">
+            <!-- 📷 画像挿入箇所3 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🏠</div>
+                    <div class="ph-tit">店舗外観</div>
+                    <div class="ph-code">images/exterior.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所4 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🏮</div>
+                    <div class="ph-tit">カウンター</div>
+                    <div class="ph-code">images/counter.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所5 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🐟</div>
+                    <div class="ph-tit">刺身盛り</div>
+                    <div class="ph-code">images/sashimi.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所6 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🍶</div>
+                    <div class="ph-tit">日本酒</div>
+                    <div class="ph-code">images/sake.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所7 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🍱</div>
+                    <div class="ph-tit">季節の前菜</div>
+                    <div class="ph-code">images/zensai.jpg</div>
+                </div>
+            </div>
+
+            <!-- 📷 画像挿入箇所8 -->
+            <div class="gal-it">
+                <div class="img-ph">
+                    <div class="ph-ico">🥢</div>
+                    <div class="ph-tit">〆のうどん</div>
+                    <div class="ph-code">images/udon.jpg</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市七日町2丁目、JR山形駅東口から徒歩約18〜20分。<br>
+            夜のみ営業、日曜・祝日定休。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">すたんど割烹 いし山</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            17:00〜22:00<br>
+                            <span class="inote">※夜のみ営業</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">日曜日・祝日</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">
+                            割烹・小料理、和食<br>
+                            寿司・海鮮料理
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            カウンター中心<br>
+                            <span class="inote">※落ち着いた大人向けの空間</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0042<br>
+                            山形県山形市七日町２丁目５−１０
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅東口より徒歩約18〜20分<br>
+                            <span class="inote">※七日町通りエリア</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival">
+                            <a href="tel:023-622-1493">023-622-1493</a><br>
+                            <span class="inote">※要予約推奨</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival">
+                            山形すし組合<br>
+                            紹介ページあり
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.2537,140.3278&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市七日町2-5-10" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                カウンター中心の小さな割烹で、鴨鍋コースと季節料理。<br>
+                前菜から〆のうどんまで、日本酒と共に愉しむ大人の夜。<br>
+                接待・会食・会社の飲み会に、ぜひご利用ください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-622-1493" class="btn btn-w">
+                    <span style="margin-right:.8rem; font-size:1.2rem;">📞</span>
+                    電話で予約
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 17:00〜22:00（夜のみ営業）<br>
+                ※定休日: 日曜日・祝日<br>
+                ※カウンター中心、要予約推奨
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">すたんど割烹 いし山</div>
+        <div class="foot-info">
+            〒990-0042 山形県山形市七日町２丁目５−１０<br>
+            JR山形駅東口より徒歩約18〜20分（七日町通りエリア）<br>
+            TEL: 023-622-1493 / 要予約推奨<br>
+            営業時間: 17:00〜22:00（夜のみ） / 定休日: 日曜日・祝日<br>
+            鴨鍋コース・季節料理・刺身 / カウンター中心の大人の割烹
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© すたんど割烹 いし山 All Rights Reserved.</div>
+    </div>
+</footer>
+
+<!-- 📸 画像挿入ガイドバナー（公開時に削除） -->
+<div style="position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:1.5rem;border-radius:12px;box-shadow:0 12px 42px rgba(0,0,0,.35);max-width:350px;z-index:9999;">
+    <h3 style="margin-bottom:.6rem;font-size:1.15rem;">📸 画像挿入箇所（全8か所）</h3>
+    <ul style="font-size:.84rem;line-height:1.9;padding-left:1rem;">
+        <li>① ヒーロー背景</li>
+        <li>② 鴨鍋コース: kamo-nabe-course.jpg</li>
+        <li>③ 店舗外観: exterior.jpg</li>
+        <li>④ カウンター: counter.jpg</li>
+        <li>⑤ 刺身盛り: sashimi.jpg</li>
+        <li>⑥ 日本酒: sake.jpg</li>
+        <li>⑦ 季節の前菜: zensai.jpg</li>
+        <li>⑧ 〆のうどん: udon.jpg</li>
+    </ul>
+    <p style="font-size:.79rem;margin-top:.9rem;opacity:.87;">※このバナーは公開前に削除してください</p>
+</div>
+
+</body>
+</html>

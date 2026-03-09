@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寿司のしん幸 - 天ぷら定食が超絶品</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3a5f;
+            --deep-navy: #152842;
+            --sushi-blue: #2a5a7f;
+            --tempura-gold: #d4a253;
+            --light-gold: #e8b86d;
+            --wasabi-green: #6a8e6a;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+            --warm-beige: #f5f2eb;
+        }
+
+        /* 画像プレースホルダー用スタイル */
+        .image-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            min-height: 400px;
+            position: relative;
+            border: 3px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-instruction {
+            font-size: 0.95rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .placeholder-code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg.placeholder {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 40%, var(--sushi-blue) 70%, var(--tempura-gold) 100%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(212, 162, 83, 0.4);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5em;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .hero-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--tempura-gold), transparent);
+            margin: 2.5rem auto;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 2.4;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            padding: 0.6rem 1.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 162, 83, 0.3);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            animation: fadeIn 1s ease-out 1s both, bounce 2.5s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-down::after {
+            content: '↓';
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--sushi-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            letter-spacing: 0.15em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--silver);
+            line-height: 2.1;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .about-highlight {
+            display: inline;
+            background: linear-gradient(transparent 65%, rgba(212, 162, 83, 0.3) 65%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .about-feature {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--warm-beige);
+            border-radius: 8px;
+            border-top: 4px solid var(--tempura-gold);
+            transition: all 0.3s ease;
+        }
+
+        .about-feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .about-feature h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .about-feature p {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: var(--charcoal);
+        }
+
+        /* Specialty Section */
+        .specialty {
+            background: var(--warm-beige);
+        }
+
+        .specialty-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .specialty-visual {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .specialty-details h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+        }
+
+        .specialty-details .accent {
+            color: var(--tempura-gold);
+        }
+
+        .specialty-text {
+            font-size: 1.05rem;
+            line-height: 2.3;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .specialty-points {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .specialty-point {
+            padding: 1.8rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .specialty-point:last-child {
+            border-bottom: none;
+        }
+
+        .point-number {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--tempura-gold);
+            min-width: 60px;
+        }
+
+        .point-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+        }
+
+        .point-content p {
+            font-size: 0.95rem;
+            line-height: 2.1;
+            color: var(--silver);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Info Section */
+        .info {
+            background: var(--navy);
+            color: white;
+        }
+
+        .info .section-label {
+            color: var(--tempura-gold);
+        }
+
+        .info .section-title {
+            color: white;
+        }
+
+        .info .section-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .info-wrapper {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(212, 162, 83, 0.15);
+            border-radius: 12px;
+            padding: 4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--tempura-gold);
+            color: var(--tempura-gold);
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 1.5rem;
+            padding: 1.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--tempura-gold);
+        }
+
+        .info-value {
+            line-height: 2;
+        }
+
+        .info-value a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .info-value a:hover {
+            border-color: var(--tempura-gold);
+        }
+
+        .info-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.3rem;
+        }
+
+        .map-section {
+            margin-top: 3rem;
+        }
+
+        .map-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--tempura-gold);
+            text-align: center;
+        }
+
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .map-link-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--tempura-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .map-link-button:hover {
+            background: var(--light-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--sushi-blue) 0%, var(--navy) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta .section-label {
+            color: rgba(212, 162, 83, 0.9);
+        }
+
+        .cta .section-title {
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-text {
+            font-size: 1.15rem;
+            line-height: 2.4;
+            margin-bottom: 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.15em;
+            min-width: 250px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--navy);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .btn-icon {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .cta-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 0.95rem;
+            line-height: 2.1;
+        }
+
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-name {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            margin-bottom: 2rem;
+        }
+
+        .footer-info {
+            font-size: 0.95rem;
+            line-height: 2.3;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 1px;
+            background: rgba(212, 162, 83, 0.4);
+            margin: 2rem auto;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 968px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-tags {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .about-features,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specialty-showcase,
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .info-wrapper {
+                padding: 3rem 2rem;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- 📷 画像挿入箇所1: ヒーロー背景画像 -->
+        <div class="hero-bg placeholder image-placeholder">
+            <div class="placeholder-icon">📷</div>
+            <div class="placeholder-title">ヒーロー背景画像</div>
+            <p>推奨: 店舗外観または天ぷら定食</p>
+            <div class="placeholder-instruction">
+                画像ファイルを配置: <code class="placeholder-code">images/hero-bg.jpg</code>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">寿司屋なのに天ぷら定食が超絶品</div>
+            <h1 class="hero-title">寿司のしん幸</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+                寿司屋クオリティの揚げたてサクサク。<br>
+                ボリューム満点、贅沢ランチ。<br>
+                通がリピートする、もう一つの名物。
+            </p>
+            <div class="hero-tags">
+                <div class="hero-tag">天ぷら定食</div>
+                <div class="hero-tag">寿司屋クオリティ</div>
+                <div class="hero-tag">ランチ人気</div>
+            </div>
+        </div>
+        <div class="scroll-down">SCROLL</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-label">ABOUT</div>
+            <h2 class="section-title">しん幸とは</h2>
+            <p class="section-subtitle">
+                天童市の寿司店。<br>
+                アットホームな雰囲気で、ランチも夜も楽しめる。
+            </p>
+
+            <div class="about-content">
+                <p class="about-text">
+                    <span class="about-highlight">寿司屋なのに天ぷら定食が超絶品</span>と口コミで話題。<br>
+                    寿司だけじゃない、もう一つの名物。
+                </p>
+                <p class="about-text">
+                    カウンター席・座敷席・小上がり・宴会場。<br>
+                    <span class="about-highlight">ランチはサラリーマンや家族連れで賑わう</span>アットホーム。
+                </p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="about-feature-icon">🍤</span>
+                        <h3>寿司屋クオリティ</h3>
+                        <p>ネタの鮮度を重視する寿司店ならではの目利き。天ぷらも超絶品。</p>
+                    </div>
+                    <div class="about-feature">
+                        <span class="about-feature-icon">🏡</span>
+                        <h3>アットホームな雰囲気</h3>
+                        <p>カウンター、座敷、小上がり、宴会場。ランチも夜も楽しめる。</p>
+                    </div>
+                    <div class="about-feature">
+                        <span class="about-feature-icon">🍽️</span>
+                        <h3>幅広いメニュー</h3>
+                        <p>寿司、海鮮丼、天ぷら定食。和食・定食類が揃う。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Section -->
+    <section class="specialty">
+        <div class="container">
+            <div class="section-label">SPECIALTY</div>
+            <h2 class="section-title">天ぷら定食</h2>
+            <p class="section-subtitle">
+                寿司屋クオリティの揚げたてサクサク。<br>
+                ボリューム満点、通がリピートする名物。
+            </p>
+
+            <div class="specialty-showcase">
+                <!-- 📷 画像挿入箇所2: 天ぷら定食のメイン画像 -->
+                <div class="specialty-visual">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🍤</div>
+                        <div class="placeholder-title">天ぷら定食</div>
+                        <p>推奨: 海老・魚・野菜の天ぷら、ご飯、味噌汁、小鉢のセット</p>
+                        <div class="placeholder-instruction">
+                            画像ファイルを配置: <code class="placeholder-code">images/tempura-teishoku.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specialty-details">
+                    <h3>
+                        天ぷら定食<br>
+                        <span class="accent">寿司屋なのに超絶品</span>
+                    </h3>
+                    <p class="specialty-text">
+                        「心を鬼にして寿司ではなく天ぷら定食を注文したら超絶品だった」と口コミで話題。衣のサクサク感と軽い口当たりが高評価を得ています。ネタの鮮度を重視する寿司店ならではの目利きが生きており、海老や魚介、野菜など一つひとつの素材の味がしっかり立つ仕上がりです。
+                    </p>
+                    <p class="specialty-text">
+                        ランチタイムに提供される定食として、ご飯・味噌汁・小鉢などがセットになり、「これだけで十分満足できる」と語られています。海鮮丼や握り寿司と同価格帯でしっかりとボリュームがあり、コスパの良い贅沢昼ごはんとして地元のビジネスパーソンに支持されています。
+                    </p>
+
+                    <ul class="specialty-points">
+                        <li class="specialty-point">
+                            <div class="point-number">01</div>
+                            <div class="point-content">
+                                <h4>寿司屋クオリティの揚げたてサクサク</h4>
+                                <p>衣のサクサク感と軽い口当たり。寿司店ならではの目利きで、素材の味がしっかり立つ。</p>
+                            </div>
+                        </li>
+                        <li class="specialty-point">
+                            <div class="point-number">02</div>
+                            <div class="point-content">
+                                <h4>ボリュームと満足度の高いランチ構成</h4>
+                                <p>ご飯・味噌汁・小鉢がセット。海鮮丼や寿司と同価格帯で、コスパの良い贅沢昼ごはん。</p>
+                            </div>
+                        </li>
+                        <li class="specialty-point">
+                            <div class="point-number">03</div>
+                            <div class="point-content">
+                                <h4>寿司だけじゃない、通がリピートするもう一つの名物</h4>
+                                <p>常連は天ぷら定食を指名。一度食べると「次もまた天ぷら定食を」と思わせるリピート力。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-label">GALLERY</div>
+            <h2 class="section-title">ギャラリー</h2>
+            <p class="section-subtitle">
+                寿司、海鮮丼、天ぷら定食。<br>
+                店内の雰囲気もご紹介。
+            </p>
+
+            <div class="gallery-grid">
+                <!-- 📷 画像挿入箇所3: カウンター席 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🏮</div>
+                        <div class="placeholder-title">カウンター席</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/counter.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📷 画像挿入箇所4: 握り寿司 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🍣</div>
+                        <div class="placeholder-title">握り寿司</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/sushi.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📷 画像挿入箇所5: 海鮮丼 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🍚</div>
+                        <div class="placeholder-title">海鮮丼</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/kaisendon.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📷 画像挿入箇所6: 座敷席 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🏯</div>
+                        <div class="placeholder-title">座敷席</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/tatami.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📷 画像挿入箇所7: 店舗外観 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🏠</div>
+                        <div class="placeholder-title">店舗外観</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/exterior.jpg</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📷 画像挿入箇所8: その他料理 -->
+                <div class="gallery-item">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🍱</div>
+                        <div class="placeholder-title">その他料理</div>
+                        <div class="placeholder-instruction">
+                            <code class="placeholder-code">images/other.jpg</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info">
+        <div class="container">
+            <div class="section-label">INFORMATION</div>
+            <h2 class="section-title">店舗情報</h2>
+            <p class="section-subtitle">
+                天童市東長岡、駐車場完備。<br>
+                JR高擶駅から徒歩約13分。
+            </p>
+
+            <div class="info-wrapper">
+                <div class="info-grid">
+                    <div class="info-block">
+                        <h3>営業案内</h3>
+                        <div class="info-row">
+                            <div class="info-label">店名</div>
+                            <div class="info-value">寿司のしん幸（すしのしんこう）</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">営業時間</div>
+                            <div class="info-value">
+                                昼 11:30〜14:00<br>
+                                <span class="info-note">※火〜金のみ昼営業</span><br>
+                                夜 17:00〜22:00
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">定休日</div>
+                            <div class="info-value">
+                                月曜日<br>
+                                <span class="info-note">※祝日の場合は火曜休みに振替</span>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">予算目安</div>
+                            <div class="info-value">
+                                昼 1,000〜1,999円<br>
+                                夜 4,000〜5,000円
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">席</div>
+                            <div class="info-value">
+                                カウンター席・座敷席<br>
+                                小上がり・宴会場あり
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>アクセス</h3>
+                        <div class="info-row">
+                            <div class="info-label">住所</div>
+                            <div class="info-value">
+                                〒994-0063<br>
+                                山形県天童市東長岡４丁目３−２４
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">アクセス</div>
+                            <div class="info-value">
+                                JR高擶駅より徒歩約13分<br>
+                                JR天童駅より車で約13分
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">駐車場</div>
+                            <div class="info-value">店舗敷地内に駐車場あり</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">電話番号</div>
+                            <div class="info-value">
+                                <a href="tel:023-655-5200">023-655-5200</a>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">公式サイト</div>
+                            <div class="info-value">
+                                <a href="http://www.tabetendo.com/shinkou/" target="_blank" rel="noopener noreferrer">たべ天童</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-section">
+                    <h3 class="map-title">📍 アクセスマップ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps?q=38.3669,140.3806&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=山形県天童市東長岡4-3-24" target="_blank" rel="noopener noreferrer" class="map-link-button">
+                        🗺️ Google Mapで開く
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-label">RESERVATION</div>
+            <h2 class="section-title">ご予約・お問い合わせ</h2>
+            
+            <div class="cta-content">
+                <p class="cta-text">
+                    寿司屋クオリティの揚げたてサクサク。<br>
+                    ボリューム満点、贅沢ランチ。<br>
+                    通がリピートする、天ぷら定食をぜひ。
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="tel:023-655-5200" class="btn btn-primary">
+                        <span class="btn-icon">📞</span>
+                        電話で予約
+                    </a>
+                    <a href="http://www.tabetendo.com/shinkou/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <span class="btn-icon">🌐</span>
+                        公式サイト
+                    </a>
+                </div>
+
+                <p class="cta-note">
+                    ※営業時間: 昼 11:30〜14:00（火〜金）/ 夜 17:00〜22:00<br>
+                    ※定休日: 月曜日（祝日の場合は火曜休み）<br>
+                    ※駐車場完備
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-name">寿司のしん幸</div>
+            <div class="footer-info">
+                〒994-0063 山形県天童市東長岡４丁目３−２４<br>
+                JR高擶駅より徒歩約13分 / JR天童駅より車で約13分<br>
+                TEL: 023-655-5200<br>
+                営業時間: 昼 11:30〜14:00（火〜金）/ 夜 17:00〜22:00<br>
+                定休日: 月曜日（祝日の場合は火曜休み）/ 駐車場完備<br>
+                寿司屋なのに天ぷら定食が超絶品
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                © 寿司のしん幸 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 画像挿入ガイド用のバナー -->
+    <div style="position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-width: 350px; z-index: 1000;">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">📸 画像挿入サンプル</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6;">
+            紫色の枠が画像挿入箇所です。<br>
+            各箇所に表示されているファイル名で画像を保存し、HTMLコードを参考に挿入してください。
+        </p>
+        <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.9;">
+            ※このバナーは実際のLPでは削除してください
+        </p>
+    </div>
+</body>
+</html>
