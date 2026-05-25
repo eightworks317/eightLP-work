@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麺道 自然や | 山形市・自家製極太麺と親鳥×背脂の絶品肉蕎麦</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. Design System & Variables
+           ========================================= */
+        :root {
+            --color-bg-base: #FDFBF7;
+            --color-text-main: #222222;
+            --color-accent: #D93829;
+            --color-accent-dark: #A52015;
+            --color-wood: #8B5A2B;
+            --color-dark: #1A1A1A;
+            
+            --font-base: 'Noto Sans JP', sans-serif;
+            --font-catch: 'Yusei Magic', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-base);
+            background-color: var(--color-bg-base);
+            color: var(--color-text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.7; }
+        img { width: 100%; height: auto; display: block; object-fit: cover; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+
+        /* =========================================
+           2. Components
+           ========================================= */
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title span {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            border-radius: 20px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: var(--color-dark);
+        }
+
+        .hl { color: var(--color-accent); font-weight: bold; }
+
+        .btn-sns {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .btn-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-twitter { background-color: #1DA1F2; }
+
+        /* =========================================
+           3. Layout Sections
+           ========================================= */
+
+        /* Header */
+        header {
+            background: var(--color-dark);
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .header-inner {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: var(--font-catch);
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+        }
+        .header-info {
+            display: flex; gap: 20px; align-items: center; font-size: 0.9rem; font-weight: bold;
+        }
+        .tel { color: #fff; font-size: 1.2rem; }
+        .tel i { color: var(--color-accent); }
+
+        /* Hero
+           ▼ 変更点: 外部URLを相対パスに変更 */
+        .hero {
+            position: relative;
+            background: url('./images/hero.jpg') no-repeat center center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 40px 20px;
+        }
+        .hero-title {
+            font-family: var(--font-catch);
+            font-size: 3.5rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--color-accent);
+            display: inline-block;
+            padding: 5px 15px;
+            transform: skew(-10deg);
+        }
+        .hero-subtitle span { display: block; transform: skew(10deg); }
+
+        /* Concept */
+        .concept { background-color: #fff; }
+        .concept-wrap {
+            display: flex; align-items: center; gap: 40px;
+        }
+        .concept-text { flex: 1; }
+        .concept-text h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: var(--color-dark);
+        }
+        .concept-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .concept-img { flex: 1; }
+        .concept-img img { border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* Signature */
+        .signature {
+            background-color: var(--color-dark);
+            color: #fff;
+            position: relative;
+        }
+        .signature::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--color-accent);
+        }
+        .signature .section-title h2 { color: #fff; }
+        
+        .sig-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .sig-intro-name {
+            font-family: var(--font-catch);
+            font-size: 2.8rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .feature-card {
+            background: #2A2A2A;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .feature-card img {
+            height: 220px;
+        }
+        .feature-body { padding: 25px; }
+        .feature-num {
+            color: var(--color-accent);
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .feature-body h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .feature-body p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Info */
+        .info { background-color: var(--color-bg-base); }
+        .info-container {
+            display: flex; gap: 40px; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .info-table-wrap { flex: 1; }
+        .info-map { flex: 1; height: 400px; border-radius: 8px; overflow: hidden; }
+        table.info-table {
+            width: 100%; border-collapse: collapse;
+        }
+        .info-table th, .info-table td {
+            padding: 15px 0; border-bottom: 1px dashed #ddd; font-size: 0.95rem;
+        }
+        .info-table th { width: 30%; font-weight: 900; color: var(--color-dark); text-align: left; }
+        
+        .sns-links { margin-top: 20px; display: flex; gap: 10px; }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: #888; text-align: center; padding: 30px 0; font-size: 0.85rem; border-top: 1px solid #333;
+        }
+        .footer-logo { font-family: var(--font-catch); font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .concept-wrap, .info-container { flex-direction: column; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .info-container { padding: 20px; }
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .header-info span.hours { display: none; }
+            .section-title h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">麺道 自然や</div>
+            <div class="header-info">
+                <span class="hours">昼 11:00〜 / 夜 17:30〜 (日曜定休)</span>
+                <a href="tel:080-6015-2565" class="tel"><i class="fas fa-phone"></i> 080-6015-2565</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">自家製極太麺の一撃。<br>親鳥×背脂の絶品スープ</h1>
+            <div class="hero-subtitle"><span>山形肉そばの新境地、ここにあり！</span></div>
+        </div>
+    </section>
+
+    <!-- Concept -->
+    <section class="concept section-padding">
+        <div class="container">
+            <div class="concept-wrap">
+                <div class="concept-text">
+                    <div class="section-title" style="text-align: left;">
+                        <span>CONCEPT</span>
+                        <h2>老若男女に愛される<br>カジュアルな麺処</h2>
+                    </div>
+                    <h3>ガッツリ食べたい日も、<br>家族でゆっくり食事したい日も。</h3>
+                    <p>
+                        山形市寿町、通り沿いに店を構える「麺道 自然や」。<br>
+                        ほんのり煮干しと親鳥だしを効かせたスープに、自家製の多加水極太ちぢれ麺が絡む"ガッツリ系"の肉そば・ラーメンが自慢です。
+                    </p>
+                    <p>
+                        店内はカウンター席、テーブル席に加え、<span class="hl">ご家族連れに嬉しい小上がり座敷</span>もご用意しております。<br>
+                        名物の肉そば・肉中華のほか、牛すじぼっかけご飯や唐揚げなど、サイドメニューの丼や一品料理も大人気。お一人様からご家族まで、気軽にお立ち寄りいただけるカジュアルな麺処です。
+                    </p>
+                </div>
+                <div class="concept-img">
+                    <!-- ▼ 変更点: 外部URLを相対パスに変更 -->
+                    <img src="./images/concept.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature -->
+    <section class="signature section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>SIGNATURE</span>
+                <h2>看板メニュー</h2>
+            </div>
+            
+            <div class="sig-intro">
+                <div class="sig-intro-name">スペシャル肉蕎麦 / 肉中華</div>
+                <p>「推しメンやまがた」でも絶賛！どんぶりを覆い尽くす豪華トッピングの最強の一杯。</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <!-- ▼ 変更点: 外部URLを相対パスに変更 -->
+                    <img src="./images/feature01.jpg" alt="">
+                    <div class="feature-body">
+                        <span class="feature-num">Feature 01</span>
+                        <h4>親鳥だし×背脂の"コク旨スープ"</h4>
+                        <p>
+                            親鳥から丁寧にとっただしに、ほんのり煮干しを効かせ、背脂の甘みをプラスした「コクはあるのにくどくない」味わい。山形の肉そば文化を踏襲しつつ、ラーメン的な背脂のコクを融合させた唯一無二のスープです。自家製麺との相性は抜群！
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <!-- ▼ 変更点: 外部URLを相対パスに変更 -->
+                    <img src="./images/feature02.jpg" alt="">
+                    <div class="feature-body">
+                        <span class="feature-num">Feature 02</span>
+                        <h4>とり天・親鳥など豪華"全部のせ"</h4>
+                        <p>
+                            とり天、黒バラ海苔、味玉、親鳥肉、ネギなどがどんぶりを覆うほど盛られた大迫力のビジュアル！コリコリした親鳥と、ジューシーなとり天という異なる食感を一杯の中で楽しめ、「鶏づくしのごちそう」として高い満足感をお約束します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <!-- ▼ 変更点: 外部URLを相対パスに変更 -->
+                    <img src="./images/feature03.jpg" alt="">
+                    <div class="feature-body">
+                        <span class="feature-num">Feature 03</span>
+                        <h4>【そば or 中華麺】選べるスタイル</h4>
+                        <p>
+                            同じ内容で麺違いの「スペシャル肉中華」もご用意。蕎麦か太麺中華かを、その日の気分で選べるのが大きな魅力です。肉そば文化に馴染みのある方は「そば」で、ラーメン好きは「中華麺」で。それぞれの推しスタイルをお楽しみください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information -->
+    <section class="info section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>INFORMATION</span>
+                <h2>店舗情報</h2>
+            </div>
+            <div class="info-container">
+                <div class="info-table-wrap">
+                    <table class="info-table">
+                        <tr>
+                            <th>店名</th>
+                            <td>麺道 自然や（めんどう じねんや）</td>
+                        </tr>
+                        <tr>
+                            <th>ジャンル</th>
+                            <td>そば・ラーメン（中華麺）、肉そば、味噌ラーメン等</td>
+                        </tr>
+                        <tr>
+                            <th>電話番号</th>
+                            <td><strong style="font-size:1.1rem; color:var(--color-accent);">080-6015-2565</strong></td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>
+                                昼：11:00〜15:00（L.O. 14:30）<br>
+                                夜：17:30〜20:30（L.O. 20:00）<br>
+                                <span style="font-size: 0.8rem; color: #666;">※一部サイトでは 10:30〜15:30 の表記もございます。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>定休日</th>
+                            <td>日曜日</td>
+                        </tr>
+                        <tr>
+                            <th>席・設備</th>
+                            <td>カウンター席・テーブル席・小上がり座敷</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>〒990-2414 山形県山形市寿町20-10<br>
+                            <span style="font-size: 0.8rem; color: #666;">（※一部 10-20 表記あり）</span></td>
+                        </tr>
+                        <tr>
+                            <th>駐車場</th>
+                            <td>店舗前に3台分あり</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="sns-links">
+                        <a href="#" class="btn-sns btn-insta"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#" class="btn-sns btn-twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">↑ 本日の蕎麦など日替わり情報発信中！</p>
+                </div>
+                <div class="info-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.565814144576!2d140.3292!3d38.2425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDE0JzMzLjAiTiAxNDDCsDE5JzQ1LjEiRQ!5e0!3m2!1sja!2sjp!4v1600000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">麺道 自然や</div>
+            <p>〒990-2414 山形県山形市寿町20-10</p>
+            <p style="margin-top: 15px;">&copy; Mendo Jinenya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
