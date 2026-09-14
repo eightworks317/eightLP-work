@@ -23,32 +23,6 @@
             --silver: #7a7a7a;
         }
 
-        /* ── 画像プレースホルダー ── */
-        .img-slot {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            border: 3px dashed rgba(255,255,255,0.5);
-        }
-
-        .img-slot-icon   { font-size: 3.5rem; margin-bottom: 0.8rem; }
-        .img-slot-title  { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; }
-        .img-slot-desc   { font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.9; line-height: 1.6; }
-        .img-slot-code   {
-            background: rgba(0,0,0,0.45);
-            padding: 0.5rem 1.2rem;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.85rem;
-        }
 
         /* ── Base ── */
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -76,14 +50,6 @@
             inset: 0;
             z-index: 1;
             min-height: 100%;
-        }
-
-        .hero-bg-fallback {
-            background: linear-gradient(135deg,
-                var(--deep-brown) 0%,
-                var(--soba-brown) 30%,
-                var(--deep-indigo) 65%,
-                var(--indigo) 100%);
         }
 
         .hero-overlay {
@@ -484,9 +450,8 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
     <!-- 📷 画像挿入箇所1: ヒーロー背景 -->
-    <div class="hero-bg hero-bg-fallback">
-        <!-- 画像に差し替える場合:
-             <img src="images/hero.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"> -->
+    <div class="hero-bg">
+        <img src="images/hero.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -558,12 +523,7 @@
         <div class="showcase">
             <!-- 📷 画像挿入箇所2: とり中華メイン -->
             <div class="show-visual">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🍜</div>
-                    <div class="img-slot-title">とり中華</div>
-                    <div class="img-slot-desc">推奨: 透き通った和風スープに中華麺、鶏もも肉、ネギ、海苔の一杯</div>
-                    <div class="img-slot-code">images/tori-chuka.jpg</div>
-                </div>
+                <img src="images/tori-chuka.jpg" alt="とり中華" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <div class="show-detail">
@@ -619,56 +579,32 @@
         <div class="gallery-grid">
             <!-- 📷 画像挿入箇所3 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🏠</div>
-                    <div class="img-slot-title">店舗外観</div>
-                    <div class="img-slot-code">images/exterior.jpg</div>
-                </div>
+                <img src="images/exterior.jpg" alt="店舗外観" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <!-- 📷 画像挿入箇所4 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🏮</div>
-                    <div class="img-slot-title">店内の様子</div>
-                    <div class="img-slot-code">images/interior.jpg</div>
-                </div>
+                <img src="images/interior.jpg" alt="店内の様子" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <!-- 📷 画像挿入箇所5 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🌾</div>
-                    <div class="img-slot-title">もりそば・うどん</div>
-                    <div class="img-slot-code">images/soba.jpg</div>
-                </div>
+                <img src="images/soba.jpg" alt="もりそば・うどん" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <!-- 📷 画像挿入箇所6 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🍜</div>
-                    <div class="img-slot-title">中華そば</div>
-                    <div class="img-slot-code">images/chuka.jpg</div>
-                </div>
+                <img src="images/chuka.jpg" alt="中華そば" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <!-- 📷 画像挿入箇所7 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🍽️</div>
-                    <div class="img-slot-title">つけ麺</div>
-                    <div class="img-slot-code">images/tsukemen.jpg</div>
-                </div>
+                <img src="images/tsukemen.jpg" alt="つけ麺" style="width:100%;height:100%;object-fit:cover;">
             </div>
 
             <!-- 📷 画像挿入箇所8 -->
             <div class="gal-item">
-                <div class="img-slot">
-                    <div class="img-slot-icon">🥢</div>
-                    <div class="img-slot-title">のれん・看板</div>
-                    <div class="img-slot-code">images/noren.jpg</div>
-                </div>
+                <img src="images/noren.jpg" alt="のれん・看板" style="width:100%;height:100%;object-fit:cover;">
             </div>
         </div>
     </div>
@@ -816,21 +752,7 @@
     </div>
 </footer>
 
-<!-- 📸 画像挿入ガイドバナー（公開時に削除） -->
-<div style="position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:1.5rem;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.3);max-width:340px;z-index:9999;">
-    <h3 style="margin-bottom:.5rem;font-size:1.15rem;">📸 画像挿入箇所（全8か所）</h3>
-    <ul style="font-size:.85rem;line-height:1.8;padding-left:1rem;">
-        <li>① ヒーロー背景: hero.jpg</li>
-        <li>② とり中華: tori-chuka.jpg</li>
-        <li>③ 店舗外観: exterior.jpg</li>
-        <li>④ 店内: interior.jpg</li>
-        <li>⑤ そば: soba.jpg</li>
-        <li>⑥ 中華そば: chuka.jpg</li>
-        <li>⑦ つけ麺: tsukemen.jpg</li>
-        <li>⑧ のれん: noren.jpg</li>
-    </ul>
-    <p style="font-size:.8rem;margin-top:.8rem;opacity:.85;">※このバナーは公開前に削除してください</p>
-</div>
+
 
 </body>
 </html>
