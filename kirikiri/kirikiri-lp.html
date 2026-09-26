@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天童市高擶の古民家食堂「飯 吉里吉里」。レトロモダンな空間で味わう看板の海老天丼。レコードが並ぶ風情ある店内で、がっつり天童ご飯を。">
+    <meta property="og:title" content="飯 吉里吉里 - 古民家で味わう海老天丼">
+    <meta property="og:description" content="高擶の古民家をリノベーションした食堂。海老が大きく存在感のある天丼が看板メニュー。">
+    <meta property="og:image" content="img/ebiten-don.jpg">
+    <meta property="og:type" content="website">
+    <title>飯 吉里吉里 - 古民家で味わう海老天丼｜天童市高擶</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kominka-wood: #6b4c35;
+            --deep-wood: #4a3324;
+            --vinyl-black: #211d1a;
+            --retro-teal: #3f6367;
+            --light-teal: #6a9a9e;
+            --tempura-gold: #d4932f;
+            --light-gold: #e6b566;
+            --cream: #f7f2e8;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--vinyl-black) 0%,
+                var(--deep-wood) 35%,
+                var(--kominka-wood) 70%,
+                var(--tempura-gold) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.46); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.6rem;
+            background: rgba(255,255,255,0.09);
+            border: 2px solid rgba(212,147,47,0.45);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.55em;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1.05s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 5.2rem;
+            font-weight: 900;
+            letter-spacing: 0.32em;
+            line-height: 1.3;
+            margin-bottom: 2.2rem;
+            animation: fadeUp 1.05s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.36em;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--tempura-gold), transparent);
+            margin: 2.6rem auto;
+            animation: fadeUp 1.05s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 660px;
+            margin: 0 auto 3.6rem;
+            font-weight: 300;
+            animation: fadeUp 1.05s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1.05s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.88rem;
+            letter-spacing: 0.2em;
+            padding: 0.6rem 1.8rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(212,147,47,0.35);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            z-index: 3;
+            animation: fadeUp 1.05s ease-out 1s both, float 3.2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(11px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.58em;
+            color: var(--kominka-wood);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--deep-wood);
+            letter-spacing: 0.2em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--silver);
+            line-height: 2.3;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            font-weight: 300;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.7;
+            font-weight: 300;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 68%, rgba(212,147,47,0.3) 68%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.6rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.9rem 2.1rem;
+            background: var(--cream);
+            border-radius: 6px;
+            border-top: 4px solid var(--tempura-gold);
+            transition: transform .35s, box-shadow .35s;
+        }
+        .feat:hover { transform: translateY(-9px); box-shadow: 0 18px 45px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.9rem; display: block; margin-bottom: 1.5rem; }
+        .feat h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--deep-wood);
+            letter-spacing: 0.05em;
+        }
+        .feat p { font-size: 0.9rem; line-height: 2.1; color: var(--charcoal); font-weight: 300; }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.2rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 30px 78px rgba(0,0,0,.22);
+        }
+        .show-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .show-det h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.65rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--deep-wood);
+            letter-spacing: 0.1em;
+            line-height: 1.7;
+        }
+        .show-det .acc { color: var(--tempura-gold); }
+
+        .show-txt {
+            font-size: 1rem;
+            line-height: 2.4;
+            margin-bottom: 1.9rem;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .pts { list-style: none; margin-top: 3rem; }
+        .pt {
+            padding: 1.85rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            display: flex;
+            gap: 2rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.05rem;
+            font-weight: 900;
+            color: var(--tempura-gold);
+            min-width: 60px;
+        }
+        .pt-body h4 {
+            font-size: 1.16rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--deep-wood);
+            letter-spacing: 0.02em;
+        }
+        .pt-body p { font-size: 0.9rem; line-height: 2.15; color: var(--silver); font-weight: 300; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.1rem;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .35s;
+        }
+        .gal-it:hover { transform: translateY(-6px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--deep-wood); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(212,147,47,.18);
+            border-radius: 10px;
+            padding: 4.3rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.3rem;
+            margin-bottom: 3.2rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 2.1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--tempura-gold);
+            color: var(--light-gold);
+            letter-spacing: 0.08em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 122px 1fr;
+            gap: 1.4rem;
+            padding: 1.3rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.88rem; }
+        .ival { line-height: 2.05; font-size: 0.92rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.78rem; color: rgba(255,255,255,.55); margin-top: .35rem; }
+
+        .info-alert {
+            background: rgba(212,147,47,.1);
+            border-left: 3px solid var(--tempura-gold);
+            border-radius: 6px;
+            padding: 1.55rem;
+            margin-top: 1.8rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.6rem; }
+        .info-alert-text  { font-size: 0.9rem; line-height: 2; color: rgba(255,255,255,.88); }
+
+        /* map */
+        .map { margin-top: 3.2rem; }
+        .map-tit { font-size: 1.26rem; font-weight: 700; margin-bottom: 1.4rem; color: var(--light-gold); text-align: center; letter-spacing: 0.08em; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 38px rgba(0,0,0,.36); margin-bottom: 1.4rem; }
+        .map-box iframe { width: 100%; height: 450px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--kominka-wood);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            transition: all .35s;
+            font-size: 0.9rem;
+        }
+        .map-btn:hover { background: var(--tempura-gold); transform: translateY(-2px); }
+
+        /* ═══ SNSアイコンボタン ═══ */
+        .sns-row {
+            display: flex;
+            gap: 1.1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        }
+        .sns-btn:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+        }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.instagram {
+            background: radial-gradient(circle at 30% 107%,
+                #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .sns-btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1.1rem 2.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 12px 32px rgba(0,0,0,.28);
+        }
+        .sns-btn-label:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0,0,0,.35);
+        }
+        .sns-btn-label svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn-label.instagram {
+            background: radial-gradient(circle at 30% 107%,
+                #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--vinyl-black) 0%, var(--kominka-wood) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(230,181,102,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 700px; margin: 0 auto; }
+        .cta-txt { font-size: 1.1rem; line-height: 2.6; margin-bottom: 3.3rem; font-weight: 300; }
+
+        .cta-btns { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; align-items: center; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 3rem;
+            font-size: 1.02rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .35s;
+            letter-spacing: 0.16em;
+            min-width: 240px;
+        }
+        .btn-w { background: white; color: var(--kominka-wood); box-shadow: 0 14px 38px rgba(0,0,0,.3); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+
+        .cta-note { margin-top: 3.3rem; padding-top: 2.1rem; border-top: 1px solid rgba(255,255,255,.24); font-size: 0.9rem; line-height: 2.25; font-weight: 300; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--vinyl-black); color: white; padding: 4.3rem 2rem 2.4rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 1.9rem; font-weight: 900; letter-spacing: 0.35em; margin-bottom: 2rem; }
+        .foot-info { font-size: 0.9rem; line-height: 2.45; color: rgba(255,255,255,.78); margin-bottom: 1.8rem; font-weight: 300; }
+        .foot-sns { margin-bottom: 2rem; }
+        .foot-hr { width: 62px; height: 1px; background: rgba(212,147,47,.4); margin: 2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.46); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 3.6rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 2.7rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { flex-direction: column; gap: 1.1rem; }
+            .features, .gal-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { grid-template-columns: 1fr; gap: 3.2rem; }
+            .info-wrap { padding: 2.8rem 1.4rem; }
+            .ir { grid-template-columns: 1fr; gap: .5rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <!-- 画像に差し替える場合:
+        <img src="img/hero.jpg" alt="飯 吉里吉里 - 古民家の外観" loading="eager"> -->
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">高擶の古民家食堂</div>
+        <h1 class="hero-tit">
+            飯 吉里吉里
+            <small>MESHI KIRIKIRI</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            海老が大きく存在感のある、看板の海老天丼。<br>
+            レコードが並ぶレトロモダンな古民家で、<br>
+            がっつり天童ご飯を味わう。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">海老天丼</div>
+            <div class="hero-tag">古民家リノベーション</div>
+            <div class="hero-tag">昼のみ営業</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">吉里吉里とは</h2>
+        <p class="sub">
+            天童市高擶、黒板塀の続くエリアに佇む古民家食堂。<br>
+            レコードが並ぶ、風情とモダンさが同居する空間。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">古民家を改装した風情ある店内</span>で、<br>
+                レトロ・モダンな外観、レコードが並ぶおしゃれな空間が広がります。<br>
+                リニューアル後は<span class="hl">「天丼」を中心としたメニュー構成</span>で、<br>
+                がっつり食べられるランチとして親しまれています。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍤</span>
+                <h3>海老天丼</h3>
+                <p>大きな海老が存在感抜群。衣が重すぎず食べやすいと評判の看板メニュー。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏠</span>
+                <h3>古民家リノベーション</h3>
+                <p>レコードが並ぶレトロモダンな空間。黒板塀の続く高擶地区に佇む一軒家。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🚗</span>
+                <h3>駐車場12台分</h3>
+                <p>店舗前に普通車約12台分の駐車スペース完備。車での来店も安心です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">海老天丼</h2>
+        <p class="sub">
+            大きな海老の存在感、衣は重すぎず食べやすい。<br>
+            古民家の空間で味わう、がっつり天童ご飯。
+        </p>
+
+        <div class="showcase">
+            <div class="show-vis">
+                <img src="img/ebiten-don.jpg" alt="海老天丼 - 大きな海老の天ぷらがのった丼" loading="lazy">
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    海老天丼<br>
+                    <span class="acc">主力の看板メニュー</span>
+                </h3>
+                <p class="show-txt">
+                    リニューアル後、メニューは「天丼」を中心に構成されていると紹介されており、最も訴求しやすい主力商品です。海老が大きく存在感があり、衣が重すぎないタイプで食べやすいと評価されています。
+                </p>
+                <p class="show-txt">
+                    古民家の雰囲気とレトロモダンな空間の中で、天丼ランチとして「がっつり天童ご飯」的な体験を提供できる点も特徴。風情ある店内でゆっくりと味わえる一品です。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>リニューアル後の主力メニュー</h4>
+                            <p>天丼を中心とした構成に一新。最も訴求しやすい看板商品として紹介されています。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>大きな海老、食べやすい衣</h4>
+                            <p>存在感のある海老と、重すぎない衣のバランス。食べやすさが評価されています。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>古民家で味わう、がっつり天童ご飯</h4>
+                            <p>レトロモダンな空間の中で楽しむ天丼ランチ。風情ある店内での特別な食体験。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">ギャラリー</h2>
+        <p class="sub">
+            レコードが並ぶ、レトロモダンな古民家の空間。<br>
+            黒板塀の続く高擶地区の風情もご紹介。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="飯 吉里吉里 店舗外観 - 黒板塀の古民家" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - 古民家を改装した風情ある空間" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/records.jpg" alt="レコードが並ぶ店内のレトロモダンな一角" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/counter.jpg" alt="店内のカウンター、テーブル席" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/parking.jpg" alt="店舗前の駐車場" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/teishoku.jpg" alt="定食メニューの一例" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            天童市高擶北、黒板塀の続くエリア。<br>
+            駐車場完備、昼のみ営業。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">飯 吉里吉里（めし きりきり）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            11:00〜14:00<br>
+                            <span class="inote">※昼のみ営業</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            木曜日<br>
+                            <span class="inote">※臨時休業あり、事前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">昼 1,000円〜2,000円程度</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">
+                            食堂・和食（天丼・定食中心）<br>
+                            古民家カフェ的要素あり
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">店舗前に普通車約12台分</div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒994-0068<br>
+                            山形県天童市高擶北137-4
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR奥羽本線 高擶駅より徒歩約26〜27分（約2.0km）<br>
+                            天童駅より車で約11分／山形駅より車で約24分<br>
+                            <span class="inote">※国道13号から県道24号経由</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-655-5670">023-655-5670</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">Instagram</div>
+                        <div class="ival"><a href="https://www.instagram.com/mesi_kiri/" target="_blank" rel="noopener noreferrer">@mesi_kiri</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💳 お支払いについて</div>
+                <p class="info-alert-text">
+                    クレジットカードはご利用いただけません。現金のほか、PayPay・au PAYがご利用いただけます。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.instagram.com/mesi_kiri/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.3654,140.3898&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="飯 吉里吉里の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県天童市高擶北137-4" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしております</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                海老が大きく存在感のある、看板の海老天丼。<br>
+                レコードが並ぶレトロモダンな古民家で、<br>
+                がっつり天童ご飯を味わってください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-655-5670" class="btn btn-w">
+                    <span style="margin-right:.8rem; font-size:1.15rem;">📞</span>
+                    電話で問い合わせ
+                </a>
+                <a href="https://www.instagram.com/mesi_kiri/" target="_blank" rel="noopener noreferrer" class="sns-btn-label instagram">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                    Instagram
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 11:00〜14:00（昼のみ）<br>
+                ※定休日: 木曜日（臨時休業あり）<br>
+                ※カード不可、PayPay・au PAY対応
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">飯 吉里吉里</div>
+        <div class="foot-info">
+            〒994-0068 山形県天童市高擶北137-4<br>
+            JR高擶駅より徒歩約26〜27分 / 駐車場約12台分<br>
+            TEL: 023-655-5670<br>
+            営業時間: 11:00〜14:00（昼のみ） / 定休日: 木曜日（臨時休業あり）<br>
+            海老天丼 / 古民家リノベーション食堂
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.instagram.com/mesi_kiri/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram" style="display:inline-flex;">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 飯 吉里吉里 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
