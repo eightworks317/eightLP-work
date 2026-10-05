@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市木の実町の和工房 空海。庄内浜の鮮魚と地元野菜を使った季節のコース料理専門店。個室完備、落ち着いた空間でおもてなしの一夜を。">
+    <meta property="og:title" content="和工房 空海 - 庄内浜の鮮魚と季節のコース料理">
+    <meta property="og:description" content="単品メニューはなくコースのみ。漁師が真心こめて獲った魚を活かす、特別な日の食事に。">
+    <meta property="og:image" content="img/course-main.jpg">
+    <meta property="og:type" content="website">
+    <title>和工房 空海 - 庄内浜の鮮魚と季節のコース料理｜山形</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-indigo: #1e2a3a;
+            --indigo: #2b3e52;
+            --stone-gray: #4a4842;
+            --shonai-blue: #35667a;
+            --light-blue: #5c8fa3;
+            --vegetable-green: #5e7a52;
+            --light-green: #88a877;
+            --gold: #c4a259;
+            --light-gold: #dcc081;
+            --cream: #f6f3ec;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--deep-indigo) 0%,
+                var(--indigo) 35%,
+                var(--shonai-blue) 75%,
+                var(--vegetable-green) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.6rem;
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(196,162,89,0.45);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.55em;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1.05s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            line-height: 1.3;
+            margin-bottom: 2.2rem;
+            animation: fadeUp 1.05s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.36em;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2.6rem auto;
+            animation: fadeUp 1.05s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 660px;
+            margin: 0 auto 3.6rem;
+            font-weight: 300;
+            animation: fadeUp 1.05s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1.05s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.88rem;
+            letter-spacing: 0.2em;
+            padding: 0.6rem 1.8rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(196,162,89,0.35);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            z-index: 3;
+            animation: fadeUp 1.05s ease-out 1s both, float 3.2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(11px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.58em;
+            color: var(--shonai-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.2em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--silver);
+            line-height: 2.3;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            font-weight: 300;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.7;
+            font-weight: 300;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 68%, rgba(196,162,89,0.3) 68%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.6rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.9rem 2.1rem;
+            background: var(--cream);
+            border-radius: 6px;
+            border-top: 4px solid var(--shonai-blue);
+            transition: transform .35s, box-shadow .35s;
+        }
+        .feat:hover { transform: translateY(-9px); box-shadow: 0 18px 45px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.9rem; display: block; margin-bottom: 1.5rem; }
+        .feat h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.05em;
+        }
+        .feat p { font-size: 0.9rem; line-height: 2.1; color: var(--charcoal); font-weight: 300; }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.2rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 30px 78px rgba(0,0,0,.22);
+        }
+        .show-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .show-det h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.1em;
+            line-height: 1.7;
+        }
+        .show-det .acc { color: var(--shonai-blue); }
+
+        .show-txt {
+            font-size: 1rem;
+            line-height: 2.4;
+            margin-bottom: 1.9rem;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .pts { list-style: none; margin-top: 3rem; }
+        .pt {
+            padding: 1.85rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            display: flex;
+            gap: 2rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.05rem;
+            font-weight: 900;
+            color: var(--shonai-blue);
+            min-width: 60px;
+        }
+        .pt-body h4 {
+            font-size: 1.16rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--deep-indigo);
+            letter-spacing: 0.02em;
+        }
+        .pt-body p { font-size: 0.9rem; line-height: 2.15; color: var(--silver); font-weight: 300; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2.2rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .35s;
+        }
+        .gal-it:hover { transform: translateY(-6px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--deep-indigo); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(196,162,89,.18);
+            border-radius: 10px;
+            padding: 4.3rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.3rem;
+            margin-bottom: 3.2rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 2.1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+            color: var(--light-gold);
+            letter-spacing: 0.08em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 122px 1fr;
+            gap: 1.4rem;
+            padding: 1.3rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.88rem; }
+        .ival { line-height: 2.05; font-size: 0.92rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.78rem; color: rgba(255,255,255,.55); margin-top: .35rem; }
+
+        .info-alert {
+            background: rgba(196,162,89,.1);
+            border-left: 3px solid var(--gold);
+            border-radius: 6px;
+            padding: 1.55rem;
+            margin-top: 1.8rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.6rem; }
+        .info-alert-text  { font-size: 0.9rem; line-height: 2; color: rgba(255,255,255,.88); }
+
+        /* map */
+        .map { margin-top: 3.2rem; }
+        .map-tit { font-size: 1.26rem; font-weight: 700; margin-bottom: 1.4rem; color: var(--light-gold); text-align: center; letter-spacing: 0.08em; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 38px rgba(0,0,0,.36); margin-bottom: 1.4rem; }
+        .map-box iframe { width: 100%; height: 450px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--shonai-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            transition: all .35s;
+            font-size: 0.9rem;
+        }
+        .map-btn:hover { background: var(--light-blue); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--shonai-blue) 0%, var(--deep-indigo) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(220,192,129,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 700px; margin: 0 auto; }
+        .cta-txt { font-size: 1.1rem; line-height: 2.6; margin-bottom: 3.3rem; font-weight: 300; }
+
+        .cta-btns { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 3rem;
+            font-size: 1.02rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .35s;
+            letter-spacing: 0.16em;
+            min-width: 250px;
+        }
+        .btn-w { background: white; color: var(--shonai-blue); box-shadow: 0 14px 38px rgba(0,0,0,.3); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+
+        .cta-note { margin-top: 3.3rem; padding-top: 2.1rem; border-top: 1px solid rgba(255,255,255,.24); font-size: 0.9rem; line-height: 2.25; font-weight: 300; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--deep-indigo); color: white; padding: 4.3rem 2rem 2.4rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 1.9rem; font-weight: 900; letter-spacing: 0.35em; margin-bottom: 2rem; }
+        .foot-info { font-size: 0.9rem; line-height: 2.45; color: rgba(255,255,255,.78); margin-bottom: 2.2rem; font-weight: 300; }
+        .foot-hr { width: 62px; height: 1px; background: rgba(196,162,89,.4); margin: 2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.46); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 3.6rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 2.6rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { flex-direction: column; gap: 1.1rem; }
+            .features, .gal-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { grid-template-columns: 1fr; gap: 3.2rem; }
+            .info-wrap { padding: 2.8rem 1.4rem; }
+            .ir { grid-template-columns: 1fr; gap: .5rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="和工房 空海 外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">木の実町の和工房</div>
+        <h1 class="hero-tit">
+            和工房 空海
+            <small>WAKOUBOU KUUKAI</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            庄内浜の鮮魚と地元野菜を使った、季節のコース料理。<br>
+            単品メニューはなく、コースのみの特別なひととき。<br>
+            落ち着いた個室で、おもてなしの一夜を。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">庄内浜の鮮魚</div>
+            <div class="hero-tag">コース料理専門</div>
+            <div class="hero-tag">個室完備</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">空海とは</h2>
+        <p class="sub">
+            山形市木の実町、JR山形駅から徒歩約8〜11分。<br>
+            落ち着いた雰囲気の中で味わう、創作料理の和工房。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">庄内浜の鮮魚と山形県産の野菜を中心に、季節を感じさせるコース料理</span>を提供。<br>
+                漁師が真心こめて獲った魚を最大限に活かす料理づくりを心がけ、<br>
+                <span class="hl">単品メニューはなくコースのみ</span>という、特別な日にふさわしい一軒です。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🐟</span>
+                <h3>庄内浜の鮮魚</h3>
+                <p>漁師が真心こめて獲った魚を、鮮度を活かした料理で提供します。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍃</span>
+                <h3>山形県産の野菜</h3>
+                <p>地元野菜を取り入れ、季節を感じさせるコースに仕立てます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>個室完備</h3>
+                <p>2名〜20名規模まで対応できる個室。全席禁煙で落ち着いた空間です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">季節のコース料理</h2>
+        <p class="sub">
+            庄内浜の鮮魚と地元野菜を活かした、<br>
+            単品メニューのないコース専門のおもてなし。
+        </p>
+
+        <div class="showcase">
+            <div class="show-vis">
+                <img src="img/course-main.jpg" alt="季節のコース料理 - 庄内浜の鮮魚と地元野菜" loading="lazy">
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    季節のコース料理<br>
+                    <span class="acc">庄内浜×地元野菜</span>
+                </h3>
+                <p class="show-txt">
+                    庄内浜の鮮魚と山形県産の野菜を中心に、季節を感じさせるコース料理を提供。漁師が真心こめて獲った魚を最大限に活かす料理づくりを心がけており、鮮度と素材の良さが際立つ内容です。
+                </p>
+                <p class="show-txt">
+                    単品メニューはなくコースのみの提供というスタイルで、「特別な日の食事」「おもてなし」向けの体験価値が高いのが特徴。落ち着いた個室で、ゆっくりと季節の移ろいを味わえます。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>庄内浜の鮮魚と地元野菜</h4>
+                            <p>庄内浜の鮮魚と山形県産野菜を中心に、季節を感じさせるコース料理を公式に明記。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>漁師の真心を活かす料理づくり</h4>
+                            <p>漁師が真心こめて獲った魚を最大限に活かす調理。鮮度と素材の良さが際立ちます。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>コースのみの特別な体験価値</h4>
+                            <p>単品メニューはなくコースのみ。特別な日の食事・おもてなしにふさわしい一夜を。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">ギャラリー</h2>
+        <p class="sub">
+            落ち着いた店内と個室。<br>
+            おもてなしにふさわしい、静かな空間です。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="和工房 空海 店舗外観" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/private-room.jpg" alt="個室 - 落ち着いた和の空間" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市木の実町、JR山形駅から徒歩圏内。<br>
+            夜のみ営業、個室2〜20名規模まで対応。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">和工房 空海（わこうぼう くうかい）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            17:30〜22:30<br>
+                            <span class="inote">※L.O. 21:00〜21:30</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">日曜日・祝日</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            夜 4,000〜7,000円帯のコース<br>
+                            <span class="inote">※5,000〜6,000円が中心</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">創作料理、日本料理、居酒屋、和食</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            個室あり（2〜20名規模対応）<br>
+                            <span class="inote">※全席禁煙、屋外に喫煙スペースあり</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0044<br>
+                            山形県山形市木の実町2-22
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅より徒歩約8〜11分（約587〜640m）<br>
+                            北山形駅より徒歩約21分（1.6km）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">店舗内敷地に6台分（無料）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-635-4646">023-635-4646</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💳 お支払いについて</div>
+                <p class="info-alert-text">
+                    クレジットカード（VISA、Master、JCB、AMEX、Diners）がご利用いただけます。キャッシュレス決済はカードを中心に対応しております。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.2525,140.3340&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="和工房 空海の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市木の実町2-22" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                庄内浜の鮮魚と地元野菜を使った、季節のコース料理。<br>
+                単品メニューはなく、コースのみの特別なひととき。<br>
+                落ち着いた個室で、おもてなしの一夜をお過ごしください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-635-4646" class="btn btn-w">
+                    <span style="margin-right:.8rem; font-size:1.2rem;">📞</span>
+                    電話で予約
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 17:30〜22:30（L.O. 21:00〜21:30）<br>
+                ※定休日: 日曜日・祝日<br>
+                ※コースのみの提供、個室は2〜20名規模まで対応
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">和工房 空海</div>
+        <div class="foot-info">
+            〒990-0044 山形県山形市木の実町2-22<br>
+            JR山形駅より徒歩約8〜11分 / 無料駐車場6台<br>
+            TEL: 023-635-4646<br>
+            営業時間: 17:30〜22:30（L.O. 21:00〜21:30） / 定休日: 日曜日・祝日<br>
+            庄内浜の鮮魚と地元野菜 / コース料理専門・個室完備
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 和工房 空海 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
