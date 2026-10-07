@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市薬師町の料亭 亀松閣。創業約120〜130年、明治天皇ゆかりの建物を受け継ぐ老舗料亭。京懐石と山形郷土料理を融合したコースを、錦鯉の泳ぐ庭園を望む個室で。">
+    <meta property="og:title" content="料亭 亀松閣 - 明治天皇ゆかりの老舗料亭">
+    <meta property="og:description" content="京懐石×山形郷土料理の融合コース。全室個室、庭園を眺める非日常のおもてなし。">
+    <meta property="og:image" content="img/course-main.jpg">
+    <meta property="og:type" content="website">
+    <title>料亭 亀松閣 - 明治天皇ゆかりの老舗料亭｜山形</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --shu-crimson: #7a2e27;
+            --deep-shu: #591f1a;
+            --garden-green: #3d5240;
+            --deep-green: #2a3a2c;
+            --sumi: #211c18;
+            --gold: #c9a961;
+            --light-gold: #e0c384;
+            --washi-cream: #f7f2e6;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #7a7a7a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--charcoal);
+            background: var(--washi-cream);
+            line-height: 2;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 720px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--sumi) 0%,
+                var(--deep-shu) 35%,
+                var(--shu-crimson) 70%,
+                var(--garden-green) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.75rem 2.8rem;
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(201,169,97,0.5);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.6em;
+            margin-bottom: 3.2rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1.15s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(22px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 5.4rem;
+            font-weight: 900;
+            letter-spacing: 0.35em;
+            line-height: 1.35;
+            margin-bottom: 2.4rem;
+            animation: fadeUp 1.15s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.34em;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            margin-top: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .hero-div {
+            width: 130px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2.8rem auto;
+            animation: fadeUp 1.15s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.7;
+            max-width: 680px;
+            margin: 0 auto 3.8rem;
+            font-weight: 300;
+            animation: fadeUp 1.15s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 2.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1.15s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.86rem;
+            letter-spacing: 0.22em;
+            padding: 0.65rem 1.9rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(201,169,97,0.4);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            letter-spacing: 0.42em;
+            z-index: 3;
+            animation: fadeUp 1.15s ease-out 1s both, float 3.4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(12px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.5rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8.5rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.62em;
+            color: var(--shu-crimson);
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+        }
+
+        .tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.6rem;
+            color: var(--sumi);
+            letter-spacing: 0.22em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--silver);
+            line-height: 2.4;
+            max-width: 720px;
+            margin: 0 auto 5.5rem;
+            font-weight: 300;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 900px;
+            margin: 0 auto 4.8rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.8;
+            font-weight: 300;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 68%, rgba(201,169,97,0.3) 68%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.8rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 3.1rem 2.2rem;
+            background: var(--washi-cream);
+            border-radius: 4px;
+            border-top: 3px solid var(--shu-crimson);
+            transition: transform .4s, box-shadow .4s;
+        }
+        .feat:hover { transform: translateY(-9px); box-shadow: 0 20px 48px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.9rem; display: block; margin-bottom: 1.6rem; }
+        .feat h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            color: var(--sumi);
+            letter-spacing: 0.06em;
+        }
+        .feat p { font-size: 0.9rem; line-height: 2.2; color: var(--charcoal); font-weight: 300; }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--washi-cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.4rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            aspect-ratio: 4/3;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 32px 82px rgba(0,0,0,.24);
+        }
+        .show-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .show-det h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.7rem;
+            font-weight: 900;
+            margin-bottom: 1.6rem;
+            color: var(--sumi);
+            letter-spacing: 0.1em;
+            line-height: 1.75;
+        }
+        .show-det .acc { color: var(--shu-crimson); }
+
+        .show-txt {
+            font-size: 1rem;
+            line-height: 2.5;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+            font-weight: 300;
+        }
+
+        .pts { list-style: none; margin-top: 3.2rem; }
+        .pt {
+            padding: 1.95rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            display: flex;
+            gap: 2.1rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--shu-crimson);
+            min-width: 62px;
+        }
+        .pt-body h4 {
+            font-size: 1.17rem;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+            color: var(--sumi);
+            letter-spacing: 0.02em;
+        }
+        .pt-body p { font-size: 0.9rem; line-height: 2.25; color: var(--silver); font-weight: 300; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.2rem;
+        }
+        .gal-grid .gal-it:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 32px rgba(0,0,0,.14);
+            transition: transform .4s;
+        }
+        .gal-it:hover { transform: translateY(-6px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--sumi); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(201,169,97,.2);
+            border-radius: 6px;
+            padding: 4.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            margin-bottom: 3.4rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.38rem;
+            font-weight: 700;
+            margin-bottom: 2.2rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 2px solid var(--gold);
+            color: var(--light-gold);
+            letter-spacing: 0.08em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 122px 1fr;
+            gap: 1.5rem;
+            padding: 1.35rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.88rem; }
+        .ival { line-height: 2.1; font-size: 0.92rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.78rem; color: rgba(255,255,255,.55); margin-top: .4rem; }
+
+        .info-alert {
+            background: rgba(201,169,97,.1);
+            border-left: 3px solid var(--gold);
+            border-radius: 4px;
+            padding: 1.6rem;
+            margin-top: 2rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.6rem; }
+        .info-alert-text  { font-size: 0.9rem; line-height: 2.05; color: rgba(255,255,255,.88); }
+
+        /* SNS */
+        .sns-row {
+            display: flex;
+            gap: 1.1rem;
+            justify-content: center;
+            margin-top: 2.6rem;
+        }
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        }
+        .sns-btn:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,0.35); }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.facebook { background: #1877F2; }
+
+        /* map */
+        .map { margin-top: 3.4rem; }
+        .map-tit { font-size: 1.28rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--light-gold); text-align: center; letter-spacing: 0.08em; }
+        .map-box { border-radius: 4px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.38); margin-bottom: 1.5rem; }
+        .map-box iframe { width: 100%; height: 450px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1.05rem 2.2rem;
+            background: var(--shu-crimson);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            transition: all .4s;
+            font-size: 0.92rem;
+        }
+        .map-btn:hover { background: var(--deep-shu); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--deep-shu) 0%, var(--sumi) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(224,195,132,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 720px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.7; margin-bottom: 3.5rem; font-weight: 300; }
+
+        .cta-btns { display: flex; gap: 2.2rem; justify-content: center; flex-wrap: wrap; align-items: center; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.6rem 3.2rem;
+            font-size: 1.04rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .4s;
+            letter-spacing: 0.18em;
+            min-width: 250px;
+        }
+        .btn-w { background: white; color: var(--shu-crimson); box-shadow: 0 14px 40px rgba(0,0,0,.32); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 52px rgba(0,0,0,.42); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--shu-crimson); }
+
+        .cta-note { margin-top: 3.5rem; padding-top: 2.2rem; border-top: 1px solid rgba(255,255,255,.24); font-size: 0.92rem; line-height: 2.3; font-weight: 300; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--sumi); color: white; padding: 4.5rem 2rem 2.5rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 1.95rem; font-weight: 900; letter-spacing: 0.4em; margin-bottom: 2.2rem; }
+        .foot-info { font-size: 0.9rem; line-height: 2.5; color: rgba(255,255,255,.78); margin-bottom: 2rem; font-weight: 300; }
+        .foot-sns { margin-bottom: 2.2rem; display: flex; justify-content: center; }
+        .foot-hr { width: 65px; height: 1px; background: rgba(201,169,97,.42); margin: 2.2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.48); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 3.8rem; }
+            .tit { font-size: 2.7rem; }
+            section { padding: 6.5rem 0; }
+            .gal-grid .gal-it:nth-child(1) { grid-column: span 3; grid-row: span 1; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 2.8rem; }
+            .tit { font-size: 2.2rem; }
+            .hero-tags { flex-direction: column; gap: 1.2rem; }
+            .features, .gal-grid { grid-template-columns: 1fr; }
+            .gal-grid .gal-it:nth-child(1) { grid-column: span 1; }
+            .showcase, .info-grid { grid-template-columns: 1fr; gap: 3.4rem; }
+            .info-wrap { padding: 3rem 1.5rem; }
+            .ir { grid-template-columns: 1fr; gap: .5rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 5.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="料亭 亀松閣 外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">創業約120〜130年 明治天皇ゆかりの料亭</div>
+        <h1 class="hero-tit">
+            料亭 亀松閣
+            <small>RYOTEI KISHOUKAKU</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            京懐石と山形郷土料理を融合した、亀松閣だけの味。<br>
+            錦鯉の泳ぐ庭園を望む全室個室で、<br>
+            歴史ある建築美に包まれる非日常のひととき。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">京懐石×郷土料理</div>
+            <div class="hero-tag">明治天皇ゆかりの建物</div>
+            <div class="hero-tag">全室個室・庭園</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">亀松閣とは</h2>
+        <p class="sub">
+            山形市薬師町、明治天皇ゆかりの建物を受け継ぐ老舗料亭。<br>
+            総席数200席、最大120名の宴会にも対応。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">明治天皇ゆかりの建物（行在所）を受け継ぐ創業約120〜130年の老舗料亭</span>。<br>
+                先代当主の修行先であった京都の懐石料理と、山形の豊富な素材を活かした郷土料理を融合させた<br>
+                <span class="hl">「亀松閣だけの味」</span>を、錦鯉が泳ぐ庭園を望む全室個室で味わえます。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🏯</span>
+                <h3>明治天皇ゆかりの建築</h3>
+                <p>行在所を受け継ぐ歴史的建築。当時の工夫や間取り、襖絵等が残る貴重な空間です。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🎋</span>
+                <h3>京懐石×郷土料理</h3>
+                <p>京都仕込みの懐石と山形の豊富な素材を融合。亀松閣だけの味を提供します。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🎏</span>
+                <h3>全室個室・庭園</h3>
+                <p>錦鯉が泳ぐ庭園を眺められる個室。結納・法要・宴会など特別な日に。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">京懐石×山形郷土料理の融合コース</h2>
+        <p class="sub">
+            先代当主が修行した京都の懐石と、山形の豊かな実り。<br>
+            二つの味を融合した、亀松閣だけのおもてなし。
+        </p>
+
+        <div class="showcase">
+            <div class="show-vis">
+                <img src="img/course-main.jpg" alt="京懐石×山形郷土料理の融合コース" loading="lazy">
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    融合コース<br>
+                    <span class="acc">亀松閣だけの味</span>
+                </h3>
+                <p class="show-txt">
+                    先代当主の修行先であった京都の懐石料理と、山形の豊富な素材を活かした郷土料理を融合させた「亀松閣だけの味」を提供しています。京の技と山形の恵み、双方の良さが調和した唯一無二のコースです。
+                </p>
+                <p class="show-txt">
+                    明治天皇ゆかりの建物で、至る所に当時の工夫や間取り、襖絵等が残る歴史的空間の中で食事ができる点が他店にはない強み。全室個室で庭園を眺めながら、結納・七五三・ご法要・忘新年会など特別な日のおもてなしに最適です。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>京懐石と山形郷土料理の融合</h4>
+                            <p>先代当主修行の京懐石と、山形の豊富な素材を活かした郷土料理。亀松閣だけの味。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>明治天皇ゆかりの歴史的空間</h4>
+                            <p>当時の工夫や間取り、襖絵等が残る建物での食事。他店にはない歴史的価値。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>全室個室×庭園、特別な日のおもてなし</h4>
+                            <p>庭園を眺めながらの食事。結納・七五三・法要・忘新年会など特別な日に最適です。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">ギャラリー</h2>
+        <p class="sub">
+            錦鯉の泳ぐ庭園、歴史ある建築美。<br>
+            非日常のひとときをご紹介します。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/garden.jpg" alt="錦鯉が泳ぐ庭園" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="料亭 亀松閣 外観 - 歴史ある建築" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/private-room.jpg" alt="個室 - 庭園を望む座敷" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior-hall.jpg" alt="館内 - 明治天皇ゆかりの建築美" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市薬師町、JR山形駅東口より車で約10分。<br>
+            無料駐車場完備、結納・法要・宴会など各種ご相談承ります。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">料亭 亀松閣（りょうてい きしょうかく）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            昼の部 11:30〜14:30<br>
+                            夜の部 16:30〜22:00<br>
+                            <span class="inote">※17:00〜22:00の表記もあり、ご予約時にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            水曜日<br>
+                            <span class="inote">※夏期休暇あり、状況により水曜営業の場合も。事前確認推奨</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            昼 5,000〜7,000円（懐石5,000円〜、法要7,000円〜）<br>
+                            夜 9,000〜15,000円（懐石9,000円〜）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">日本料理・懐石・会席、郷土料理、料亭</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            全室個室（座敷中心）、総席数200席<br>
+                            <span class="inote">※最大宴会収容120名（着席時）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0053<br>
+                            山形県山形市薬師町2丁目8-81
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅東口より車で約10分<br>
+                            JR北山形駅東口より車で約5分<br>
+                            バス「千歳公園」行 → 「千歳公園待合所」下車徒歩5分
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">あり（10〜20台分、無料）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-631-3644">023-631-3644</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival"><a href="https://kishoukaku.com" target="_blank" rel="noopener noreferrer">kishoukaku.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💳 お支払いについて</div>
+                <p class="info-alert-text">
+                    クレジットカード（VISA、Master、JCB、AMEX、Diners）がご利用いただけます。電子マネー・QRコード決済の対応状況は、ご予約時にご確認ください。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.facebook.com/kishoukaku" target="_blank" rel="noopener noreferrer" class="sns-btn facebook" aria-label="Facebook">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.891-.287 1.776h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.628-5.373-12-12-12s-12 5.372-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.2620,140.3295&hl=ja&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="料亭 亀松閣の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市薬師町2-8-81" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                京懐石と山形郷土料理を融合した、亀松閣だけの味。<br>
+                錦鯉の泳ぐ庭園を望む全室個室で、<br>
+                歴史ある建築美に包まれる特別な一夜をお過ごしください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-631-3644" class="btn btn-w">
+                    <span style="margin-right:.8rem; font-size:1.2rem;">📞</span>
+                    電話で予約
+                </a>
+                <a href="https://kishoukaku.com" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span style="margin-right:.8rem; font-size:1.2rem;">🌐</span>
+                    公式サイト
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 昼11:30〜14:30／夜16:30〜22:00（要確認）<br>
+                ※定休日: 水曜日（夏期休暇あり、要確認）<br>
+                ※全室個室、結納・法要・宴会は事前のご相談を
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">料亭 亀松閣</div>
+        <div class="foot-info">
+            〒990-0053 山形県山形市薬師町2丁目8-81<br>
+            JR山形駅東口より車で約10分 / 無料駐車場10〜20台<br>
+            TEL: 023-631-3644 / <a href="https://kishoukaku.com" style="color:inherit;" target="_blank" rel="noopener noreferrer">kishoukaku.com</a><br>
+            営業時間: 昼11:30〜14:30／夜16:30〜22:00（要確認） / 定休日: 水曜日<br>
+            京懐石×山形郷土料理 / 全室個室・庭園・創業約120〜130年
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.facebook.com/kishoukaku" target="_blank" rel="noopener noreferrer" class="sns-btn facebook" aria-label="Facebook">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 1.891-.287 1.776h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.628-5.373-12-12-12s-12 5.372-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 料亭 亀松閣 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
