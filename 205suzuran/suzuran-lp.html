@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形駅東口から徒歩2〜5分、すずらん通りの老舗大衆酒場「味の店 スズラン」。日本海直送の海鮮、山形郷土料理、和洋中100種類以上。200席・個室最大100名、ランチ525円〜。">
+    <meta property="og:title" content="味の店 スズラン - 山形駅すぐの老舗大衆酒場">
+    <meta property="og:description" content="日本海直送の海鮮と山形郷土料理、和洋中100種類以上。200席・個室最大100名で宴会も。">
+    <meta property="og:image" content="img/kaisen.jpg">
+    <meta property="og:type" content="website">
+    <title>味の店 スズラン - 山形駅すぐの老舗大衆酒場｜海鮮・郷土料理</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lantern-red: #b5352a;
+            --deep-red: #8c2820;
+            --noren-navy: #1f2d4d;
+            --deep-navy: #162038;
+            --amber: #e09f3e;
+            --light-amber: #f0bb6a;
+            --cream: #f8f3ea;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.85;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--deep-navy) 0%,
+                var(--noren-navy) 35%,
+                var(--deep-red) 70%,
+                var(--lantern-red) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.4rem;
+            background: rgba(255,255,255,0.12);
+            border: 2px solid rgba(240,187,106,0.55);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            margin-bottom: 2.8rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 5.2rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            line-height: 1.3;
+            margin-bottom: 1.6rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.34em;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            margin-top: 0.9rem;
+            opacity: 0.92;
+        }
+
+        .hero-div {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--amber), transparent);
+            margin: 2.4rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.18rem;
+            line-height: 2.35;
+            max-width: 680px;
+            margin: 0 auto 3.4rem;
+            font-weight: 500;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 0.6rem 1.7rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(240,187,106,0.45);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Numbers strip ═══ */
+        .numbers {
+            background: var(--deep-red);
+            color: white;
+            padding: 3.4rem 0;
+        }
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+        }
+        .num-item { padding: 0.5rem 1rem; border-right: 1px solid rgba(255,255,255,0.2); }
+        .num-item:last-child { border-right: none; }
+        .num-val {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.3;
+            color: var(--light-amber);
+        }
+        .num-val small { font-size: 0.5em; font-weight: 700; margin-left: 0.15em; }
+        .num-lab { font-size: 0.86rem; letter-spacing: 0.12em; opacity: 0.92; margin-top: 0.3rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+        .numbers { padding: 3.4rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--lantern-red);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tit {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 3.3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--noren-navy);
+            letter-spacing: 0.1em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.1;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.2rem;
+            text-align: center;
+            font-size: 1.12rem;
+            line-height: 2.5;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(224,159,62,0.4) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.4rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.8rem 2rem;
+            background: var(--cream);
+            border-radius: 10px;
+            border-top: 5px solid var(--lantern-red);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.9rem; display: block; margin-bottom: 1.3rem; }
+        .feat h3 {
+            font-size: 1.22rem;
+            font-weight: 900;
+            margin-bottom: 0.9rem;
+            color: var(--noren-navy);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--cream); }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.6rem;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 14px 44px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-card:hover { transform: translateY(-8px); box-shadow: 0 22px 56px rgba(0,0,0,.15); }
+
+        .spec-img { aspect-ratio: 4/3; overflow: hidden; }
+        .spec-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .spec-body { padding: 2.2rem 1.9rem 2.4rem; flex: 1; }
+
+        .spec-num {
+            display: inline-block;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            color: white;
+            background: var(--lantern-red);
+            padding: 0.2rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .spec-body h3 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--noren-navy);
+            line-height: 1.55;
+        }
+
+        .spec-body p {
+            font-size: 0.92rem;
+            line-height: 2.05;
+            color: var(--charcoal);
+            margin-bottom: 0.9rem;
+        }
+        .spec-body p:last-child { margin-bottom: 0; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--noren-navy); color: white; }
+        .info .lab { color: var(--light-amber); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.85); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(240,187,106,.2);
+            border-radius: 14px;
+            padding: 4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--amber);
+            color: var(--light-amber);
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 122px 1fr;
+            gap: 1.4rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-amber); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.35);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-amber); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.6); margin-top: .3rem; }
+
+        .info-alert {
+            background: rgba(224,159,62,.12);
+            border-left: 4px solid var(--amber);
+            border-radius: 8px;
+            padding: 1.5rem 1.7rem;
+            margin-top: 1.6rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-amber); margin-bottom: 0.5rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.9); }
+
+        /* map */
+        .map { margin-top: 3rem; }
+        .map-tit { font-size: 1.28rem; font-weight: 900; margin-bottom: 1.4rem; color: var(--light-amber); text-align: center; }
+        .map-box { border-radius: 10px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.35); margin-bottom: 1.4rem; }
+        .map-box iframe { width: 100%; height: 450px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--lantern-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--amber); color: var(--deep-navy); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--lantern-red) 0%, var(--deep-red) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(240,187,106,.95); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 740px; margin: 0 auto; }
+        .cta-txt { font-size: 1.14rem; line-height: 2.4; margin-bottom: 3rem; }
+
+        .cta-btns { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.6rem;
+            font-size: 1.05rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.1em;
+            min-width: 260px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--lantern-red); box-shadow: 0 14px 38px rgba(0,0,0,.3); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--lantern-red); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.28); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--deep-navy); color: white; padding: 4.2rem 2rem 2.3rem; }
+        .foot { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Maru Gothic', sans-serif; font-size: 1.9rem; font-weight: 900; letter-spacing: 0.2em; margin-bottom: 1.9rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.9rem; }
+        .foot-hr { width: 60px; height: 2px; background: rgba(240,187,106,.5); margin: 2rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 3.8rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+            .spec-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 2.7rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.9rem; }
+            .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 1.8rem 0; }
+            .num-item:nth-child(2) { border-right: none; }
+            .num-val { font-size: 2.1rem; }
+            .features, .gal-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .info-wrap { padding: 2.6rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="味の店 スズラン 外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形駅東口 徒歩2〜5分</div>
+        <h1 class="hero-tit">
+            味の店 スズラン
+            <small>AJI NO MISE SUZURAN</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            すずらん通りの老舗大衆酒場。<br>
+            日本海直送の海鮮と山形郷土料理、和洋中100種類以上。<br>
+            昼は525円〜、夜は宴会まで。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">日本海直送の海鮮</div>
+            <div class="hero-tag">山形郷土料理</div>
+            <div class="hero-tag">個室最大100名</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ NUMBERS ═══ -->
+<div class="numbers" role="region" aria-label="スズランの規模と特徴">
+    <div class="con">
+        <div class="numbers-grid">
+            <div class="num-item">
+                <div class="num-val">200<small>席</small></div>
+                <div class="num-lab">総席数</div>
+            </div>
+            <div class="num-item">
+                <div class="num-val">100<small>名</small></div>
+                <div class="num-lab">個室は2〜100名まで</div>
+            </div>
+            <div class="num-item">
+                <div class="num-val">100<small>種類〜</small></div>
+                <div class="num-lab">和洋中のメニュー</div>
+            </div>
+            <div class="num-item">
+                <div class="num-val">525<small>円〜</small></div>
+                <div class="num-lab">ランチ</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">スズランとは</h2>
+        <p class="sub">
+            山形駅近くの飲み屋街・すずらん通りに位置する老舗の大衆酒場。<br>
+            地元の常連も多い、活気ある雰囲気です。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">日本海直送の新鮮な海鮮</span>と<span class="hl">山形ならではの郷土料理</span>を、<br>
+                お手頃価格でたっぷり味わえる大衆酒場。<br>
+                ランチは気軽に、夜は2名様から<span class="hl">最大100名の宴会</span>まで幅広く対応します。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🐟</span>
+                <h3>日本海直送の海鮮</h3>
+                <p>天然魚を寿司・刺身・焼魚などで。鮮度とコスパが最大の強みです。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>山形の郷土料理</h3>
+                <p>芋煮汁や玉こんにゃくなど、地元の人にも観光の方にも愛される味。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>個室・宴会に対応</h3>
+                <p>2名〜100名までの個室あり。宴会・接待・グループ利用に最適です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY（3つの目玉） ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">スズランの看板</h2>
+        <p class="sub">
+            海の幸、山形の味、そして圧倒的な品揃え。<br>
+            大衆酒場ならではの3つの魅力をご紹介します。
+        </p>
+
+        <div class="spec-grid">
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/kaisen.jpg" alt="日本海直送の刺身盛り合わせ" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 01</div>
+                    <h3>日本海直送の新鮮な海鮮料理</h3>
+                    <p>日本海直送の天然魚を、寿司・刺身・焼魚などでお手頃価格で味わえます。鮮度とコスパが最大の強みです。</p>
+                    <p>刺身盛り合わせや山形牛の握りなど、海鮮と肉の両方を楽しめるメニュー構成です。</p>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/kyodo.jpg" alt="山形郷土料理 - 芋煮汁・玉こんにゃく・米ナスの田楽" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 02</div>
+                    <h3>山形郷土料理</h3>
+                    <p>芋煮汁、玉こんにゃく、米ナスの田楽など、山形ならではの郷土料理が味わえる点が他店との差別化ポイントです。</p>
+                    <p>地元の人にも愛される味で、観光の方には「山形飯」体験としてもおすすめです。</p>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/menu.jpg" alt="和洋中100種類以上のボリューム満点メニュー" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 03</div>
+                    <h3>和洋中100種類以上のボリューム満点</h3>
+                    <p>和洋中のメニューが100種類以上と盛りだくさん。宴会やグループ利用に最適です。</p>
+                    <p>新鮮でボリューム満点と好評で、コストパフォーマンスの高さが口コミでも評価されています。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">店内の様子</h2>
+        <p class="sub">
+            すずらん通りの老舗酒場。<br>
+            広々とした店内と個室で、お待ちしております。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="味の店 スズラン 外観 - すずらん通り" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - 広々とした座敷と個室" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形駅東口から徒歩2〜5分、すずらん通り。<br>
+            駐車場完備、ランチもディナーも営業。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">味の店 スズラン（あじのみせ すずらん）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            ランチ 11:30〜13:30<br>
+                            ディナー 17:00〜23:00（L.O.22:30）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            不定休<br>
+                            <span class="inote">※日曜定休との情報もあり。日曜もご予約の場合は営業可。ご来店前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            ランチ 525円〜<br>
+                            夜 3,000〜4,999円（平均4,000円前後）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">居酒屋、海鮮料理、郷土料理、和食</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            総席数200席<br>
+                            個室あり（2〜100名、宴会・接待対応）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0039<br>
+                            山形県山形市香澄町2丁目10-5
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅東口より徒歩2〜5分（約337m）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">店舗駐車場あり</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival">
+                            <a href="tel:023-642-2911">023-642-2911</a><br>
+                            <span class="inote">予約専用：<a href="tel:050-5872-8213">050-5872-8213</a></span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival">
+                            <a href="http://www.okazawa-group.com/index.html" target="_blank" rel="noopener noreferrer">おかざわグループ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💳 お支払いについて</div>
+                <p class="info-alert-text">
+                    クレジットカードがご利用いただけます。電子マネー・QRコード決済の対応状況は、ご来店前にお問い合わせください。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市香澄町2-10-5&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="味の店 スズランの地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市香澄町2-10-5" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                日本海直送の海鮮と山形郷土料理、和洋中100種類以上。<br>
+                ランチは気軽に、夜はご宴会まで。<br>
+                山形駅からすぐのスズランで、お待ちしております。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:050-5872-8213" class="btn btn-w">
+                    <span>📞 電話で予約</span>
+                    <small>予約専用 050-5872-8213</small>
+                </a>
+                <a href="http://www.okazawa-group.com/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>🌐 公式サイト</span>
+                    <small>おかざわグループ</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: ランチ11:30〜13:30／ディナー17:00〜23:00（L.O.22:30）<br>
+                ※定休日: 不定休（日曜定休との情報あり、ご確認ください）<br>
+                ※お問い合わせ: 023-642-2911／駐車場完備
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">味の店 スズラン</div>
+        <div class="foot-info">
+            〒990-0039 山形県山形市香澄町2丁目10-5<br>
+            JR山形駅東口より徒歩2〜5分 / 店舗駐車場あり<br>
+            TEL: 023-642-2911（予約専用 050-5872-8213）<br>
+            ランチ11:30〜13:30／ディナー17:00〜23:00（L.O.22:30） / 定休日: 不定休<br>
+            海鮮・郷土料理・和洋中100種類以上 / 総席数200席・個室最大100名
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 味の店 スズラン All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
