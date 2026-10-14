@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市馬見ケ崎の定食屋「仁亭」。サクサク衣とジューシーな鶏肉の鶏唐サラダ定食が看板。800〜1,000円の家庭的な定食を昼も夜も。駐車場あり、テイクアウト対応。">
+    <meta property="og:title" content="定食屋 仁亭 - 馬見ケ崎の鶏唐サラダ定食">
+    <meta property="og:description" content="サクサクジューシーな鶏唐サラダ定食が看板。800〜1,000円の家庭的な定食屋。">
+    <meta property="og:image" content="img/karaage-salad.jpg">
+    <meta property="og:type" content="website">
+    <title>定食屋 仁亭 - 馬見ケ崎の鶏唐サラダ定食｜山形</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --wood-dark: #4a3626;
+            --wood: #7a5a3a;
+            --wood-light: #a68057;
+            --karaage-gold: #d9922e;
+            --light-gold: #efb85c;
+            --salad-green: #5f8a4a;
+            --chalk-green: #2e3b33;
+            --cream: #faf5ea;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.85;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 680px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--wood-dark) 0%,
+                var(--wood) 45%,
+                var(--karaage-gold) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.65rem 2.2rem;
+            background: rgba(255,255,255,0.14);
+            border: 2px solid rgba(239,184,92,0.6);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            margin-bottom: 2.6rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 5.4rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.32em;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            margin-top: 0.9rem;
+            opacity: 0.92;
+        }
+
+        .hero-div {
+            width: 90px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--light-gold), transparent);
+            margin: 2.3rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            line-height: 2.3;
+            max-width: 640px;
+            margin: 0 auto 3.2rem;
+            font-weight: 500;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.6rem 1.6rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(239,184,92,0.5);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.75);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7.5rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--karaage-gold);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--wood-dark);
+            letter-spacing: 0.1em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.1;
+            max-width: 680px;
+            margin: 0 auto 4.6rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 860px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.12rem;
+            line-height: 2.5;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(217,146,46,0.38) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.3rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.7rem 1.9rem;
+            background: var(--cream);
+            border-radius: 12px;
+            border-top: 5px solid var(--karaage-gold);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: var(--wood-dark);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--cream); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.8rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 26px 70px rgba(0,0,0,.2);
+        }
+        .show-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .show-det h3 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            margin-bottom: 1.4rem;
+            color: var(--wood-dark);
+            letter-spacing: 0.06em;
+            line-height: 1.6;
+        }
+        .show-det .acc { color: var(--karaage-gold); }
+
+        .show-txt {
+            font-size: 1.02rem;
+            line-height: 2.25;
+            margin-bottom: 1.7rem;
+            color: var(--charcoal);
+        }
+
+        .pts { list-style: none; margin-top: 2.8rem; }
+        .pt {
+            padding: 1.7rem 0;
+            border-bottom: 2px dotted rgba(122,90,58,.25);
+            display: flex;
+            gap: 1.8rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--salad-green);
+            min-width: 58px;
+        }
+        .pt-body h4 {
+            font-size: 1.15rem;
+            font-weight: 900;
+            margin-bottom: 0.6rem;
+            color: var(--wood-dark);
+        }
+        .pt-body p { font-size: 0.93rem; line-height: 2.05; color: var(--silver); }
+
+        /* ═══ Menu board（黒板風） ═══ */
+        .menu { background: white; }
+
+        .board {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--chalk-green);
+            border: 14px solid var(--wood);
+            border-radius: 10px;
+            padding: 3.4rem 3.6rem;
+            color: #f4efe2;
+            box-shadow: 0 22px 60px rgba(0,0,0,.25), inset 0 0 40px rgba(0,0,0,.25);
+        }
+
+        .board-head {
+            text-align: center;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            margin-bottom: 2.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 2px dashed rgba(244,239,226,.45);
+        }
+
+        .board-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+        }
+
+        .board-item {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            padding: 1.05rem 0.2rem;
+            border-bottom: 1px dotted rgba(244,239,226,.4);
+            font-size: 1.12rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        .board-item .bi { font-size: 1.5rem; width: 2rem; text-align: center; }
+        .board-item small { font-size: 0.78rem; font-weight: 500; opacity: 0.8; margin-left: 0.2rem; }
+
+        .board-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.86rem;
+            line-height: 2;
+            color: rgba(244,239,226,.78);
+        }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--cream); }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--wood-dark); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.85); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(239,184,92,.22);
+            border-radius: 14px;
+            padding: 3.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.32rem;
+            font-weight: 900;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 3px solid var(--karaage-gold);
+            color: var(--light-gold);
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.35);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; }
+
+        .info-alert {
+            background: rgba(217,146,46,.14);
+            border-left: 4px solid var(--karaage-gold);
+            border-radius: 8px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.9); }
+
+        /* map */
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-size: 1.26rem; font-weight: 900; margin-bottom: 1.3rem; color: var(--light-gold); text-align: center; }
+        .map-box { border-radius: 10px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.35); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--karaage-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--light-gold); color: var(--wood-dark); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--salad-green) 0%, #3f6334 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(255,255,255,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 700px; margin: 0 auto; }
+        .cta-txt { font-size: 1.15rem; line-height: 2.4; margin-bottom: 2.9rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.45rem 3.2rem;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.15em;
+            min-width: 270px;
+            background: white;
+            color: #3f6334;
+            box-shadow: 0 14px 38px rgba(0,0,0,.28);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+
+        .cta-note { margin-top: 2.9rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: #2a1f16; color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Maru Gothic', sans-serif; font-size: 1.9rem; font-weight: 900; letter-spacing: 0.25em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 2px; background: rgba(239,184,92,.5); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .showcase, .info-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { gap: 3rem; }
+            .board { padding: 2.4rem 1.5rem; border-width: 10px; }
+            .board-list { grid-template-columns: 1fr; }
+            .board-item { font-size: 1.05rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .btn { min-width: auto; width: 100%; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="定食屋 仁亭 外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">馬見ケ崎の定食屋</div>
+        <h1 class="hero-tit">
+            定食屋 仁亭
+            <small>JINTEI</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            サクサク衣とジューシーな鶏肉。<br>
+            看板の鶏唐サラダ定食をはじめ、<br>
+            800〜1,000円の家庭的な定食を昼も夜も。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">鶏唐サラダ定食</div>
+            <div class="hero-tag">800〜1,000円</div>
+            <div class="hero-tag">駐車場あり</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">仁亭とは</h2>
+        <p class="sub">
+            山形市馬見ケ崎の定食屋。<br>
+            木のぬくもりを感じる、家庭的な雰囲気のお店です。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                <span class="hl">サクサクの衣とジューシーな鶏肉</span>で評判の鶏唐サラダ定食が看板。<br>
+                ロースカツ、生姜焼き、ハンバーグなど、<br>
+                <span class="hl">約800〜1,000円</span>で味わえる定食がずらりと揃います。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍗</span>
+                <h3>看板の鶏唐サラダ定食</h3>
+                <p>サクサクの衣とジューシーな鶏肉。ボリュームがありながら食べやすい一品です。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">💰</span>
+                <h3>約800〜1,000円</h3>
+                <p>家庭的な定食をお手頃な価格で。昼も夜も気軽にお立ち寄りいただけます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🪵</span>
+                <h3>木のぬくもりの店内</h3>
+                <p>カウンター・テーブル・座敷。木製の内装で、温かみのある家庭的な雰囲気です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">鶏唐サラダ定食</h2>
+        <p class="sub">
+            サクサクの衣とジューシーな鶏肉。<br>
+            酸味のあるドレッシングで、ボリュームがあっても食べやすい。
+        </p>
+
+        <div class="showcase">
+            <div class="show-vis">
+                <img src="img/karaage-salad.jpg" alt="鶏唐サラダ定食 - 唐揚げとサラダ、ご飯、味噌汁" loading="lazy">
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    鶏唐サラダ定食<br>
+                    <span class="acc">仁亭の看板メニュー</span>
+                </h3>
+                <p class="show-txt">
+                    サクサクの衣とジューシーな鶏肉で評判の、仁亭の看板メニュー。鶏もも肉を使い、醤油とニンニクの風味を効かせた下味が特徴です。
+                </p>
+                <p class="show-txt">
+                    揚げたての唐揚げに酸味のあるドレッシングを合わせた構成で、ボリュームがありながら食べやすく仕上がっています。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>サクサクの衣、ジューシーな鶏肉</h4>
+                            <p>食感と肉汁の両方が楽しめる、評判の看板メニューです。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>醤油とニンニクの効いた下味</h4>
+                            <p>鶏もも肉に、醤油とニンニクの風味をしっかり効かせています。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>酸味のあるドレッシングで食べやすく</h4>
+                            <p>唐揚げにドレッシングを合わせ、ボリュームがあっても最後まで飽きずに。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU（黒板風） ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">人気の定食</h2>
+        <p class="sub">
+            看板の鶏唐サラダ定食のほかにも、<br>
+            ご飯がすすむ定食がいろいろ。
+        </p>
+
+        <div class="board" role="group" aria-label="人気メニュー一覧">
+            <div class="board-head">本日も営業中</div>
+            <ul class="board-list">
+                <li class="board-item"><span class="bi" aria-hidden="true">🍖</span>ロースカツ定食</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">🍗</span>鶏の唐揚げ定食</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">🦑</span>イカフライ定食</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">🥩</span>生姜焼き定食</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">🍽️</span>ハンバーグ定食</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">🍛</span>カレー</li>
+                <li class="board-item"><span class="bi" aria-hidden="true">👶</span>お子様カレー<small>（小学生まで）</small></li>
+            </ul>
+            <p class="board-note">
+                ※メニュー・価格は変更になる場合があります。<br>
+                テイクアウト対応あり（詳細は店舗へお問い合わせください）
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            木の温かみを感じる、家庭的な店内。<br>
+            カウンター・テーブル・座敷でお待ちしています。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="定食屋 仁亭 外観" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - 木製の内装のカウンターと座敷" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市馬見ケ崎、駐車場あり。<br>
+            そば処 春馬と同じ敷地内にあります。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">定食屋 仁亭（じんてい）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            昼 11:00〜14:00<br>
+                            夜 17:00〜21:00<br>
+                            <span class="inote">※夜は20:30までとする情報もあり。ご来店前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            月曜日<br>
+                            <span class="inote">※祝日の場合は営業し、翌火曜日が休み</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">約800〜1,000円</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">定食、家庭料理、食堂</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            カウンター席・テーブル席・座敷<br>
+                            <span class="inote">※個室はありません</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0810<br>
+                            山形県山形市馬見ケ崎3丁目14-3
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            山形市馬見ケ崎エリア<br>
+                            <span class="inote">※そば処 春馬と同じ敷地内</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">あり</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-681-5808">023-681-5808</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">その他</div>
+                        <div class="ival">
+                            テイクアウト対応あり（要確認）<br>
+                            <span class="inote">※全面禁煙。一部喫煙スペースありとの情報もあり</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">💴 お支払いについて</div>
+                <p class="info-alert-text">
+                    お支払いは現金のみとなります。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市馬見ケ崎3-14-3&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="定食屋 仁亭の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市馬見ケ崎3-14-3" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしています</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                サクサク、ジューシーな鶏唐サラダ定食。<br>
+                800〜1,000円の家庭的な定食を、<br>
+                昼も夜も、お気軽にどうぞ。
+            </p>
+
+            <a href="tel:023-681-5808" class="btn">
+                <span style="margin-right:.8rem; font-size:1.2rem;">📞</span>
+                電話で問い合わせ
+            </a>
+
+            <p class="cta-note">
+                ※営業時間: 昼11:00〜14:00／夜17:00〜21:00<br>
+                ※定休日: 月曜日（祝日の場合は営業、翌火曜日休み）<br>
+                ※現金のみ／駐車場あり／テイクアウト対応あり（要確認）
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">定食屋 仁亭</div>
+        <div class="foot-info">
+            〒990-0810 山形県山形市馬見ケ崎3丁目14-3<br>
+            そば処 春馬と同じ敷地内 / 駐車場あり<br>
+            TEL: 023-681-5808<br>
+            昼11:00〜14:00／夜17:00〜21:00 / 定休日: 月曜日<br>
+            鶏唐サラダ定食 / 約800〜1,000円・現金のみ
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 定食屋 仁亭 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
