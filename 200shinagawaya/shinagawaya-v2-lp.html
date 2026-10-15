@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市役所裏の昔ながらのそば店「品川家」。郷土色のある温かい麺料理「しっぽこ」が名物。そば・うどん・納豆きしめん・中華そばまで幅広く、約1,000円前後。日曜定休。">
+    <meta property="og:title" content="そば処 品川家 - 山形市役所裏の町そば屋">
+    <meta property="og:description" content="名物「しっぽこ」をはじめ、そば・うどん・納豆きしめん・中華そばまで揃う昔ながらのそば店。">
+    <meta property="og:image" content="img/shippoko.jpg">
+    <meta property="og:type" content="website">
+    <title>そば処 品川家 - 山形市役所裏の町そば屋｜名物しっぽこ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ai-indigo: #26364f;
+            --deep-ai: #1a2638;
+            --kinari: #f6f1e5;
+            --ocher: #b9893c;
+            --light-ocher: #d9b06a;
+            --beni: #a8452f;
+            --soba-brown: #6a5440;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--kinari);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 680px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--deep-ai) 0%,
+                var(--ai-indigo) 45%,
+                var(--soba-brown) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.44); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 860px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.65rem 2.3rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(217,176,106,0.6);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            margin-bottom: 2.8rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 5.4rem;
+            font-weight: 800;
+            letter-spacing: 0.28em;
+            line-height: 1.3;
+            margin-bottom: 1.6rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.3em;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            margin-top: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-div {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--light-ocher), transparent);
+            margin: 2.4rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 640px;
+            margin: 0 auto 3.2rem;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            padding: 0.55rem 1.6rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(217,176,106,0.45);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7.5rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.55em;
+            color: var(--ocher);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--ai-indigo);
+            letter-spacing: 0.16em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.2;
+            max-width: 680px;
+            margin: 0 auto 4.6rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 860px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.6;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(185,137,60,0.34) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.3rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.7rem 1.9rem;
+            background: var(--kinari);
+            border-radius: 6px;
+            border-top: 4px solid var(--ai-indigo);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.28rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--ai-indigo);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2.05; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--kinari); }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.8rem;
+            align-items: center;
+        }
+
+        .show-vis {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 26px 70px rgba(0,0,0,.22);
+        }
+        .show-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 1.6rem;
+            writing-mode: vertical-rl;
+            background: var(--beni);
+            color: white;
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.35em;
+            padding: 1.3rem 0.8rem;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,.25);
+            z-index: 2;
+        }
+
+        .show-det h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 1.4rem;
+            color: var(--ai-indigo);
+            letter-spacing: 0.08em;
+            line-height: 1.65;
+        }
+        .show-det .acc { color: var(--beni); }
+
+        .show-txt {
+            font-size: 1.02rem;
+            line-height: 2.35;
+            margin-bottom: 1.7rem;
+            color: var(--charcoal);
+        }
+
+        .pts { list-style: none; margin-top: 2.8rem; }
+        .pt {
+            padding: 1.7rem 0;
+            border-bottom: 1px solid rgba(38,54,79,.14);
+            display: flex;
+            gap: 1.8rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--ocher);
+            min-width: 58px;
+        }
+        .pt-body h4 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--ai-indigo);
+        }
+        .pt-body p { font-size: 0.93rem; line-height: 2.1; color: var(--silver); }
+
+        /* ═══ Menu（お品書き） ═══ */
+        .menu { background: white; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.6rem 2.4rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 1.7rem;
+            background: var(--kinari);
+            border-left: 4px solid var(--ocher);
+            border-radius: 4px;
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: var(--ai-indigo);
+            letter-spacing: 0.06em;
+        }
+        .menu-item .mi { font-size: 1.6rem; width: 2.1rem; text-align: center; }
+        .menu-item.star { border-left-color: var(--beni); background: #f8ebe4; }
+        .menu-badge {
+            margin-left: auto;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: white;
+            background: var(--beni);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .menu-note {
+            max-width: 860px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 0.86rem;
+            color: var(--silver);
+        }
+
+        /* ═══ Scenes（ご利用シーン） ═══ */
+        .scenes { background: var(--kinari); }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .scene {
+            background: white;
+            border-radius: 6px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 8px 26px rgba(0,0,0,.07);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.12); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--ai-indigo);
+            margin-bottom: 0.7rem;
+        }
+        .scene p { font-size: 0.88rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--ai-indigo); color: white; }
+        .info .lab { color: var(--light-ocher); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.85); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(217,176,106,.22);
+            border-radius: 8px;
+            padding: 3.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .info-block h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 2px solid var(--ocher);
+            color: var(--light-ocher);
+            letter-spacing: 0.1em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-ocher); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.35);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-ocher); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; }
+
+        .info-alert {
+            background: rgba(185,137,60,.14);
+            border-left: 4px solid var(--ocher);
+            border-radius: 6px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-ocher); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.9); }
+
+        /* SNS */
+        .sns-row { display: flex; gap: 1.1rem; justify-content: center; margin-top: 2.4rem; }
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,.25);
+        }
+        .sns-btn:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.instagram {
+            background: radial-gradient(circle at 30% 107%,
+                #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        /* map */
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: 'Shippori Mincho', serif; font-size: 1.3rem; font-weight: 800; margin-bottom: 1.3rem; color: var(--light-ocher); text-align: center; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.35); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--ocher);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--light-ocher); color: var(--deep-ai); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--beni) 0%, #7d2f1f 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(255,255,255,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 720px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.5; margin-bottom: 2.9rem; }
+
+        .cta-btns { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.8rem;
+            font-size: 1.06rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.12em;
+            min-width: 260px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--beni); box-shadow: 0 14px 38px rgba(0,0,0,.28); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--beni); }
+
+        .cta-note { margin-top: 2.9rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--deep-ai); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Shippori Mincho', serif; font-size: 1.9rem; font-weight: 800; letter-spacing: 0.3em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-sns { display: flex; justify-content: center; margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 1px; background: rgba(217,176,106,.5); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .showcase, .info-grid, .menu-grid, .scene-grid { grid-template-columns: 1fr; }
+            .showcase, .info-grid { gap: 3rem; }
+            .menu-item { font-size: 1.15rem; padding: 1.2rem 1.3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="そば処 品川家 外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形市役所裏の町そば屋</div>
+        <h1 class="hero-tit">
+            そば処 品川家
+            <small>SOBADOKORO SHINAGAWAYA</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            名物は、郷土色のある温かい麺料理「しっぽこ」。<br>
+            そば、うどん、納豆きしめん、中華そばまで。<br>
+            昔ながらの落ち着いたそば店です。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">名物 しっぽこ</div>
+            <div class="hero-tag">約1,000円前後</div>
+            <div class="hero-tag">昼営業（月〜土）</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">品川家とは</h2>
+        <p class="sub">
+            山形市役所裏にある、昔ながらの落ち着いたそば店。<br>
+            そば・うどん・ラーメン・定食と、幅広い麺料理が揃います。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                名物として紹介される<span class="hl">郷土色のある麺料理「しっぽこ」</span>。<br>
+                そばだけでなく、<span class="hl">納豆きしめんや中華そば</span>など、<br>
+                幅広い麺料理を楽しめるのが品川家の特徴です。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>名物 しっぽこ</h3>
+                <p>郷土色のある、温かい汁物系の麺料理。品川家の名物として紹介されています。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍜</span>
+                <h3>幅広い麺料理</h3>
+                <p>もりそば、天もり、納豆きしめん、中華そば、各種うどんなど多彩に揃います。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>昔ながらの店内</h3>
+                <p>テーブル席と小上がりの座敷席。落ち着いた雰囲気のそば店です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">しっぽこ（すっぽこ）</h2>
+        <p class="sub">
+            品川家の名物として紹介される、郷土色のある麺料理。<br>
+            寒い季節にも楽しみやすい、温かい汁物です。
+        </p>
+
+        <div class="showcase">
+            <div class="show-vis">
+                <img src="img/shippoko.jpg" alt="しっぽこ（すっぽこ） - 温かい汁物系の郷土麺料理" loading="lazy">
+                <div class="ribbon">郷土の味</div>
+            </div>
+
+            <div class="show-det">
+                <h3>
+                    しっぽこ<br>
+                    <span class="acc">品川家の名物</span>
+                </h3>
+                <p class="show-txt">
+                    品川家の名物として紹介されている、郷土色のある麺料理です。一般的なそば店の定番メニューとは一味違う、ここならではの一品として親しまれています。
+                </p>
+                <p class="show-txt">
+                    寒い季節にも楽しみやすい、温かい汁物系のメニューとして、地域の情報サイトでも紹介されています。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>品川家の名物、郷土色のある麺料理</h4>
+                            <p>一般的なそば店とは一味違う、郷土色のある一品です。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>寒い季節にもうれしい温かい汁物</h4>
+                            <p>温かい汁物系のメニューとして、地域の情報サイトで紹介されています。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>そば以外の麺料理も幅広く</h4>
+                            <p>しっぽこのほか、納豆きしめん、中華そばなど多彩な麺料理が揃います。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            名物のしっぽこに加えて、<br>
+            そばからラーメンまで幅広くお楽しみいただけます。
+        </p>
+
+        <ul class="menu-grid" style="list-style:none;">
+            <li class="menu-item star"><span class="mi" aria-hidden="true">🍲</span>しっぽこ（すっぽこ）<span class="menu-badge">名物</span></li>
+            <li class="menu-item"><span class="mi" aria-hidden="true">🌾</span>もりそば</li>
+            <li class="menu-item"><span class="mi" aria-hidden="true">🍤</span>天もり</li>
+            <li class="menu-item"><span class="mi" aria-hidden="true">🍜</span>納豆きしめん</li>
+            <li class="menu-item"><span class="mi" aria-hidden="true">🍜</span>中華そば</li>
+            <li class="menu-item"><span class="mi" aria-hidden="true">🥢</span>各種うどん類</li>
+        </ul>
+        <p class="menu-note">※メニュー・価格は変更になる場合があります。詳細は店舗へお問い合わせください。</p>
+    </div>
+</section>
+
+<!-- ═══ SCENES（ご利用シーン） ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            昼の食事に、寒い日のあたたまりに。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">🍱</span>
+                <h3>ランチに</h3>
+                <p>月〜土の昼営業。予算は約1,000円前後。山形市役所裏で、気軽にお食事できます。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🍵</span>
+                <h3>座敷でゆっくり</h3>
+                <p>テーブル席のほか、小上がりの座敷席もあります。落ち着いた店内で。</p>
+            </div>
+            <div class="scene">
+                <span class="si">♨️</span>
+                <h3>寒い日に</h3>
+                <p>温かい汁物系のしっぽこは、寒い季節にも楽しみやすい一品です。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🗾</span>
+                <h3>郷土の味を知りたい時に</h3>
+                <p>郷土色のあるしっぽこは、品川家の名物。山形らしい味を試したい方に。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            昔ながらの落ち着いたそば店。<br>
+            テーブル席と小上がりの座敷席でお待ちしています。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="そば処 品川家 外観 - 山形市役所裏" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - テーブル席と小上がりの座敷席" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市旅篭町、山形市役所裏。<br>
+            月〜土の昼営業、日曜定休です。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">そば処 品川家（そばどころ しながわや）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            月曜日〜土曜日 11:30〜14:30<br>
+                            <span class="inote">※料理L.O. 14:20</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">日曜日</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">約1,000円前後</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">そば、うどん、ラーメン、定食・食堂</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">テーブル席・小上がりの座敷席</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ご予約</div>
+                        <div class="ival">
+                            不可との情報あり<br>
+                            <span class="inote">※詳しくは店舗へお問い合わせください</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0047<br>
+                            山形県山形市旅篭町2丁目1-26
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            山形市役所裏<br>
+                            JR北山形駅から約1,226m、徒歩約20分
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-622-2287">023-622-2287</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">Instagram</div>
+                        <div class="ival">
+                            <a href="https://www.instagram.com/explore/locations/513174504/qiao-mai-chu-pin-chuan-jia/" target="_blank" rel="noopener noreferrer">位置情報ページを見る</a><br>
+                            <span class="inote">※公式アカウントではなく、お店の位置情報ページです</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    駐車場の有無、お支払い方法については確認できておりません。お車でのご来店やカード・電子マネーをご利用の方は、事前に店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.instagram.com/explore/locations/513174504/qiao-mai-chu-pin-chuan-jia/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（位置情報ページ）">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市旅篭町2-1-26&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="そば処 品川家の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市旅篭町2-1-26" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしております</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                名物は、郷土色のある温かい麺料理「しっぽこ」。<br>
+                そばも、納豆きしめんも、中華そばも。<br>
+                山形市役所裏の昔ながらのそば店で、お待ちしています。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-622-2287" class="btn btn-w">
+                    <span>📞 電話で問い合わせ</span>
+                    <small>023-622-2287</small>
+                </a>
+                <a href="https://www.instagram.com/explore/locations/513174504/qiao-mai-chu-pin-chuan-jia/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>📷 Instagramを見る</span>
+                    <small>位置情報ページ</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 月〜土 11:30〜14:30（料理L.O. 14:20）<br>
+                ※定休日: 日曜日／予約不可との情報あり<br>
+                ※駐車場・お支払い方法は事前に店舗へご確認ください
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">そば処 品川家</div>
+        <div class="foot-info">
+            〒990-0047 山形県山形市旅篭町2丁目1-26<br>
+            山形市役所裏 / JR北山形駅から徒歩約20分<br>
+            TEL: 023-622-2287<br>
+            月〜土 11:30〜14:30（料理L.O. 14:20） / 定休日: 日曜日<br>
+            名物しっぽこ / そば・うどん・納豆きしめん・中華そば
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.instagram.com/explore/locations/513174504/qiao-mai-chu-pin-chuan-jia/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（位置情報ページ）">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© そば処 品川家 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
