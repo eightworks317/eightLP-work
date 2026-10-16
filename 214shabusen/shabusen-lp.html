@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形駅東口から徒歩約4〜6分、しゃぶしゃぶ・すき焼き専門店「しゃぶ専」。A-5ランクの米沢牛・山形牛、庄内豚を堪能。広々とした座敷と個室で、お祝いや会食に。">
+    <meta property="og:title" content="しゃぶ専 - 米沢牛・山形牛のしゃぶしゃぶ・すき焼き">
+    <meta property="og:description" content="A-5ランクの米沢牛と山形牛、庄内豚。山形駅東口から徒歩約4〜6分のしゃぶしゃぶ・すき焼き専門店。">
+    <meta property="og:image" content="img/yonezawa.jpg">
+    <meta property="og:type" content="website">
+    <title>しゃぶ専 - 米沢牛・山形牛のしゃぶしゃぶ・すき焼き｜山形駅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #1b1818;
+            --wine: #4a1019;
+            --deep-crimson: #8f1d2c;
+            --crimson: #b02a3b;
+            --gold: #c8a35a;
+            --light-gold: #e2c585;
+            --ivory: #f7f2ea;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--ivory);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--black) 0%,
+                var(--wine) 40%,
+                var(--deep-crimson) 80%,
+                var(--crimson) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.46); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.4rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(226,197,133,0.6);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            margin-bottom: 2.8rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 6.4rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            line-height: 1.2;
+            margin-bottom: 1.4rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-size: 0.24em;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-sub {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 0.5rem;
+            animation: fadeUp 1s ease-out 0.3s both;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2.4rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 660px;
+            margin: 0 auto 3.2rem;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.16em;
+            padding: 0.55rem 1.7rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(226,197,133,0.45);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.55em;
+            color: var(--deep-crimson);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 3.3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--black);
+            letter-spacing: 0.16em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.25;
+            max-width: 700px;
+            margin: 0 auto 4.8rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.6;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(200,163,90,0.38) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.4rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.9rem 2rem;
+            background: var(--ivory);
+            border-radius: 6px;
+            border-top: 4px solid var(--deep-crimson);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.28rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: var(--black);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2.05; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--ivory); }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.6rem;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.16); }
+
+        .spec-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+        .spec-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .rank {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 2;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--light-gold), var(--gold));
+            color: var(--black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Zen Old Mincho', serif;
+            font-weight: 900;
+            font-size: 1.15rem;
+            line-height: 1.1;
+            box-shadow: 0 6px 18px rgba(0,0,0,.3);
+        }
+        .rank small { font-size: 0.55rem; letter-spacing: 0.12em; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+        .rank.owner {
+            background: var(--deep-crimson);
+            color: white;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+        }
+
+        .spec-body { padding: 2.2rem 1.9rem 2.4rem; flex: 1; }
+
+        .spec-num {
+            font-size: 0.78rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+
+        .spec-body h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1.1rem;
+            color: var(--black);
+            line-height: 1.5;
+        }
+
+        .spec-body p {
+            font-size: 0.92rem;
+            line-height: 2.1;
+            color: var(--charcoal);
+            margin-bottom: 0.9rem;
+        }
+        .spec-body p:last-child { margin-bottom: 0; }
+
+        /* ═══ Menu（お品書き） ═══ */
+        .menu { background: var(--wine); color: white; }
+        .menu .lab { color: var(--light-gold); }
+        .menu .tit { color: white; }
+        .menu .sub { color: rgba(255,255,255,.82); }
+
+        .menu-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.6rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-group {
+            border: 1px solid rgba(226,197,133,.4);
+            border-radius: 6px;
+            padding: 2.2rem 1.9rem 1.6rem;
+            background: rgba(0,0,0,.18);
+        }
+        .menu-group h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.45rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            text-align: center;
+            color: var(--light-gold);
+            padding-bottom: 1rem;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid var(--gold);
+        }
+        .menu-group ul { list-style: none; }
+        .menu-group li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+            padding: 0.95rem 0.2rem;
+            border-bottom: 1px dotted rgba(255,255,255,.3);
+            font-size: 1.02rem;
+            font-weight: 500;
+        }
+        .menu-group li:last-child { border-bottom: none; }
+        .menu-tag {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--black);
+            background: var(--light-gold);
+            padding: 0.1rem 0.65rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .menu-note {
+            max-width: 1000px;
+            margin: 2.4rem auto 0;
+            text-align: center;
+            font-size: 0.86rem;
+            line-height: 2;
+            color: rgba(255,255,255,.75);
+        }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: white; }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .scene {
+            background: var(--ivory);
+            border-radius: 6px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.1); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 0.7rem;
+        }
+        .scene p { font-size: 0.88rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--ivory); }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.14);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--black); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,163,90,.22);
+            border-radius: 8px;
+            padding: 3.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .info-block h3 {
+            font-family: 'Zen Old Mincho', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 2px solid var(--gold);
+            color: var(--light-gold);
+            letter-spacing: 0.1em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.35);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; }
+
+        .info-alert {
+            background: rgba(200,163,90,.12);
+            border-left: 4px solid var(--gold);
+            border-radius: 6px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.9); }
+
+        /* map */
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: 'Zen Old Mincho', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: 1.3rem; color: var(--light-gold); text-align: center; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--deep-crimson);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--crimson); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--deep-crimson) 0%, var(--wine) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(226,197,133,.95); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 720px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.5; margin-bottom: 3rem; }
+
+        .cta-btns { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.8rem;
+            font-size: 1.06rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.12em;
+            min-width: 260px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--deep-crimson); box-shadow: 0 14px 38px rgba(0,0,0,.3); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--deep-crimson); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--black); color: white; padding: 4rem 2rem 2.2rem; border-top: 1px solid rgba(200,163,90,.25); }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: 'Zen Old Mincho', serif; font-size: 2rem; font-weight: 900; letter-spacing: 0.4em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 1px; background: rgba(200,163,90,.5); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4.6rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+            .spec-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+            .menu-board { grid-template-columns: 1fr; max-width: 520px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3.6rem; }
+            .hero-sub { font-size: 1.05rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .info-grid, .scene-grid { grid-template-columns: 1fr; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="しゃぶ専 外観・しゃぶしゃぶの鍋" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形駅東口 徒歩約4〜6分</div>
+        <p class="hero-sub">しゃぶしゃぶ・すき焼き専門店</p>
+        <h1 class="hero-tit">
+            しゃぶ専
+            <small>SHABU-SEN</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            A-5ランクの米沢牛、山形牛。庄内豚も。<br>
+            しゃぶしゃぶとすき焼きで味わう、山形の肉。<br>
+            広々とした座敷と個室で、お祝いや会食に。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">特上米沢牛</div>
+            <div class="hero-tag">極上山形牛</div>
+            <div class="hero-tag">座敷・個室</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">しゃぶ専とは</h2>
+        <p class="sub">
+            山形駅東口から徒歩圏内、ターミナルプラザビル1階。<br>
+            しゃぶしゃぶとすき焼きを専門に、山形の肉を提供しています。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                山形を代表するブランド牛、<span class="hl">A-5ランクの米沢牛と山形牛</span>。<br>
+                牛肉のほかに、<span class="hl">庄内豚や米の娘ぶた</span>のしゃぶしゃぶもご用意しています。<br>
+                広々とした座敷で、ご家族のお祝いやグループの会食を。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🥩</span>
+                <h3>A-5ランクの牛肉</h3>
+                <p>米沢牛は「特上」、山形牛は「極上」として案内。山形を代表する味を。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>しゃぶしゃぶ・すき焼き</h3>
+                <p>専門店ならではの二本立て。牛肉のほか、庄内豚・米の娘ぶたも選べます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>広々とした座敷と個室</h3>
+                <p>座敷のほか、6〜30名で利用可能とされる完全個室もあります。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY（3つの目玉） ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">しゃぶ専の看板</h2>
+        <p class="sub">
+            山形が誇る2つのブランド牛と、店主自慢の水餃子。<br>
+            しゃぶ専ならではの3つの魅力をご紹介します。
+        </p>
+
+        <div class="spec-grid">
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/yonezawa.jpg" alt="特上米沢牛のしゃぶしゃぶ・すき焼き" loading="lazy">
+                    <div class="rank">A-5<small>RANK</small></div>
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 01</div>
+                    <h3>特上米沢牛の<br>しゃぶしゃぶ・すき焼き</h3>
+                    <p>A-5ランクの米沢牛を使用。公式サイトでは「特上米沢牛」として案内されています。</p>
+                    <p>山形を代表するブランド牛を、しゃぶしゃぶとすき焼きで味わえます。</p>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/yamagata.jpg" alt="極上山形牛のしゃぶしゃぶ・すき焼き" loading="lazy">
+                    <div class="rank">A-5<small>RANK</small></div>
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 02</div>
+                    <h3>極上山形牛の<br>しゃぶしゃぶ・すき焼き</h3>
+                    <p>A-5ランクの山形牛を使用。公式サイトでは「極上山形牛」として案内されています。</p>
+                    <p>牛肉のほかに、庄内豚・米の娘ぶたのしゃぶしゃぶも選べます。</p>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/suigyoza.jpg" alt="店主自慢の水餃子" loading="lazy">
+                    <div class="rank owner">店主<br>自慢</div>
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 03</div>
+                    <h3>店主自慢の水餃子</h3>
+                    <p>しゃぶしゃぶ・すき焼きの専門店でありながら、店主自慢の水餃子もおすすめメニューとして紹介されています。</p>
+                    <p>お肉と一緒に楽しめる一品です。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            しゃぶしゃぶ、すき焼き、そして餃子。<br>
+            お好みの肉をお選びください。
+        </p>
+
+        <div class="menu-board">
+            <div class="menu-group">
+                <h3>しゃぶしゃぶ</h3>
+                <ul>
+                    <li>庄内豚</li>
+                    <li>米の娘ぶた</li>
+                    <li>山形牛<span class="menu-tag">A-5</span></li>
+                    <li>米沢牛<span class="menu-tag">A-5</span></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h3>すき焼き</h3>
+                <ul>
+                    <li>山形牛<span class="menu-tag">A-5</span></li>
+                    <li>米沢牛<span class="menu-tag">A-5</span></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h3>餃子</h3>
+                <ul>
+                    <li>水餃子<span class="menu-tag">店主自慢</span></li>
+                    <li>揚げ餃子</li>
+                    <li>焼き餃子</li>
+                </ul>
+            </div>
+        </div>
+        <p class="menu-note">
+            ※メニュー・価格は変更になる場合があります。<br>
+            コース料金やご予算については、ご予約時に店舗へお問い合わせください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            お祝いの席から、出張の夜まで。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">🎉</span>
+                <h3>記念日・お祝いに</h3>
+                <p>ご家族の祝い事や記念日のお食事に。広々とした座敷でお過ごしいただけます。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🥂</span>
+                <h3>グループ・会食に</h3>
+                <p>6〜30名で利用可能とされる完全個室の情報があります。詳細はお問い合わせください。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🚃</span>
+                <h3>観光・出張の夜に</h3>
+                <p>JR山形駅東口から徒歩約4〜6分。駅から近く、立ち寄りやすい立地です。</p>
+            </div>
+            <div class="scene">
+                <span class="si">☀️</span>
+                <h3>昼のご利用（要予約）</h3>
+                <p>通常のランチ営業はありませんが、事前のご予約で昼営業に対応します。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            ターミナルプラザビル1階の店舗と、<br>
+            鍋を囲む広々とした座敷席。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="しゃぶ専 外観 - ターミナルプラザビル1階" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/zashiki.jpg" alt="鍋を囲む座敷席と個室" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市香澄町、JR山形駅東口から徒歩約4〜6分。<br>
+            夜の営業、ご予約をおすすめします。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">しゃぶ専（しゃぶせん）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            月〜土 17:00〜23:00（L.O.22:30）<br>
+                            日曜 17:00〜22:30（L.O.22:00）<br>
+                            <span class="inote">※予約サイトでは17:00〜21:00（料理・ドリンクL.O.20:15）の掲載あり。ご予約時にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            不定休（2か月に1回程度）<br>
+                            <span class="inote">※予約サイトでは月曜日と掲載あり。ご予約時にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">しゃぶしゃぶ、すき焼き、和食</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            広々とした座敷<br>
+                            完全個室あり（6〜30名で利用可との情報）<br>
+                            <span class="inote">※個室の詳細はお問い合わせください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ご予約</div>
+                        <div class="ival">
+                            電話・ネット予約に対応<br>
+                            <span class="inote">※公式サイトでは15:00から予約受付と案内</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">昼のご利用</div>
+                        <div class="ival">通常のランチ営業なし。事前予約で昼営業に対応</div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0039<br>
+                            山形県山形市香澄町3丁目8-38<br>
+                            ターミナルプラザビル101 1F
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅東口より徒歩約4〜6分<br>
+                            <span class="inote">十字屋デパート交差点を右折し、一つ目の信号を越えた左側のビル1階</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-631-4692">023-631-4692</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival"><a href="http://www.syabusen.com/" target="_blank" rel="noopener noreferrer">www.syabusen.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    ご予算・コース料金、駐車場の有無、お支払い方法（カード・電子マネー・QRコード決済）、禁煙・喫煙、テイクアウトの可否については、確認できておりません。ご予約時に店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市香澄町3-8-38&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="しゃぶ専の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市香澄町3-8-38" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                A-5ランクの米沢牛、山形牛を、しゃぶしゃぶとすき焼きで。<br>
+                ご家族のお祝いにも、会食にも。<br>
+                ご予約をお待ちしております。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-631-4692" class="btn btn-w">
+                    <span>📞 電話で予約</span>
+                    <small>023-631-4692</small>
+                </a>
+                <a href="http://www.syabusen.com/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>🌐 公式サイト</span>
+                    <small>www.syabusen.com</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 月〜土17:00〜23:00／日曜17:00〜22:30（詳細は店舗へご確認ください）<br>
+                ※定休日: 不定休（2か月に1回程度）<br>
+                ※電話予約は15:00から／昼のご利用は事前予約で対応
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">しゃぶ専</div>
+        <div class="foot-info">
+            〒990-0039 山形県山形市香澄町3丁目8-38 ターミナルプラザビル101 1F<br>
+            JR山形駅東口より徒歩約4〜6分<br>
+            TEL: 023-631-4692 / <a href="http://www.syabusen.com/" style="color:inherit;" target="_blank" rel="noopener noreferrer">www.syabusen.com</a><br>
+            月〜土17:00〜23:00／日曜17:00〜22:30 / 定休日: 不定休<br>
+            しゃぶしゃぶ・すき焼き専門店
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© しゃぶ専 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
