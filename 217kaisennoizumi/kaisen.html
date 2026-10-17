@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海鮮の泉 | 山形市 江戸蔵屋敷で味わう鮮魚と地酒</title>
+  <meta name="description" content="山形市大字内表にある「海鮮の泉」。江戸時代の蔵屋敷を活用した蔵座敷・完全個室で、選りすぐりの鮮魚や「生本まぐろ中落ち丼」、地酒をお楽しみいただけます。">
+  <style>
+    /* 基本設定 */
+    :root {
+      --primary-color: #0d233a; /* 深みのある紺色（蔵・海風） */
+      --accent-color: #bc262c;  /* えんじ色・まぐろの赤 */
+      --bg-light: #f7f5f0;      /* 蔵の壁や和紙をイメージしたシックな和風カラー */
+      --card-bg: #ffffff;
+      --text-color: #2b2b2b;
+      --border-color: #dcd6cd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "游明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      color: var(--text-color);
+      background-color: var(--bg-light);
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      letter-spacing: 0.12em;
+    }
+
+    .header-tel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .header-btn {
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    /* メインビジュアル */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 450px;
+      background: linear-gradient(rgba(13, 35, 58, 0.5), rgba(13, 35, 58, 0.5)), url('img/hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+
+    /* 店舗のこだわり（蔵屋敷） */
+    .concept {
+      background-color: var(--card-bg);
+      padding: 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 60px;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .concept-text h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .concept-text p {
+      margin-bottom: 15px;
+    }
+
+    .concept-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* 目玉メニュー */
+    .featured-menu {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-body {
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 2px;
+      width: fit-content;
+      margin-bottom: 10px;
+      font-family: sans-serif;
+    }
+
+    .featured-title {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .featured-price {
+      font-size: 1.3rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    /* その他のメニュー */
+    .other-menu {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+
+    .other-menu h3 {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .other-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item-box {
+      text-align: center;
+    }
+
+    .menu-item-box img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .menu-item-box h4 {
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+
+    /* 利用シーン */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .scene-item {
+      background-color: var(--card-bg);
+      padding: 25px;
+      border-radius: 4px;
+      border-top: 4px solid var(--primary-color);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .scene-item h4 {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    /* 店舗概要テーブル */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+    }
+
+    .info-table th, .info-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .info-table th {
+      width: 25%;
+      background-color: #ebe7df;
+      color: var(--primary-color);
+      white-space: nowrap;
+    }
+
+    .notice-box {
+      margin-top: 15px;
+      padding: 12px 15px;
+      background-color: #fff8e7;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #856404;
+      font-family: sans-serif;
+    }
+
+    /* フッター */
+    footer {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+      font-family: sans-serif;
+    }
+
+    footer a {
+      color: #dcd6cd;
+      text-decoration: underline;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .concept-grid, .featured-menu {
+        grid-template-columns: 1fr;
+      }
+      .featured-img img {
+        height: 240px;
+      }
+      .info-table th, .info-table td {
+        display: block;
+        width: 100%;
+      }
+      .info-table th {
+        background-color: #ebe7df;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-logo">海鮮の泉</div>
+    <div class="header-tel">
+      <a href="tel:0236749900" class="header-btn">TEL: 023-674-9900</a>
+    </div>
+  </header>
+
+  <!-- メインビジュアル -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>江戸蔵屋敷で味わう、極上の鮮魚と地酒。</h1>
+      <p>山形市内表｜歴史感じる趣豊かな空間と至高の海鮮料理</p>
+    </div>
+  </section>
+
+  <!-- こだわり -->
+  <section class="container">
+    <h2 class="section-title">当店のみどころ</h2>
+    <div class="concept">
+      <div class="concept-grid">
+        <div class="concept-text">
+          <h3>江戸時代の蔵屋敷を活用した趣ある空間</h3>
+          <p>「海鮮の泉」は、歴史を感じさせる江戸時代の蔵屋敷を活用した蔵座敷が自慢の店です。</p>
+          <p>厳選された新鮮な魚介類と地元山形の豊かな地酒を、情緒あふれる和の空間でご堪能いただけます。人数に応じた完全個室（2名～30名様以上まで）も完備しており、特別な日のご会食から各種ご宴会まで幅広くご利用いただけます。</p>
+        </div>
+        <div class="concept-img">
+          <img src="img/kura-zashiki.jpg" alt="江戸時代の蔵屋敷・蔵座敷">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- おすすめ商品 -->
+  <section class="container" style="padding-top: 0;">
+    <h2 class="section-title">名物・目玉商品</h2>
+    
+    <!-- 特選！生本まぐろ中落ち丼 -->
+    <div class="featured-menu">
+      <div class="featured-img">
+        <img src="img/maguro-don.jpg" alt="特選！生本まぐろ中落ち丼">
+      </div>
+      <div class="featured-body">
+        <span class="featured-badge">名物</span>
+        <h3 class="featured-title">特選！生本まぐろ中落ち丼</h3>
+        <div class="featured-price">1,800円（税込）</div>
+        <p>生の本まぐろから削ぎ落とした贅沢な中落ちをふんだんに使用。深みのある「4種出汁飯」との相性が抜群で、まぐろの旨味と濃厚な脂を心ゆくまで楽しめる自慢の逸品です。</p>
+      </div>
+    </div>
+
+    <!-- その他メニュー・地酒 -->
+    <div class="other-menu">
+      <h3>旬の鮮魚と地酒</h3>
+      <div class="other-menu-grid">
+        <div class="menu-item-box">
+          <img src="img/sashimi.jpg" alt="鮮魚の刺身盛り合わせ">
+          <h4>旬のお刺身盛り合わせ</h4>
+        </div>
+        <div class="menu-item-box">
+          <img src="img/sake.jpg" alt="厳選地酒">
+          <h4>山形の厳選地酒</h4>
+        </div>
+        <div class="menu-item-box">
+          <img src="img/kaisen-ryori.jpg" alt="一品料理">
+          <h4>季節の海鮮一品料理</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 利用シーン -->
+  <section class="container" style="padding-top: 0;">
+    <h2 class="section-title">ご利用シーン</h2>
+    <div class="scene-grid">
+      <div class="scene-item">
+        <h4>絶品海鮮ランチ</h4>
+        <p>「生本まぐろ中落ち丼」をはじめ、贅沢な海鮮料理をゆったりと楽しむ贅沢な昼食に。</p>
+      </div>
+      <div class="scene-item">
+        <h4>完全個室でご家族・会食</h4>
+        <p>2名〜30名様以上の完全個室を完備。周りを気にせずご家族や大切なお仲間とのひとときを過ごせます。</p>
+      </div>
+      <div class="scene-item">
+        <h4>鮮魚と地酒の夜営業</h4>
+        <p>選りすぐりの鮮魚と山形の豊かな地酒を取り揃え、お酒と料理をじっくり味わいたい方におすすめです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="container" style="padding-top: 0;">
+    <h2 class="section-title">店舗情報</h2>
+    <table class="info-table">
+      <tr>
+        <th>店名</th>
+        <td>海鮮の泉（かいせんのいずみ）</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>〒990-0877 山形県山形市大字内表71（内表71-1）</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>
+          <a href="tel:0236749900">023-674-9900</a> / 
+          <a href="tel:09019390121">090-1939-0121</a>
+        </td>
+      </tr>
+      <tr>
+        <th>ジャンル</th>
+        <td>居酒屋、食堂、海鮮料理</td>
+      </tr>
+      <tr>
+        <th>席・空間</th>
+        <td>江戸時代の蔵屋敷を活用した蔵座敷／完全個室あり（2～30人、30人以上対応）</td>
+      </tr>
+      <tr>
+        <th>ご利用可能決済</th>
+        <td>ベニpay対応（※その他各種カード・電子マネー等は直接ご確認ください）</td>
+      </tr>
+    </table>
+
+    <div class="notice-box">
+      ※営業時間、定休日（木曜、または日曜・祝日等）、駐車場、最新のメニュー価格やご予約可否に関しましては、変更となる場合がございます。ご来店前に直接店舗までお電話にてご確認ください。
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 海鮮の泉 All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

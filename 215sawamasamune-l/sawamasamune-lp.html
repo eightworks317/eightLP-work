@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JR山形駅ビル1階の蔵元直営店「酒蔵 澤正宗 山形駅店」。澤正宗の日本酒と芋煮定食など山形の郷土料理を11時から。大吟醸の飲み比べセットも人気です。">
+    <meta property="og:title" content="酒蔵 澤正宗 山形駅店 - 蔵元直営の日本酒と芋煮">
+    <meta property="og:description" content="寒河江の酒蔵・古澤酒造の蔵元直営店。JR山形駅直結、11時から営業。">
+    <meta property="og:image" content="img/sawamasamune.jpg">
+    <meta property="og:type" content="website">
+    <title>酒蔵 澤正宗 山形駅店 - 蔵元直営の日本酒と芋煮｜JR山形駅直結</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Old+Mincho:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ai-dark: #1b2233;
+            --ai: #2a3650;
+            --sugi: #4f6b3a;
+            --light-sugi: #86a56c;
+            --kome: #f4efe3;
+            --gold: #b9964f;
+            --light-gold: #dcc58a;
+            --seal: #b23a2b;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+            --head-font: 'Yuji Syuku', 'Zen Old Mincho', serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--kome);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--ai-dark) 0%,
+                var(--ai) 50%,
+                var(--sugi) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 2; }
+
+        .seal {
+            position: absolute;
+            top: 14%;
+            right: max(7%, 2rem);
+            z-index: 3;
+            writing-mode: vertical-rl;
+            background: var(--seal);
+            color: white;
+            font-family: var(--head-font);
+            font-size: 1.15rem;
+            letter-spacing: 0.25em;
+            padding: 1.1rem 0.65rem;
+            border-radius: 3px;
+            box-shadow: 0 6px 20px rgba(0,0,0,.35);
+            transform: rotate(3deg);
+            animation: fadeUp 1s ease-out 1s both;
+        }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.4rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(220,197,138,0.6);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            margin-bottom: 2.8rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: var(--head-font);
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            line-height: 1.25;
+            margin-bottom: 1.4rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit .ten {
+            display: block;
+            font-size: 0.34em;
+            letter-spacing: 0.5em;
+            margin-top: 0.5rem;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.17em;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            margin-top: 1rem;
+            opacity: 0.85;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 2.4rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 660px;
+            margin: 0 auto 3.2rem;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            padding: 0.55rem 1.7rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(220,197,138,0.45);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.55em;
+            color: var(--sugi);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: var(--head-font);
+            font-size: 3.4rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--ai-dark);
+            letter-spacing: 0.16em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.25;
+            max-width: 700px;
+            margin: 0 auto 4.8rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.6;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(185,150,79,0.36) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.4rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.9rem 2rem;
+            background: var(--kome);
+            border-radius: 6px;
+            border-top: 4px solid var(--sugi);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-family: var(--head-font);
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: var(--ai-dark);
+            letter-spacing: 0.06em;
+        }
+        .feat p { font-size: 0.93rem; line-height: 2.05; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--kome); }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.6rem;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.16); }
+
+        .spec-img { aspect-ratio: 4/3; overflow: hidden; }
+        .spec-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .spec-body { padding: 2.2rem 1.9rem 2.4rem; flex: 1; display: flex; flex-direction: column; }
+
+        .spec-num {
+            font-size: 0.78rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+
+        .spec-body h3 {
+            font-family: var(--head-font);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1.1rem;
+            color: var(--ai-dark);
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+        }
+
+        .spec-body p {
+            font-size: 0.92rem;
+            line-height: 2.1;
+            color: var(--charcoal);
+            margin-bottom: 0.9rem;
+        }
+
+        .spec-price {
+            margin-top: auto;
+            align-self: flex-start;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--ai-dark);
+            background: var(--light-gold);
+            padding: 0.35rem 1.1rem;
+            border-radius: 50px;
+        }
+
+        /* ═══ Menu（お品書き） ═══ */
+        .menu { background: white; }
+
+        .menu-board { max-width: 960px; margin: 0 auto; display: grid; gap: 2.4rem; }
+
+        .menu-group {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            background: var(--kome);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 26px rgba(0,0,0,.07);
+        }
+
+        .menu-group h3 {
+            writing-mode: vertical-rl;
+            background: var(--ai-dark);
+            color: var(--light-gold);
+            font-family: var(--head-font);
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            text-align: center;
+            padding: 1.6rem 0;
+        }
+
+        .menu-group ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+            padding: 1.6rem 2.2rem;
+        }
+
+        .menu-group li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            padding: 0.7rem 0;
+            font-size: 0.98rem;
+        }
+        .menu-group .nm { font-weight: 500; }
+        .menu-group .ld { flex: 1; border-bottom: 1px dotted rgba(27,34,51,.35); transform: translateY(-4px); min-width: 1rem; }
+        .menu-group .pr { font-weight: 700; color: var(--ai-dark); white-space: nowrap; }
+        .menu-group .nm small { font-size: 0.74rem; color: var(--silver); margin-left: 0.3rem; font-weight: 400; }
+
+        .menu-note {
+            max-width: 960px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 0.86rem;
+            line-height: 2;
+            color: var(--silver);
+        }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: var(--kome); }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .scene {
+            background: white;
+            border-radius: 6px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 8px 26px rgba(0,0,0,.07);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.12); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 {
+            font-family: var(--head-font);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--ai-dark);
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.04em;
+        }
+        .scene p { font-size: 0.88rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: white; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.14);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--ai-dark); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(185,150,79,.25);
+            border-radius: 8px;
+            padding: 3.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .info-block h3 {
+            font-family: var(--head-font);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 2px solid var(--gold);
+            color: var(--light-gold);
+            letter-spacing: 0.1em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.35);
+            transition: border-color .3s;
+        }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; display: block; }
+
+        .info-alert {
+            background: rgba(185,150,79,.13);
+            border-left: 4px solid var(--gold);
+            border-radius: 6px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.9); }
+
+        /* SNS */
+        .sns-row { display: flex; gap: 1.1rem; justify-content: center; margin-top: 2.4rem; }
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,.25);
+        }
+        .sns-btn:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.instagram {
+            background: radial-gradient(circle at 30% 107%,
+                #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        /* map */
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: var(--head-font); font-size: 1.4rem; font-weight: 400; margin-bottom: 1.3rem; color: var(--light-gold); text-align: center; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--sugi);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--light-sugi); color: var(--ai-dark); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--sugi) 0%, #364a28 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(255,255,255,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 760px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.5; margin-bottom: 3rem; }
+
+        .cta-btns { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.04rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.1em;
+            min-width: 230px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--sugi); box-shadow: 0 14px 38px rgba(0,0,0,.28); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--sugi); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--ai-dark); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: var(--head-font); font-size: 2rem; font-weight: 400; letter-spacing: 0.3em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-sns { display: flex; justify-content: center; margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 1px; background: rgba(185,150,79,.55); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4.4rem; }
+            .tit { font-size: 2.7rem; }
+            section { padding: 6rem 0; }
+            .spec-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3.3rem; }
+            .seal { top: 9%; right: 1rem; font-size: 0.95rem; padding: 0.8rem 0.5rem; }
+            .tit { font-size: 2.2rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .info-grid, .scene-grid { grid-template-columns: 1fr; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .menu-group { grid-template-columns: 1fr; }
+            .menu-group h3 { writing-mode: horizontal-tb; padding: 0.9rem 0; letter-spacing: 0.3em; }
+            .menu-group ul { grid-template-columns: 1fr; padding: 1.1rem 1.3rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="酒蔵 澤正宗 山形駅店 - 日本酒と郷土料理" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="seal" aria-hidden="true">蔵元直営</div>
+    <div class="hero-con">
+        <div class="hero-badge">JR山形駅直結 S-PAL山形1F</div>
+        <h1 class="hero-tit">
+            酒蔵 澤正宗
+            <span class="ten">山形駅店</span>
+            <small>SAKAGURA SAWAMASAMUNE</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            寒河江の酒蔵・古澤酒造の蔵元直営店。<br>
+            澤正宗の日本酒と、芋煮など山形の郷土料理を。<br>
+            駅ビル1階、11時から営業しています。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">澤正宗の日本酒</div>
+            <div class="hero-tag">芋煮定食</div>
+            <div class="hero-tag">11時から営業</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">澤正宗とは</h2>
+        <p class="sub">
+            山形駅ビル（S-PAL山形）1階にある、日本酒と郷土料理の居酒屋。<br>
+            酒蔵が営むお店ならではの一杯を、気軽に楽しめます。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                店名に掲げる<span class="hl">「澤正宗」は、古澤酒造が手がける日本酒</span>です。<br>
+                蔵元直営の居酒屋として、<span class="hl">澤正宗と山形の郷土料理</span>を一緒に。<br>
+                11時から営業しているので、ランチにも、急なお客様との会食にも。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍶</span>
+                <h3>蔵元直営の日本酒</h3>
+                <p>辛口、本醸造、吟醸生酒、大吟醸原酒など、澤正宗の日本酒が揃います。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>山形の郷土料理</h3>
+                <p>山形名物の芋煮をはじめ、ひっぱりうどんなど郷土の味を楽しめます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🚉</span>
+                <h3>JR山形駅直結</h3>
+                <p>S-PAL山形1階。移動の前後にも立ち寄りやすい立地です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">澤正宗の看板</h2>
+        <p class="sub">
+            蔵元の日本酒、山形名物の芋煮、そして飲み比べ。<br>
+            この店ならではの3つをご紹介します。
+        </p>
+
+        <div class="spec-grid">
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/sawamasamune.jpg" alt="澤正宗の日本酒と酒器" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 01</div>
+                    <h3>澤正宗の日本酒</h3>
+                    <p>蔵元直営店ならではの品ぞろえ。辛口、本醸造、吟醸生酒、大吟醸原酒などを味わえます。</p>
+                    <p>1合や1杯から注文できるので、少しずつ楽しめます。</p>
+                    <div class="spec-price">例）澤正宗 辛口 1合 600円</div>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/imoni.jpg" alt="芋煮定食" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 02</div>
+                    <h3>芋煮定食</h3>
+                    <p>山形名物の芋煮を、定食で気軽に。公式サイトでも人気メニューとして紹介されています。</p>
+                    <p>山形駅直結なので、郷土料理を味わいたい観光や出張の方にも。</p>
+                    <div class="spec-price">1,200円</div>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/daiginjo-set.jpg" alt="大吟醸お試しセット（3盃）" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 03</div>
+                    <h3>大吟醸お試しセット</h3>
+                    <p>大吟醸を3盃楽しめる飲み比べセット。地酒の飲み比べセットとして人気です。</p>
+                    <p>お料理をたくさん頼まなくても、蔵元のお酒を比べて楽しめます。</p>
+                    <div class="spec-price">3盃 1,400円</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            お食事、おつまみ、そして日本酒。<br>
+            主なメニューをご紹介します。
+        </p>
+
+        <div class="menu-board">
+            <div class="menu-group">
+                <h3>料理</h3>
+                <ul>
+                    <li><span class="nm">芋煮定食</span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">ひっぱりうどん</span><span class="ld"></span><span class="pr">1,150円</span></li>
+                    <li><span class="nm">山形御膳</span><span class="ld"></span><span class="pr">3,200円</span></li>
+                    <li><span class="nm">海鮮バラチラシ</span><span class="ld"></span><span class="pr">1,280円</span></li>
+                    <li><span class="nm">海鮮丼</span><span class="ld"></span><span class="pr">1,280円</span></li>
+                    <li><span class="nm">イクラネギトロ丼</span><span class="ld"></span><span class="pr">1,380円</span></li>
+                    <li><span class="nm">お刺身定食</span><span class="ld"></span><span class="pr">1,780円</span></li>
+                    <li><span class="nm">月見うどん／そば</span><span class="ld"></span><span class="pr">950円</span></li>
+                    <li><span class="nm">山菜うどん／そば</span><span class="ld"></span><span class="pr">980円</span></li>
+                    <li><span class="nm">小エビのかき揚げそば</span><span class="ld"></span><span class="pr">1,100円</span></li>
+                </ul>
+            </div>
+
+            <div class="menu-group">
+                <h3>おつまみ</h3>
+                <ul>
+                    <li><span class="nm">お刺身盛り合わせ<small>3点盛</small></span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">まぐろ刺身</span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">いかソーメン</span><span class="ld"></span><span class="pr">880円</span></li>
+                    <li><span class="nm">トロホッケ<small>1枚</small></span><span class="ld"></span><span class="pr">1,480円</span></li>
+                    <li><span class="nm">イカの一夜干し</span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">鶏なんこつの唐揚げ</span><span class="ld"></span><span class="pr">800円</span></li>
+                    <li><span class="nm">たこの唐揚げ</span><span class="ld"></span><span class="pr">850円</span></li>
+                    <li><span class="nm">揚げ出し豆腐</span><span class="ld"></span><span class="pr">750円</span></li>
+                    <li><span class="nm">オリジナル野菜サラダ</span><span class="ld"></span><span class="pr">750円</span></li>
+                    <li><span class="nm">冷奴</span><span class="ld"></span><span class="pr">480円</span></li>
+                    <li><span class="nm">梅茶漬け</span><span class="ld"></span><span class="pr">650円</span></li>
+                    <li><span class="nm">焼きおにぎり<small>2個・漬物付</small></span><span class="ld"></span><span class="pr">600円</span></li>
+                </ul>
+            </div>
+
+            <div class="menu-group">
+                <h3>お酒</h3>
+                <ul>
+                    <li><span class="nm">澤正宗 辛口<small>1合</small></span><span class="ld"></span><span class="pr">600円</span></li>
+                    <li><span class="nm">澤正宗 本醸造<small>1合</small></span><span class="ld"></span><span class="pr">680円</span></li>
+                    <li><span class="nm">澤正宗 吟醸生酒<small>300ml</small></span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">澤正宗 大吟醸原酒<small>1杯</small></span><span class="ld"></span><span class="pr">1,400円</span></li>
+                    <li><span class="nm">美田美酒 純米大吟醸<small>1杯</small></span><span class="ld"></span><span class="pr">980円</span></li>
+                    <li><span class="nm">紅花屋重兵衛 大吟醸<small>1杯</small></span><span class="ld"></span><span class="pr">1,200円</span></li>
+                    <li><span class="nm">大吟醸お試しセット<small>3盃</small></span><span class="ld"></span><span class="pr">1,400円</span></li>
+                    <li><span class="nm">雪原 麦焼酎<small>グラス</small></span><span class="ld"></span><span class="pr">600円</span></li>
+                    <li><span class="nm">雪原 極上米焼酎<small>グラス</small></span><span class="ld"></span><span class="pr">800円</span></li>
+                    <li><span class="nm">おもしろ倶楽部 しそ梅酒<small>グラス</small></span><span class="ld"></span><span class="pr">630円</span></li>
+                    <li><span class="nm">雪原 麦焼酎<small>ボトル</small></span><span class="ld"></span><span class="pr">3,600円</span></li>
+                </ul>
+            </div>
+        </div>
+        <p class="menu-note">
+            ※価格は公式サイトの掲載に基づきます。メニュー・価格は変更になる場合があります。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            昼ごはんから、夜の一杯まで。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">🚉</span>
+                <h3>観光・出張の前後に</h3>
+                <p>JR山形駅直結。移動の合間に、芋煮や地酒を楽しめます。</p>
+            </div>
+            <div class="scene">
+                <span class="si">☀️</span>
+                <h3>昼ごはん・昼飲みに</h3>
+                <p>11時から営業。ランチも好評で、急なお客様との会食にも使いやすい店です。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🍶</span>
+                <h3>日本酒を少しずつ</h3>
+                <p>1合や1杯から、大吟醸3盃のお試しセットも。蔵元のお酒を飲み比べできます。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🌙</span>
+                <h3>夜の一杯に</h3>
+                <p>刺身、揚げ物、郷土料理と日本酒を。営業は21:00（L.O.20:30）までです。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            山形駅ビル1階の店舗と、<br>
+            日本酒が並ぶ店内。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="酒蔵 澤正宗 山形駅店 外観 - S-PAL山形1階" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="酒瓶が並ぶ店内とカウンター" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            JR山形駅ビル（S-PAL山形）1階。<br>
+            11:00〜21:00の通し営業です。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">
+                            酒蔵 澤正宗 山形駅店<br>
+                            <span class="inote">さかぐら さわまさむね やまがたえきてん／公式サイトでの表記：居酒屋酒蔵澤正宗</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">運営</div>
+                        <div class="ival">古澤酒造（山形県寒河江市）の蔵元直営店</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            11:00〜21:00（L.O.20:30）<br>
+                            <span class="inote">※日曜日は19:00閉店との情報あり。ご来店前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            S-PAL山形の休館日に準じる<br>
+                            <span class="inote">※休館日は <a href="https://www.s-pal.jp/yamagata/" target="_blank" rel="noopener noreferrer">S-PAL山形</a> でご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            昼 1,000〜2,000円程度<br>
+                            夜 1,000〜3,000円程度<br>
+                            <span class="inote">※目安です。お品書きの価格もご参照ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">日本酒・酒蔵系居酒屋、和食、山形郷土料理</div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0039<br>
+                            山形県山形市香澄町1丁目1-1<br>
+                            S-PAL山形 1F
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">JR山形駅直結（S-PAL山形・山形駅ビル1階）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-628-1206">023-628-1206</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival"><a href="https://furusawa.co.jp/tavern/" target="_blank" rel="noopener noreferrer">古澤酒造「居酒屋酒蔵澤正宗」</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">Instagram</div>
+                        <div class="ival">
+                            <a href="https://www.instagram.com/furusawashuzou_sagae/" target="_blank" rel="noopener noreferrer">蔵元・古澤酒造のInstagram</a>
+                            <span class="inote">※店舗専用ではなく、蔵元のアカウントです</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    席数・個室・貸切の可否、ご予約の可否、駐車場（S-PAL山形の駐車場の利用条件）、お支払い方法、禁煙・喫煙、テイクアウトの可否については、確認できておりません。詳しくは店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.instagram.com/furusawashuzou_sagae/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（蔵元・古澤酒造）">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.2480799,140.3275949&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="酒蔵 澤正宗 山形駅店の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市香澄町1-1+S-PAL山形" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしております</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                蔵元直営の澤正宗と、山形の郷土料理を。<br>
+                JR山形駅ビル1階、11時から。<br>
+                旅の始まりにも、終わりにも、お気軽にどうぞ。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-628-1206" class="btn btn-w">
+                    <span>📞 電話で問い合わせ</span>
+                    <small>023-628-1206</small>
+                </a>
+                <a href="https://furusawa.co.jp/tavern/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>🌐 公式サイト</span>
+                    <small>古澤酒造</small>
+                </a>
+                <a href="https://www.instagram.com/furusawashuzou_sagae/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>📷 Instagram</span>
+                    <small>蔵元・古澤酒造</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 11:00〜21:00（L.O.20:30）／日曜は19:00閉店との情報あり<br>
+                ※定休日: S-PAL山形の休館日に準じる<br>
+                ※席数・個室・予約・駐車場・お支払い方法は事前に店舗へご確認ください
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">酒蔵 澤正宗 山形駅店</div>
+        <div class="foot-info">
+            〒990-0039 山形県山形市香澄町1丁目1-1 S-PAL山形 1F<br>
+            JR山形駅直結 / 古澤酒造 蔵元直営<br>
+            TEL: 023-628-1206 / <a href="https://furusawa.co.jp/tavern/" style="color:inherit;" target="_blank" rel="noopener noreferrer">公式サイト</a><br>
+            11:00〜21:00（L.O.20:30） / 定休日: S-PAL山形の休館日に準じる<br>
+            澤正宗の日本酒・芋煮定食・大吟醸お試しセット
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.instagram.com/furusawashuzou_sagae/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（蔵元・古澤酒造）">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 酒蔵 澤正宗 山形駅店 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
