@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形駅東口から徒歩2分、赤い提灯が目印の「居酒屋 伝七 山形駅前店」。山形牛入り芋煮の晩酌コース4,000円、オリジナル日本酒「伝七」。お一人様大歓迎、カウンター5席・座敷あり。">
+    <meta property="og:title" content="居酒屋 伝七 山形駅前店 - 晩酌コースと日本酒">
+    <meta property="og:description" content="山形駅東口から徒歩2分。旬の郷土料理と日本酒を楽しむ、隠れ家的な和風居酒屋。">
+    <meta property="og:image" content="img/imoni.jpg">
+    <meta property="og:type" content="website">
+    <title>居酒屋 伝七 山形駅前店 - 晩酌コースと日本酒｜山形駅東口 徒歩2分</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sumi: #1d1a18;
+            --sumi-2: #2b2622;
+            --chochin: #c8321f;
+            --deep-chochin: #8e1f12;
+            --andon: #f0a24b;
+            --light-andon: #f6c27f;
+            --washi: #f6efe1;
+            --take: #6b5640;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+            --head-font: 'Kaisei Opti', 'Noto Sans JP', serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--washi);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--sumi) 0%,
+                #3a231c 50%,
+                var(--deep-chochin) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.46); z-index: 2; }
+
+        /* 赤提灯 */
+        .lantern {
+            position: absolute;
+            top: 0;
+            right: max(8%, 1.5rem);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform-origin: 50% 0;
+            animation: sway 5s ease-in-out infinite;
+        }
+        .lantern .cord { width: 2px; height: clamp(40px, 9vh, 90px); background: #111; }
+        .lantern .cap { width: 46px; height: 12px; background: #151515; border-radius: 3px; }
+        .lantern .body {
+            position: relative;
+            width: 92px;
+            height: 118px;
+            border-radius: 50% / 38%;
+            background: radial-gradient(ellipse at 50% 40%, #e24a30 0%, var(--chochin) 60%, var(--deep-chochin) 100%);
+            box-shadow: 0 0 60px 8px rgba(240,162,75,.45), inset 0 0 18px rgba(0,0,0,.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .lantern .body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(to bottom, transparent 0 11px, rgba(0,0,0,.18) 11px 12px);
+        }
+        .lantern .body span {
+            position: relative;
+            z-index: 1;
+            writing-mode: vertical-rl;
+            font-family: var(--head-font);
+            font-weight: 700;
+            font-size: 1.9rem;
+            letter-spacing: 0.15em;
+            color: #1a1612;
+        }
+        @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.3rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(246,194,127,0.65);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 2.8rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-sub {
+            font-family: var(--head-font);
+            font-size: 1.3rem;
+            letter-spacing: 0.35em;
+            margin-bottom: 0.4rem;
+            animation: fadeUp 1s ease-out 0.15s both;
+        }
+
+        .hero-tit {
+            font-family: var(--head-font);
+            font-size: 7rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            line-height: 1.2;
+            margin-bottom: 1.4rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.2em;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            margin-top: 0.9rem;
+            opacity: 0.88;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--andon), transparent);
+            margin: 2.3rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 660px;
+            margin: 0 auto 3.2rem;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.14em;
+            padding: 0.55rem 1.6rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(246,194,127,0.5);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.55em;
+            color: var(--chochin);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: var(--head-font);
+            font-size: 3.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--sumi);
+            letter-spacing: 0.14em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.25;
+            max-width: 700px;
+            margin: 0 auto 4.8rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 880px;
+            margin: 0 auto 4.2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2.6;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 66%, rgba(240,162,75,0.42) 66%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.4rem; }
+
+        .feat {
+            text-align: center;
+            padding: 2.9rem 2rem;
+            background: var(--washi);
+            border-radius: 6px;
+            border-top: 4px solid var(--chochin);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-family: var(--head-font);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--sumi);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2.05; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--washi); }
+
+        .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.6rem; }
+
+        .spec-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.16); }
+
+        .spec-img { aspect-ratio: 4/3; overflow: hidden; }
+        .spec-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .spec-body { padding: 2.2rem 1.9rem 2.4rem; flex: 1; display: flex; flex-direction: column; }
+        .spec-num { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--chochin); font-weight: 700; margin-bottom: 0.7rem; }
+        .spec-body h3 {
+            font-family: var(--head-font);
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            color: var(--sumi);
+            line-height: 1.5;
+        }
+        .spec-body p { font-size: 0.92rem; line-height: 2.1; color: var(--charcoal); margin-bottom: 0.9rem; }
+        .spec-chip {
+            margin-top: auto;
+            align-self: flex-start;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--sumi);
+            background: var(--light-andon);
+            padding: 0.35rem 1.1rem;
+            border-radius: 50px;
+        }
+        .spec-note { font-size: 0.78rem; color: var(--silver); margin: 0.5rem 0 0; }
+
+        /* ═══ Course ═══ */
+        .course { background: var(--sumi); color: white; }
+        .course .lab { color: var(--light-andon); }
+        .course .tit { color: white; }
+        .course .sub { color: rgba(255,255,255,.8); }
+
+        .course-price {
+            text-align: center;
+            margin-bottom: 3.6rem;
+        }
+        .course-price .p {
+            display: inline-block;
+            font-family: var(--head-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--light-andon);
+            padding: 0.4rem 2.2rem;
+            border: 2px solid var(--andon);
+            border-radius: 50px;
+        }
+        .course-price .p small { font-size: 0.5em; margin-left: 0.5rem; color: white; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; }
+
+        .flow {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .flow::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: repeating-linear-gradient(to right, var(--andon) 0 8px, transparent 8px 16px);
+            z-index: 1;
+        }
+        .step { position: relative; z-index: 2; text-align: center; padding: 0 0.6rem; }
+        .step .dot {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--chochin);
+            color: white;
+            font-family: var(--head-font);
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.1rem;
+            box-shadow: 0 0 0 6px var(--sumi), 0 6px 18px rgba(0,0,0,.4);
+        }
+        .step.main .dot { background: var(--andon); color: var(--sumi); }
+        .step h3 { font-family: var(--head-font); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .step p { font-size: 0.82rem; line-height: 1.8; color: rgba(255,255,255,.75); }
+
+        .course-note { max-width: 960px; margin: 3.2rem auto 0; text-align: center; font-size: 0.86rem; line-height: 2; color: rgba(255,255,255,.7); }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: white; }
+        .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+        .scene {
+            background: var(--washi);
+            border-radius: 6px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.1); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 { font-family: var(--head-font); font-size: 1.2rem; font-weight: 700; color: var(--sumi); margin-bottom: 0.7rem; }
+        .scene p { font-size: 0.88rem; line-height: 2; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--washi); }
+        .gal-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 880px; margin: 0 auto; }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.14);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--sumi-2); color: white; }
+        .info .lab { color: var(--light-andon); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 2.8rem;
+        }
+        .notice {
+            background: rgba(240,162,75,.12);
+            border: 1px solid rgba(240,162,75,.45);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        .notice .ni { font-size: 1.7rem; display: block; margin-bottom: 0.3rem; }
+        .notice small { display: block; font-size: 0.74rem; font-weight: 400; opacity: 0.75; }
+
+        .info-wrap {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(240,162,75,.25);
+            border-radius: 8px;
+            padding: 3.8rem;
+        }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.8rem; margin-bottom: 2.8rem; }
+
+        .info-block h3 {
+            font-family: var(--head-font);
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 2px solid var(--andon);
+            color: var(--light-andon);
+            letter-spacing: 0.1em;
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-andon); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); transition: border-color .3s; }
+        .ival a:hover { border-color: var(--light-andon); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; display: block; }
+
+        .info-alert {
+            background: rgba(240,162,75,.12);
+            border-left: 4px solid var(--andon);
+            border-radius: 6px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-andon); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.92); }
+
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: var(--head-font); font-size: 1.35rem; font-weight: 700; margin-bottom: 1.3rem; color: var(--light-andon); text-align: center; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--chochin);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--andon); color: var(--sumi); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--chochin) 0%, var(--deep-chochin) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(246,194,127,.95); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 780px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.5; margin-bottom: 3rem; }
+
+        .cta-btns { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.04rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.1em;
+            min-width: 230px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--chochin); box-shadow: 0 14px 38px rgba(0,0,0,.28); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--chochin); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--sumi); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: var(--head-font); font-size: 2rem; font-weight: 700; letter-spacing: 0.3em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 1px; background: rgba(240,162,75,.55); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .lantern, .scroll { animation: none; }
+        }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 5rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+            .spec-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+            .notice-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3.6rem; }
+            .hero-sub { font-size: 1.05rem; }
+            .lantern .cap { width: 34px; height: 9px; }
+            .lantern .body { width: 66px; height: 86px; }
+            .lantern .body span { font-size: 1.35rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .info-grid, .scene-grid { grid-template-columns: 1fr; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .flow { grid-template-columns: 1fr; gap: 0; }
+            .flow::before { display: none; }
+            .step { display: flex; align-items: center; gap: 1.2rem; text-align: left; padding: 1rem 0; border-bottom: 1px dotted rgba(255,255,255,.3); }
+            .step:last-child { border-bottom: none; }
+            .step .dot { margin: 0; flex-shrink: 0; width: 52px; height: 52px; box-shadow: none; }
+            .course-price .p { font-size: 1.7rem; padding: 0.3rem 1.4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+
+        @media (max-width: 480px) {
+            .notice-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="居酒屋 伝七 山形駅前店 - 赤い提灯が目印の外観" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="lantern" aria-hidden="true">
+        <div class="cord"></div>
+        <div class="cap"></div>
+        <div class="body"><span>伝七</span></div>
+        <div class="cap"></div>
+    </div>
+    <div class="hero-con">
+        <div class="hero-badge">山形駅東口 徒歩2分</div>
+        <p class="hero-sub">居酒屋</p>
+        <h1 class="hero-tit">
+            伝七
+            <small>DENSHICHI YAMAGATA-EKIMAE</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            赤い提灯が目印の、隠れ家的な和風居酒屋。<br>
+            山形牛入り芋煮の晩酌コースと、日本酒を。<br>
+            お一人様大歓迎です。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">山形牛入り芋煮</div>
+            <div class="hero-tag">晩酌コース 4,000円</div>
+            <div class="hero-tag">お一人様大歓迎</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">伝七とは</h2>
+        <p class="sub">
+            山形駅東口から徒歩2分、NTTドコモビルの前。<br>
+            赤い提灯を目印に、お越しください。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                山形駅前で、<span class="hl">旬の食材を使った郷土料理</span>と<span class="hl">日本酒</span>を楽しめる、<br>
+                隠れ家的な和風居酒屋です。<br>
+                お座敷がメインの、くつろいだ雰囲気。カウンター5席もあります。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>旬の郷土料理</h3>
+                <p>地元の食材にこだわり、旬のおいしいものを提供しています。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍶</span>
+                <h3>日本酒・焼酎が充実</h3>
+                <p>オリジナル日本酒「伝七」をはじめ、料理に合うお酒を揃えています。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🏮</span>
+                <h3>お座敷とカウンター</h3>
+                <p>全26席。お座敷がメインで、カウンターは5席。お一人様も歓迎です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">伝七の看板</h2>
+        <p class="sub">
+            山形牛入りの芋煮、旬の日替わり料理、そして日本酒。<br>
+            伝七ならではの3つをご紹介します。
+        </p>
+
+        <div class="spec-grid">
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/imoni.jpg" alt="山形牛入り芋煮" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 01</div>
+                    <h3>山形牛入り芋煮</h3>
+                    <p>晩酌コースのメインとして紹介されている、山形牛入りの芋煮です。</p>
+                    <p>山形の郷土料理と山形牛を、一緒に味わえます。</p>
+                    <div class="spec-chip">晩酌コースのメイン</div>
+                    <p class="spec-note">※内容は時期により変わることがあります</p>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/banshaku.jpg" alt="晩酌コースの料理 - 刺身、オードブル、焼き物" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 02</div>
+                    <h3>旬の日替わり料理</h3>
+                    <p>地元の食材にこだわり、旬のおいしいものを提供しています。</p>
+                    <p>刺身、オードブル、焼き物、一人鍋など、約7品をコースで楽しめます。</p>
+                    <div class="spec-chip">晩酌コース 4,000円（税込）</div>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/sake.jpg" alt="オリジナル日本酒「伝七」" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 03</div>
+                    <h3>日本酒「伝七」</h3>
+                    <p>お酒の中身もオリジナルで作った日本酒。製造元は男山酒造です。料理に合う厳選のお酒として案内しています。</p>
+                    <p>日本酒・焼酎が充実。女性に人気の果実酒も多数揃います。</p>
+                    <div class="spec-chip">伝七 小瓶 1,300円（税込）</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ COURSE ═══ -->
+<section class="course">
+    <div class="con">
+        <div class="lab">COURSE</div>
+        <h2 class="tit">晩酌コース</h2>
+        <p class="sub">
+            刺身から一人鍋まで、約7品。<br>
+            ボリュームも品数も、満足と評判のコースです。
+        </p>
+
+        <div class="course-price">
+            <span class="p">4,000円<small>（税込）</small></span>
+        </div>
+
+        <div class="flow">
+            <div class="step">
+                <div class="dot">1</div>
+                <div>
+                    <h3>刺身</h3>
+                </div>
+            </div>
+            <div class="step">
+                <div class="dot">2</div>
+                <div>
+                    <h3>オードブル</h3>
+                    <p>3品</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="dot">3</div>
+                <div>
+                    <h3>焼き物</h3>
+                </div>
+            </div>
+            <div class="step main">
+                <div class="dot">4</div>
+                <div>
+                    <h3>日替わりメイン</h3>
+                    <p>山形牛入り芋煮</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="dot">5</div>
+                <div>
+                    <h3>一人鍋</h3>
+                </div>
+            </div>
+        </div>
+
+        <p class="course-note">
+            ※コースの内容・写真は一例です。時期や仕入れにより変わることがあります。<br>
+            詳しくは店舗へお問い合わせください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            お一人様から、女子会、ご宴会まで。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">🍶</span>
+                <h3>お一人様大歓迎</h3>
+                <p>カウンターは5席。出張時にお一人で利用する方も多いお店です。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🥂</span>
+                <h3>接待・ご宴会に</h3>
+                <p>お座敷は最大21名、店内全体で最大26名まで。宴会は事前にご相談ください。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🍑</span>
+                <h3>女子会に</h3>
+                <p>女性でも入りやすい雰囲気。女性に人気の果実酒も多数揃います。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🚉</span>
+                <h3>出張・観光の夜に</h3>
+                <p>山形駅東口から徒歩2分。英語メニューもあります。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            赤い提灯が目印の外観と、お座敷がメインの和風の店内です。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="居酒屋 伝七 外観 - 赤い提灯" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - お座敷とカウンター席" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市幸町、山形駅東口から徒歩2分。<br>
+            月〜土の夜営業、日曜定休です。
+        </p>
+
+        <div class="notice-grid" role="list" aria-label="ご来店前のお知らせ">
+            <div class="notice" role="listitem"><span class="ni">🚬</span>全席喫煙可<small>喫煙専用室はありません</small></div>
+            <div class="notice" role="listitem"><span class="ni">🅿️</span>駐車場なし<small>徒歩1分にコインパーキング</small></div>
+            <div class="notice" role="listitem"><span class="ni">🙅</span>お子様連れ・20歳未満の方は<br>入店できません</div>
+            <div class="notice" role="listitem"><span class="ni">🏠</span>個室なし・貸切不可<small>宴会は事前にご相談を</small></div>
+        </div>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">
+                            居酒屋 伝七 山形駅前店<br>
+                            <span class="inote">いざかや でんしち やまがたえきまえてん／「伝七」の名前のお店は他にもあります。こちらは山形市幸町の店舗です</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            月〜土・祝日・祝前日 17:30〜21:30<br>
+                            <span class="inote">料理L.O.20:00／ドリンクL.O.21:00</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            日曜日<br>
+                            <span class="inote">※日曜・月曜が連休の場合は月曜日も休み</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            夜 5,001〜6,000円<br>
+                            <span class="inote">晩酌コース 4,000円（税込）</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">和食居酒屋、郷土料理、海鮮料理</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            全26席（カウンター5席）<br>
+                            お座敷（5名×1席、4名×4席）<br>
+                            <span class="inote">※個室なし、貸切不可。宴会は最大26名、事前にご相談ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ご予約</div>
+                        <div class="ival">
+                            電話・ネット予約に対応<br>
+                            <span class="inote">※ネット予約はリクエスト予約です。可否は 023-622-4434 または 090-1399-7598 からお電話でご連絡します</span>
+                            <span class="inote">※コース予約は、ご来店前日21時以降のキャンセルでコース料金の50%（1予約あたり）がかかります</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0042<br>
+                            山形県山形市幸町5-1
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            山形駅東口から徒歩2分<br>
+                            <span class="inote">NTTドコモビルの前、赤い提灯が目印です</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">
+                            なし<br>
+                            <span class="inote">徒歩1分の距離にコインパーキングがあります</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-622-4434">023-622-4434</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式ページ</div>
+                        <div class="ival"><a href="https://denshichi.owst.jp/" target="_blank" rel="noopener noreferrer">denshichi.owst.jp</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">お支払い</div>
+                        <div class="ival">
+                            クレジットカード（VISA、Mastercard、American Express、Diners Club、JCB、Discover）<br>
+                            電子マネー（楽天Edy、WAON、Suica、PASMO、nanaco、ICOCA、iD、QUICPay、Apple Pay）<br>
+                            QRコード決済（PayPay、楽天ペイ、d払い、au PAY、メルペイ）
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    テイクアウトの可否は確認できておりません。コースの内容・価格は、時期や仕入れにより変わることがあります。詳しくは店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=38.2474823,140.3283238&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="居酒屋 伝七 山形駅前店の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市幸町5-1" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                山形牛入り芋煮の晩酌コースと、日本酒を。<br>
+                赤い提灯を目印に、お越しください。<br>
+                お一人様も、お待ちしております。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-622-4434" class="btn btn-w">
+                    <span>📞 電話で予約</span>
+                    <small>023-622-4434</small>
+                </a>
+                <a href="https://www.hotpepper.jp/strJ000290429/yoyaku/hpds/?ROUTE_KBN=20" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>💻 ネット予約</span>
+                    <small>ホットペッパーグルメ</small>
+                </a>
+                <a href="https://denshichi.owst.jp/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>🌐 公式ページ</span>
+                    <small>denshichi.owst.jp</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 月〜土・祝日・祝前日 17:30〜21:30（料理L.O.20:00／ドリンクL.O.21:00）<br>
+                ※定休日: 日曜日（日・月連休の場合は月曜も休み）<br>
+                ※駐車場なし／全席喫煙可／お子様連れ・20歳未満の方は入店不可
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">居酒屋 伝七 山形駅前店</div>
+        <div class="foot-info">
+            〒990-0042 山形県山形市幸町5-1<br>
+            山形駅東口から徒歩2分 / NTTドコモビルの前・赤い提灯が目印<br>
+            TEL: 023-622-4434 / <a href="https://denshichi.owst.jp/" style="color:inherit;" target="_blank" rel="noopener noreferrer">公式ページ</a><br>
+            月〜土・祝日・祝前日 17:30〜21:30 / 定休日: 日曜日<br>
+            山形牛入り芋煮の晩酌コース・オリジナル日本酒「伝七」
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 居酒屋 伝七 山形駅前店 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>

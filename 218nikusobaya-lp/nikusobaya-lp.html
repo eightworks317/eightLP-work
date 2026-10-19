@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市富の中の「山形の肉そば屋」。冷たい肉そば・温かい肉そばが選べる看板メニュー900円。せいろそば、きつねそば、うどん、中華麺も。水曜定休、昼と夜の営業。">
+    <meta property="og:title" content="山形の肉そば屋 - 冷たい肉そば・温かい肉そば">
+    <meta property="og:description" content="店名に掲げる看板の肉そばは、冷たいも温かいも選べる900円。山形市富の中。">
+    <meta property="og:image" content="img/nikusoba.jpg">
+    <meta property="og:type" content="website">
+    <title>山形の肉そば屋 - 冷たい肉そば900円｜山形市富の中</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tsuyu-dark: #2a1d16;
+            --tsuyu: #4a3022;
+            --gold: #d9a441;
+            --light-gold: #f0c876;
+            --negi: #6a8f3c;
+            --cold: #3f7fa6;
+            --hot: #c0452f;
+            --kinari: #f7f1e3;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+            --head-font: 'Dela Gothic One', 'Noto Sans JP', sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--kinari);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 680px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg,
+                var(--tsuyu-dark) 0%,
+                var(--tsuyu) 55%,
+                #8a5a2b 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 2; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.65rem 2.2rem;
+            background: rgba(255,255,255,0.12);
+            border: 2px solid rgba(240,200,118,0.65);
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            margin-bottom: 2.6rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-tit {
+            font-family: var(--head-font);
+            font-size: 6.2rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.25;
+            margin-bottom: 1.4rem;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero-tit small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.17em;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            margin-top: 0.9rem;
+            opacity: 0.88;
+        }
+
+        .hero-div {
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cold), var(--gold), var(--hot));
+            border-radius: 4px;
+            margin: 2.3rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            line-height: 2.3;
+            max-width: 640px;
+            margin: 0 auto 3.2rem;
+            font-weight: 500;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+
+        .hero-tag {
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.6rem 1.6rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(240,200,118,0.5);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.75);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7.5rem 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--hot);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: var(--head-font);
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--tsuyu-dark);
+            letter-spacing: 0.06em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.2;
+            max-width: 680px;
+            margin: 0 auto 4.6rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+
+        .about-lead {
+            max-width: 860px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.12rem;
+            line-height: 2.5;
+        }
+
+        .hl {
+            background: linear-gradient(transparent 64%, rgba(217,164,65,0.45) 64%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2.3rem;
+        }
+
+        .feat {
+            text-align: center;
+            padding: 2.7rem 1.9rem;
+            background: var(--kinari);
+            border-radius: 10px;
+            border-top: 5px solid var(--gold);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: var(--tsuyu-dark);
+        }
+        .feat p { font-size: 0.93rem; line-height: 2; color: var(--charcoal); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--kinari); }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.6rem;
+            align-items: center;
+            margin-bottom: 5.5rem;
+        }
+
+        .main-vis {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 26px 70px rgba(0,0,0,.22);
+        }
+        .main-vis img { width: 100%; height: 100%; object-fit: cover; }
+
+        .temp {
+            position: absolute;
+            left: 1.2rem;
+            bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 2;
+        }
+        .temp span.c {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--head-font);
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 6px 18px rgba(0,0,0,.3);
+        }
+        .temp .cold { background: var(--cold); }
+        .temp .hot  { background: var(--hot); }
+        .temp .t-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,.55);
+            padding: 0.25rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        .main-det h3 {
+            font-family: var(--head-font);
+            font-size: 2.7rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            color: var(--tsuyu-dark);
+            line-height: 1.5;
+        }
+        .main-det .acc { color: var(--hot); }
+
+        .price-chip {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--tsuyu-dark);
+            background: var(--light-gold);
+            padding: 0.35rem 1.4rem;
+            border-radius: 50px;
+            margin-bottom: 1.6rem;
+        }
+
+        .show-txt { font-size: 1.02rem; line-height: 2.25; margin-bottom: 1.6rem; }
+
+        .pts { list-style: none; margin-top: 2.4rem; }
+        .pt {
+            padding: 1.6rem 0;
+            border-bottom: 2px dotted rgba(74,48,34,.25);
+            display: flex;
+            gap: 1.7rem;
+        }
+        .pt:last-child { border-bottom: none; }
+        .pt-num {
+            font-family: var(--head-font);
+            font-size: 1.9rem;
+            color: var(--gold);
+            min-width: 56px;
+        }
+        .pt-body h4 { font-size: 1.12rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--tsuyu-dark); }
+        .pt-body p { font-size: 0.93rem; line-height: 2; color: var(--silver); }
+
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.6rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .sub-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 14px 44px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .sub-card:hover { transform: translateY(-8px); box-shadow: 0 22px 56px rgba(0,0,0,.15); }
+        .sub-img { aspect-ratio: 4/3; overflow: hidden; }
+        .sub-img img { width: 100%; height: 100%; object-fit: cover; }
+        .sub-body { padding: 2rem 1.9rem 2.2rem; }
+        .sub-body .num { font-size: 0.78rem; letter-spacing: 0.3em; font-weight: 700; color: var(--gold); margin-bottom: 0.6rem; }
+        .sub-body h3 { font-family: var(--head-font); font-size: 1.7rem; font-weight: 400; color: var(--tsuyu-dark); margin-bottom: 0.9rem; }
+        .sub-body p { font-size: 0.93rem; line-height: 2.05; margin-bottom: 1.1rem; }
+
+        /* ═══ Menu（木札） ═══ */
+        .menu { background: var(--tsuyu-dark); color: white; }
+        .menu .lab { color: var(--light-gold); }
+        .menu .tit { color: white; }
+        .menu .sub { color: rgba(255,255,255,.8); }
+
+        .fuda-wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 2.8rem; }
+
+        .fuda-group h3 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            color: var(--light-gold);
+            padding-bottom: 0.7rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid rgba(240,200,118,.5);
+        }
+        .fuda-list { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; }
+        .fuda {
+            background: var(--tsuyu);
+            border-bottom: 4px solid var(--gold);
+            border-radius: 4px;
+            padding: 0.9rem 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,.3);
+        }
+        .fuda .pr { color: var(--light-gold); font-size: 0.98rem; white-space: nowrap; }
+        .fuda small { font-size: 0.74rem; font-weight: 500; opacity: 0.75; }
+        .fuda.star { background: var(--hot); border-bottom-color: var(--light-gold); }
+        .fuda.star .pr { color: white; }
+
+        .menu-note { max-width: 980px; margin: 2.4rem auto 0; text-align: center; font-size: 0.86rem; line-height: 2; color: rgba(255,255,255,.7); }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: white; }
+
+        .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+
+        .scene {
+            background: var(--kinari);
+            border-radius: 10px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.1); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 { font-size: 1.15rem; font-weight: 900; color: var(--tsuyu-dark); margin-bottom: 0.7rem; }
+        .scene p { font-size: 0.88rem; line-height: 2; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--kinari); }
+        .gal-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 860px; margin: 0 auto; }
+        .gal-it {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.13);
+            transition: transform .3s;
+        }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--tsuyu); color: white; }
+        .info .lab { color: var(--light-gold); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.85); }
+
+        .info-wrap {
+            background: rgba(0,0,0,.18);
+            border: 1px solid rgba(240,200,118,.25);
+            border-radius: 14px;
+            padding: 3.8rem;
+        }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.8rem; margin-bottom: 2.8rem; }
+
+        .info-block h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 3px solid var(--gold);
+            color: var(--light-gold);
+        }
+
+        .ir {
+            display: grid;
+            grid-template-columns: 118px 1fr;
+            gap: 1.3rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-gold); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); transition: border-color .3s; }
+        .ival a:hover { border-color: var(--light-gold); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.65); margin-top: .3rem; display: block; }
+
+        .info-alert {
+            background: rgba(217,164,65,.15);
+            border-left: 4px solid var(--gold);
+            border-radius: 8px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.5rem;
+        }
+        .info-alert-title { font-weight: 700; color: var(--light-gold); margin-bottom: 0.45rem; }
+        .info-alert-text  { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.92); }
+
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-size: 1.25rem; font-weight: 900; margin-bottom: 1.3rem; color: var(--light-gold); text-align: center; }
+        .map-box { border-radius: 10px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--hot);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--gold); color: var(--tsuyu-dark); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--hot) 0%, #8c2e1d 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(255,255,255,.9); }
+        .cta .tit { color: white; }
+
+        .cta-wrap { max-width: 700px; margin: 0 auto; }
+        .cta-txt { font-size: 1.15rem; line-height: 2.4; margin-bottom: 2.9rem; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 3.2rem;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.12em;
+            min-width: 280px;
+            line-height: 1.5;
+            background: white;
+            color: var(--hot);
+            box-shadow: 0 14px 38px rgba(0,0,0,.28);
+        }
+        .btn small { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.8; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+
+        .cta-note { margin-top: 2.9rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--tsuyu-dark); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: var(--head-font); font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 1.8rem; font-weight: 400; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 3px; background: var(--gold); border-radius: 3px; margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4.2rem; }
+            .tit { font-size: 2.5rem; }
+            section { padding: 6rem 0; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+            .main-grid { gap: 3rem; }
+            .main-det h3 { font-size: 2.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 2.6rem; }
+            .tit { font-size: 2rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .info-grid, .scene-grid, .main-grid, .sub-grid { grid-template-columns: 1fr; }
+            .main-grid { margin-bottom: 4rem; }
+            .main-det h3 { font-size: 2rem; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .fuda { width: 100%; justify-content: space-between; }
+            .btn { min-width: auto; width: 100%; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="山形の肉そば屋 - 肉そばと店舗" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形市富の中</div>
+        <h1 class="hero-tit">
+            山形の肉そば屋
+            <small>YAMAGATA NO NIKUSOBAYA</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            店名に掲げる看板は、肉そば900円。<br>
+            冷たいも、温かいも、選べます。<br>
+            昼も夜も、山形の味をどうぞ。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">冷たい肉そば</div>
+            <div class="hero-tag">温かい肉そば</div>
+            <div class="hero-tag">昼・夜の営業</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">お店について</h2>
+        <p class="sub">
+            山形市富の中にある、肉そばを中心としたそば屋。<br>
+            そば、うどん、中華麺、ミニ丼まで揃います。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                山形名物の<span class="hl">冷たい肉そば</span>を中心に、<br>
+                <span class="hl">温かい肉そば</span>、うどん、中華麺も提供しています。<br>
+                山形市薬師町の「山形一寸亭」の直営店として、2007年に出店したと紹介されています。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍜</span>
+                <h3>店名に掲げる肉そば</h3>
+                <p>お店の中心メニュー。冷たいか、温かいかを選べます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">💰</span>
+                <h3>500〜999円の手頃さ</h3>
+                <p>肉そば900円、せいろそば850円、きつねそば820円。気軽に通える価格帯です。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🌆</span>
+                <h3>昼も夜も営業</h3>
+                <p>11:00〜15:00と17:00〜20:00の2部営業。夕食にもご利用いただけます。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">看板メニュー</h2>
+        <p class="sub">
+            店名に掲げる肉そばを主役に、<br>
+            せいろそばときつねそばをご紹介します。
+        </p>
+
+        <div class="main-grid">
+            <div class="main-vis">
+                <img src="img/nikusoba.jpg" alt="肉そば - 冷たい肉そばと温かい肉そば" loading="lazy">
+                <div class="temp" role="img" aria-label="冷たいものと温かいものを選べます">
+                    <span class="c cold" aria-hidden="true">冷</span>
+                    <span class="c hot" aria-hidden="true">温</span>
+                    <span class="t-label">選べます</span>
+                </div>
+            </div>
+
+            <div class="main-det">
+                <h3>
+                    肉そば<br>
+                    <span class="acc">お店の看板</span>
+                </h3>
+                <div class="price-chip">肉そば 900円</div>
+                <p class="show-txt">
+                    店名に掲げる、お店の中心メニュー。地域の情報サイトでも看板メニューとして紹介されています。山形名物の冷たい肉そばのほか、温かい肉そばも選べます。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>店名に掲げる看板メニュー</h4>
+                            <p>お店の名前そのものが、一番のおすすめです。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>冷たいか、温かいか、選べる</h4>
+                            <p>山形名物の冷たい肉そばと、温かい肉そばから好みで。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>うどん・中華麺への変更も</h4>
+                            <p>そばを中華麺やうどんに変えても同じ900円との情報があります。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sub-grid">
+            <article class="sub-card">
+                <div class="sub-img">
+                    <img src="img/seiro.jpg" alt="せいろそば" loading="lazy">
+                </div>
+                <div class="sub-body">
+                    <div class="num">POINT 02</div>
+                    <h3>せいろそば</h3>
+                    <p>そばの風味をシンプルに楽しめる、手頃なせいろそば。肉そばだけでなく、通常のそばも選べます。</p>
+                    <div class="price-chip">850円</div>
+                </div>
+            </article>
+
+            <article class="sub-card">
+                <div class="sub-img">
+                    <img src="img/kitsune.jpg" alt="きつねそば" loading="lazy">
+                </div>
+                <div class="sub-body">
+                    <div class="num">POINT 03</div>
+                    <h3>きつねそば</h3>
+                    <p>酒町の油揚げを使用。ふっくらジューシーな味わいの油揚げがのった、あったかいそばです。</p>
+                    <div class="price-chip">820円</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            肉そばを中心に、そば、うどん、中華麺、ミニ丼まで。
+        </p>
+
+        <div class="fuda-wrap">
+            <div class="fuda-group">
+                <h3>そば</h3>
+                <ul class="fuda-list">
+                    <li class="fuda star">肉そば<small>冷・温</small><span class="pr">900円</span></li>
+                    <li class="fuda">ちくわ天付き肉そば</li>
+                    <li class="fuda">せいろそば<span class="pr">850円</span></li>
+                    <li class="fuda">板そば<small>2人前</small><span class="pr">1,700円</span></li>
+                    <li class="fuda">きつねそば<span class="pr">820円</span></li>
+                </ul>
+            </div>
+            <div class="fuda-group">
+                <h3>うどん・中華麺</h3>
+                <ul class="fuda-list">
+                    <li class="fuda">うどん</li>
+                    <li class="fuda">中華麺</li>
+                </ul>
+            </div>
+            <div class="fuda-group">
+                <h3>ミニ丼・天ぷら</h3>
+                <ul class="fuda-list">
+                    <li class="fuda">ミニ丼</li>
+                    <li class="fuda">天ぷら系メニュー</li>
+                </ul>
+            </div>
+        </div>
+        <p class="menu-note">
+            ※価格は掲載情報により異なる場合があります。メニュー・価格は変更になることがありますので、最新の内容は店舗へご確認ください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            昼ごはんにも、夕食にも。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">☀️</span>
+                <h3>昼ごはんに</h3>
+                <p>11:00から15:00まで営業。肉そばをはじめ、そば・うどん・中華麺で昼食を。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🌆</span>
+                <h3>夕食に</h3>
+                <p>17:00から20:00まで夜の営業があり、そばを夕食としても楽しめます。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🪑</span>
+                <h3>一人でふらっと</h3>
+                <p>カウンター席があるので、お一人でも気軽に入れます。テーブル席もあります。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🚗</span>
+                <h3>山形名物を味わいに</h3>
+                <p>冷たい肉そばは山形名物。30台の駐車場があるとの情報もあり、車で立ち寄りやすいお店です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            店舗の外観と、カウンター席・テーブル席のある店内です。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="山形の肉そば屋 外観と看板" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - カウンター席とテーブル席" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市富の中。昼と夜の2部営業、水曜定休です。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">山形の肉そば屋（やまがたのにくそばや）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            11:00〜15:00<br>
+                            17:00〜20:00<br>
+                            <span class="inote">※情報により終了時刻・ラストオーダーが異なります（15:15、19:15までとする情報あり）。ご来店前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">水曜日</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            500〜999円<br>
+                            <span class="inote">肉そば900円との情報あり</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">そば、うどん、中華麺、食堂</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            カウンター席・テーブル席<br>
+                            <span class="inote">※55席との情報あり</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-2463<br>
+                            山形県山形市富の中4丁目1-21
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            山形市富の中エリア<br>
+                            <span class="inote">※最寄り駅からの所要時間は確認できておりません。地図をご参照ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">
+                            あり（30台との情報）<br>
+                            <span class="inote">※無料・有料は確認できておりません</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-679-3808">023-679-3808</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">お支払い</div>
+                        <div class="ival">
+                            PayPay対応との情報あり<br>
+                            <span class="inote">※その他の方法は確認できておりません</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    ご予約の可否、テイクアウト、個室・貸切、禁煙・喫煙、PayPay以外のお支払い方法については、確認できておりません。詳しくは店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市富の中4-1-21&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="山形の肉そば屋の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市富の中4-1-21" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしています</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                店名に掲げる看板は、肉そば900円。<br>
+                冷たいも、温かいも、お好みで。<br>
+                昼も夜も、お待ちしています。
+            </p>
+
+            <a href="tel:023-679-3808" class="btn">
+                <span>📞 電話で問い合わせ</span>
+                <small>023-679-3808</small>
+            </a>
+
+            <p class="cta-note">
+                ※営業時間: 11:00〜15:00／17:00〜20:00（終了時刻は要確認）<br>
+                ※定休日: 水曜日<br>
+                ※駐車場あり（30台との情報）／PayPay対応との情報あり
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">山形の肉そば屋</div>
+        <div class="foot-info">
+            〒990-2463 山形県山形市富の中4丁目1-21<br>
+            TEL: 023-679-3808<br>
+            11:00〜15:00／17:00〜20:00 / 定休日: 水曜日<br>
+            肉そば（冷・温）・せいろそば・きつねそば・うどん・中華麺
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 山形の肉そば屋 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
