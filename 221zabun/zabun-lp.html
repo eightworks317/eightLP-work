@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市桧町の「肉そば・鳥中華 ざぶん」。親鳥チャーシューの冷たい肉そば、温・冷が選べる鳥中華。カフェスタイルの店内で昼営業。公式オンラインショップでお取り寄せセットも販売。">
+    <meta property="og:title" content="肉そば・鳥中華 ざぶん - 山形名物の冷たい肉そばと鳥中華">
+    <meta property="og:description" content="親鳥のうま味を、冷たくも温かくも。山形市桧町、昼営業。お取り寄せセットもあります。">
+    <meta property="og:image" content="img/nikusoba.jpg">
+    <meta property="og:type" content="website">
+    <title>肉そば・鳥中華 ざぶん - 山形名物の冷たい肉そばと鳥中華｜山形市桧町</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #151515;
+            --ink-2: #232323;
+            --teal: #2c6b63;
+            --deep-teal: #1f4c46;
+            --yellow: #f0b93a;
+            --light-yellow: #f7d37a;
+            --hot: #d2512f;
+            --cold: #3b82a6;
+            --cream: #f7f4ec;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+            --head-font: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 680px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background: linear-gradient(135deg, var(--ink) 0%, var(--deep-teal) 60%, var(--teal) 100%);
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 2; }
+
+        .wave {
+            position: absolute;
+            left: 0; right: 0; bottom: -1px;
+            height: 90px;
+            z-index: 3;
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'><path d='M0,64 C240,120 480,0 720,48 C960,96 1200,20 1440,64 L1440,120 L0,120 Z' fill='%23f7f4ec'/></svg>") no-repeat center / 100% 100%;
+        }
+
+        .hero-con {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            color: white;
+            padding: 2rem 2rem 5rem;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.65rem 2.2rem;
+            background: rgba(255,255,255,0.12);
+            border: 2px solid rgba(247,211,122,0.65);
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            margin-bottom: 2.4rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-sub {
+            font-family: var(--head-font);
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            margin-bottom: 0.2rem;
+            animation: fadeUp 1s ease-out 0.15s both;
+        }
+
+        .hero-tit {
+            font-family: var(--head-font);
+            font-size: 9rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            animation: fadeUp 1s ease-out 0.25s both;
+        }
+        .hero-tit small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.13em;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            opacity: 0.85;
+            margin-top: 0.4rem;
+        }
+
+        .hero-div {
+            width: 90px;
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--cold), var(--yellow), var(--hot));
+            margin: 1.8rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.18rem;
+            line-height: 2.4;
+            max-width: 640px;
+            margin: 0 auto 2.8rem;
+            font-weight: 500;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+        .hero-tag {
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.55rem 1.5rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(247,211,122,0.5);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7.5rem 0; }
+        .hero { padding: 0; }
+
+        .lab {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        .tit {
+            font-family: var(--head-font);
+            font-size: 3.1rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--ink);
+            letter-spacing: 0.06em;
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 1.02rem;
+            color: var(--silver);
+            line-height: 2.2;
+            max-width: 680px;
+            margin: 0 auto 4.6rem;
+        }
+
+        /* ═══ About ═══ */
+        .about { background: var(--cream); padding-top: 5rem; }
+
+        .about-lead {
+            max-width: 860px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.12rem;
+            line-height: 2.5;
+        }
+        .hl {
+            background: linear-gradient(transparent 64%, rgba(240,185,58,0.5) 64%);
+            font-weight: 700;
+            padding: 0 0.3em;
+        }
+
+        .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.3rem; }
+        .feat {
+            text-align: center;
+            padding: 2.7rem 1.9rem;
+            background: white;
+            border-radius: 14px;
+            border-top: 5px solid var(--teal);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 { font-family: var(--head-font); font-size: 1.25rem; font-weight: 900; margin-bottom: 0.8rem; color: var(--ink); }
+        .feat p { font-size: 0.93rem; line-height: 2; }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: white; }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.6rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+        .main-vis {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 26px 70px rgba(0,0,0,.2);
+        }
+        .main-vis img { width: 100%; height: 100%; object-fit: cover; }
+        .dialect {
+            position: absolute;
+            left: 1.1rem;
+            bottom: 1.1rem;
+            z-index: 2;
+            background: rgba(0,0,0,.62);
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+        }
+
+        .main-det h3 {
+            font-family: var(--head-font);
+            font-size: 2.7rem;
+            font-weight: 900;
+            line-height: 1.45;
+            margin-bottom: 1.1rem;
+            color: var(--ink);
+        }
+        .main-det .acc { color: var(--cold); }
+
+        .choices { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.6rem; }
+        .choice {
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.3rem 1.1rem;
+            border-radius: 50px;
+            color: white;
+        }
+        .choice.hot { background: var(--hot); }
+        .choice.cold { background: var(--cold); }
+        .choice.rich { background: var(--ink); }
+        .choice.light { background: var(--teal); }
+
+        .show-txt { font-size: 1.02rem; line-height: 2.25; margin-bottom: 1.5rem; }
+
+        .pts { list-style: none; margin-top: 2.2rem; }
+        .pt { padding: 1.5rem 0; border-bottom: 2px dotted rgba(21,21,21,.18); display: flex; gap: 1.6rem; }
+        .pt:last-child { border-bottom: none; }
+        .pt-num { font-family: var(--head-font); font-size: 1.9rem; font-weight: 900; color: var(--yellow); min-width: 56px; }
+        .pt-body h4 { font-size: 1.1rem; font-weight: 900; margin-bottom: 0.45rem; color: var(--ink); }
+        .pt-body p { font-size: 0.93rem; line-height: 2; color: var(--silver); }
+
+        .wide-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--cream);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 14px 44px rgba(0,0,0,.1);
+        }
+        .wide-img { aspect-ratio: 4/3; overflow: hidden; }
+        .wide-img img { width: 100%; height: 100%; object-fit: cover; }
+        .wide-body { padding: 2.8rem 2.6rem; display: flex; flex-direction: column; justify-content: center; }
+        .wide-body .num { font-size: 0.78rem; letter-spacing: 0.3em; font-weight: 700; color: var(--teal); margin-bottom: 0.6rem; }
+        .wide-body h3 { font-family: var(--head-font); font-size: 2.2rem; font-weight: 900; color: var(--ink); margin-bottom: 1rem; }
+        .wide-body p { font-size: 0.96rem; line-height: 2.1; margin-bottom: 1.1rem; }
+
+        /* ═══ Menu ═══ */
+        .menu { background: var(--ink); color: white; }
+        .menu .lab { color: var(--light-yellow); }
+        .menu .tit { color: white; }
+        .menu .sub { color: rgba(255,255,255,.78); }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.4rem; max-width: 900px; margin: 0 auto; }
+        .menu-card { background: var(--ink-2); border-radius: 16px; padding: 2.2rem 2rem; border: 1px solid rgba(255,255,255,.12); }
+        .menu-card h3 { font-family: var(--head-font); font-size: 1.7rem; font-weight: 900; margin-bottom: 1.4rem; text-align: center; letter-spacing: 0.1em; }
+        .temp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .temp-tile {
+            border-radius: 12px;
+            padding: 1.4rem 0.8rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .temp-tile .t { display: block; font-family: var(--head-font); font-size: 1.7rem; font-weight: 900; margin-bottom: 0.2rem; }
+        .temp-tile.hot { background: var(--hot); }
+        .temp-tile.cold { background: var(--cold); }
+
+        .taste { text-align: center; margin-top: 2.6rem; }
+        .taste p { font-size: 0.95rem; color: rgba(255,255,255,.82); margin-bottom: 1rem; }
+        .taste .choice { font-size: 0.95rem; padding: 0.4rem 1.5rem; margin: 0 0.3rem; border: 1px solid rgba(255,255,255,.4); background: transparent; }
+
+        .menu-note { max-width: 900px; margin: 2rem auto 0; text-align: center; font-size: 0.84rem; line-height: 2; color: rgba(255,255,255,.65); }
+
+        /* ═══ Order（お取り寄せ） ═══ */
+        .order { background: var(--cream); }
+
+        .order-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; max-width: 1000px; margin: 0 auto; }
+        .order-grid .set:nth-child(4) { grid-column: 1 / 2; }
+
+        .set {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--ink);
+            background: white;
+            border-radius: 14px;
+            padding: 2rem 1.6rem;
+            text-align: center;
+            border-top: 5px solid var(--yellow);
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .set:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(0,0,0,.14); }
+        .set .n { font-family: var(--head-font); font-size: 1.3rem; font-weight: 900; margin-bottom: 0.4rem; }
+        .set .d { font-size: 0.85rem; color: var(--silver); margin-bottom: 1rem; }
+        .set .p { font-family: var(--head-font); font-size: 1.9rem; font-weight: 900; color: var(--teal); }
+        .set .p small { font-size: 0.5em; margin-left: 0.2em; font-weight: 700; }
+
+        .order-btn { text-align: center; margin-top: 2.8rem; }
+        .order-btn a {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--teal);
+            color: white;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+        }
+        .order-btn a:hover { background: var(--deep-teal); transform: translateY(-2px); }
+        .order-note { text-align: center; margin-top: 1.6rem; font-size: 0.84rem; line-height: 2; color: var(--silver); }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: white; }
+        .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+        .scene {
+            background: var(--cream);
+            border-radius: 14px;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.1); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 { font-family: var(--head-font); font-size: 1.15rem; font-weight: 900; color: var(--ink); margin-bottom: 0.7rem; }
+        .scene p { font-size: 0.88rem; line-height: 2; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--cream); }
+        .gal-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; max-width: 860px; margin: 0 auto; }
+        .gal-it { aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.13); transition: transform .3s; }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--ink); color: white; }
+        .info .lab { color: var(--light-yellow); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap { background: var(--ink-2); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 3.8rem; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.8rem; margin-bottom: 2.8rem; }
+
+        .info-block h3 {
+            font-family: var(--head-font);
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 3px solid var(--yellow);
+            color: var(--light-yellow);
+        }
+        .ir { display: grid; grid-template-columns: 118px 1fr; gap: 1.3rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-yellow); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); transition: border-color .3s; }
+        .ival a:hover { border-color: var(--light-yellow); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; display: block; }
+
+        .info-alert { background: rgba(240,185,58,.13); border-left: 4px solid var(--yellow); border-radius: 8px; padding: 1.4rem 1.6rem; margin-top: 1.5rem; }
+        .info-alert-title { font-weight: 700; color: var(--light-yellow); margin-bottom: 0.45rem; }
+        .info-alert-text { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.92); }
+
+        .sns-row { display: flex; gap: 1.1rem; justify-content: center; margin-top: 2.4rem; }
+        .sns-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 52px; height: 52px; border-radius: 50%;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,.25);
+        }
+        .sns-btn:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: var(--head-font); font-size: 1.3rem; font-weight: 900; margin-bottom: 1.3rem; color: var(--light-yellow); text-align: center; }
+        .map-box { border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn {
+            display: inline-block;
+            padding: 1rem 2.1rem;
+            background: var(--teal);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all .3s;
+            font-size: 0.93rem;
+        }
+        .map-btn:hover { background: var(--yellow); color: var(--ink); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, var(--teal) 0%, var(--deep-teal) 100%); color: white; text-align: center; }
+        .cta .lab { color: rgba(255,255,255,.9); }
+        .cta .tit { color: white; }
+        .cta-wrap { max-width: 780px; margin: 0 auto; }
+        .cta-txt { font-size: 1.14rem; line-height: 2.4; margin-bottom: 3rem; }
+        .cta-btns { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.04rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all .3s;
+            letter-spacing: 0.1em;
+            min-width: 230px;
+            line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--teal); box-shadow: 0 14px 38px rgba(0,0,0,.28); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.38); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--teal); }
+
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--ink); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: var(--head-font); font-size: 1.9rem; font-weight: 900; letter-spacing: 0.12em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-sns { display: flex; justify-content: center; margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 3px; background: var(--yellow); border-radius: 3px; margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 6.5rem; }
+            .tit { font-size: 2.5rem; }
+            section { padding: 6rem 0; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+            .main-grid { gap: 3rem; }
+            .main-det h3 { font-size: 2.2rem; }
+            .order-grid { grid-template-columns: repeat(2, 1fr); }
+            .order-grid .set:nth-child(4) { grid-column: auto; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 4.6rem; }
+            .hero-sub { font-size: 1.15rem; }
+            .wave { height: 54px; }
+            .tit { font-size: 2rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .gal-grid, .info-grid, .scene-grid, .main-grid, .menu-grid, .wide-card { grid-template-columns: 1fr; }
+            .main-grid { margin-bottom: 4rem; }
+            .main-det h3 { font-size: 2rem; }
+            .wide-body { padding: 2rem 1.6rem; }
+            .order-grid { grid-template-columns: 1fr; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="肉そば・鳥中華 ざぶん - 冷たい肉そばと店舗" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形市桧町</div>
+        <p class="hero-sub">肉そば・鳥中華</p>
+        <h1 class="hero-tit">
+            ざぶん
+            <small>ZABUN</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            親鳥のうま味を、冷たくも、温かくも。<br>
+            山形名物の肉そばと、ご当地麺の鳥中華。<br>
+            カフェスタイルの店内で、昼のひとときを。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">冷たい肉そば</div>
+            <div class="hero-tag">鳥中華</div>
+            <div class="hero-tag">11:30〜15:00</div>
+        </div>
+    </div>
+    <div class="wave" aria-hidden="true"></div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">ざぶんとは</h2>
+        <p class="sub">
+            山形名物の肉そばと鳥中華を専門にするお店。<br>
+            蕎麦屋というより、カフェのような店内が印象的です。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                看板は、<span class="hl">肉そば</span>と<span class="hl">鳥中華</span>。<br>
+                歯ごたえのある親鳥のチャーシューと、かつおだしの香るスープ。<br>
+                温・冷から選べて、お持ち帰りやお取り寄せもできます。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🍜</span>
+                <h3>肉そばと鳥中華</h3>
+                <p>肉そばと並ぶ看板料理が、中華麺の鳥中華。どちらも温・冷が選べます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">☕</span>
+                <h3>カフェスタイルの店内</h3>
+                <p>おしゃれなカフェのような雰囲気。カウンター・テーブル・座敷があるとの情報です。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">📦</span>
+                <h3>お取り寄せもできる</h3>
+                <p>公式サイトのオンラインショップで、肉そば・鳥中華のセットを販売しています。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">看板メニュー</h2>
+        <p class="sub">
+            山形名物の冷たい肉そばと、ご当地麺の鳥中華。<br>
+            ざぶんの2枚看板をご紹介します。
+        </p>
+
+        <div class="main-grid">
+            <div class="main-vis">
+                <img src="img/nikusoba.jpg" alt="冷たい肉そば - 親鳥のチャーシューがのった山形名物" loading="lazy">
+                <div class="dialect">「つったい」＝冷たい（山形の方言）</div>
+            </div>
+
+            <div class="main-det">
+                <h3>
+                    冷たい肉そば<br>
+                    <span class="acc">つったい肉そば</span>
+                </h3>
+                <div class="choices">
+                    <span class="choice cold">冷</span>
+                    <span class="choice hot">温</span>
+                    <span class="choice rich">こってり</span>
+                    <span class="choice light">すっきり</span>
+                </div>
+                <p class="show-txt">
+                    山形名物の肉そば。歯ごたえのある親鳥のチャーシューを使い、かつおだしの香るスープに、鶏肉のうま味を合わせています。
+                </p>
+
+                <ul class="pts">
+                    <li class="pt">
+                        <div class="pt-num">01</div>
+                        <div class="pt-body">
+                            <h4>親鳥のチャーシュー</h4>
+                            <p>歯ごたえのある親鳥のチャーシューを使っています。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">02</div>
+                        <div class="pt-body">
+                            <h4>かつおだしと鶏のうま味</h4>
+                            <p>かつおだしの香るスープに、鶏肉のうま味を合わせた一杯です。</p>
+                        </div>
+                    </li>
+                    <li class="pt">
+                        <div class="pt-num">03</div>
+                        <div class="pt-body">
+                            <h4>好みで選べる</h4>
+                            <p>温・冷、こってり・すっきりから好みを選べると紹介されています。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <article class="wide-card">
+            <div class="wide-img">
+                <img src="img/torichuka.jpg" alt="鳥中華 - 中華麺に親鳥のうま味" loading="lazy">
+            </div>
+            <div class="wide-body">
+                <div class="num">POINT 02</div>
+                <h3>鳥中華</h3>
+                <p>肉そばと並ぶ、ざぶんの看板料理。そばではなく中華麺で、親鳥のうま味を楽しめる、山形のご当地麺です。</p>
+                <p>肉そばと同じく、温・冷から選べます。</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            肉そばも、鳥中華も、温かいか冷たいか。<br>
+            その日の気分で選べます。
+        </p>
+
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>肉そば</h3>
+                <div class="temp-row">
+                    <div class="temp-tile hot"><span class="t">温</span>温かい肉そば</div>
+                    <div class="temp-tile cold"><span class="t">冷</span>冷たい肉そば</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <h3>鳥中華</h3>
+                <div class="temp-row">
+                    <div class="temp-tile hot"><span class="t">温</span>温かい鳥中華</div>
+                    <div class="temp-tile cold"><span class="t">冷</span>冷たい鳥中華</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="taste">
+            <p>味は、こってり・すっきりから選べると紹介されています。</p>
+            <span class="choice">こってり味</span><span class="choice">すっきり味</span>
+        </div>
+
+        <p class="menu-note">
+            ※メニュー・価格は変更になる場合があります。詳しくは店舗へお問い合わせください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ ORDER（お取り寄せ） ═══ -->
+<section class="order">
+    <div class="con">
+        <div class="lab">ONLINE SHOP</div>
+        <h2 class="tit">お取り寄せ</h2>
+        <p class="sub">
+            公式サイトのオンラインショップで、<br>
+            ざぶんの味をセットでお届けします。
+        </p>
+
+        <div class="order-grid">
+            <a class="set" href="https://zabun.shop/items/65a4c41a12d039002ce89adc" target="_blank" rel="noopener noreferrer">
+                <div class="n">肉そば 4食セット</div>
+                <div class="d">肉そばを4食</div>
+                <div class="p">4,800<small>円</small></div>
+            </a>
+            <a class="set" href="https://zabun.shop/items/65a4c4e7c5bd30002ca06949" target="_blank" rel="noopener noreferrer">
+                <div class="n">鳥中華 4食セット</div>
+                <div class="d">鳥中華を4食</div>
+                <div class="p">4,800<small>円</small></div>
+            </a>
+            <a class="set" href="https://zabun.shop/items/65e02376f6398e05699adb68" target="_blank" rel="noopener noreferrer">
+                <div class="n">食べ比べ 4食セット</div>
+                <div class="d">食べ比べを楽しむ4食</div>
+                <div class="p">4,800<small>円</small></div>
+            </a>
+            <a class="set" href="https://zabun.shop/items/6506b9f76d151200388a6040" target="_blank" rel="noopener noreferrer">
+                <div class="n">選べる 3食セット</div>
+                <div class="d">お好みで選べる3食</div>
+                <div class="p">3,600<small>円</small></div>
+            </a>
+            <a class="set" href="https://zabun.shop/items/6506bb136d1512002f8a7b74" target="_blank" rel="noopener noreferrer">
+                <div class="n">選べる 6食セット</div>
+                <div class="d">お好みで選べる6食</div>
+                <div class="p">7,200<small>円</small></div>
+            </a>
+        </div>
+
+        <div class="order-btn">
+            <a href="https://zabun.shop/items" target="_blank" rel="noopener noreferrer">🛒 オンラインショップを見る</a>
+        </div>
+        <p class="order-note">
+            ※価格は公式サイトの表示に基づきます。送料・配送方法・賞味期限などの詳細は、公式サイトでご確認ください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            お昼ごはんに、おうちで、イベントに。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">☀️</span>
+                <h3>ランチに</h3>
+                <p>11:30〜15:00の昼営業。肉そば・鳥中華で、昼のひとときを。夜の部は休業中です。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🪑</span>
+                <h3>一人でも、家族でも</h3>
+                <p>カウンター、テーブル、座敷があるとの情報です。お一人でもご家族でも。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🥡</span>
+                <h3>お持ち帰り・お取り寄せ</h3>
+                <p>テイクアウト対応との情報があり、公式サイトではお取り寄せセットも販売しています。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🎪</span>
+                <h3>貸切・イベントに</h3>
+                <p>貸切営業・場所貸しは予約制との情報があります。詳しくはお問い合わせください。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            看板のある外観と、カフェスタイルの店内です。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="肉そば・鳥中華 ざぶん 外観と看板" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="カフェスタイルの店内" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市桧町。昼のみの営業で、月曜・火曜が定休日です。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">肉そば・鳥中華 ざぶん（にくそば・とりちゅうか ざぶん）</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            11:30〜15:00（夜の部は休業中）<br>
+                            <span class="inote">※ラストオーダーは14:30との情報あり。最新の営業情報は公式サイトでご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">毎週月曜日・火曜日</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">1,000円前後</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ジャンル</div>
+                        <div class="ival">肉そば、鳥中華、そば、ラーメン、和食</div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            カウンター・テーブル・座敷（との情報）<br>
+                            <span class="inote">※カフェスタイルの店内として紹介されています</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ご予約</div>
+                        <div class="ival">
+                            貸切営業・場所貸しは予約制との情報あり<br>
+                            <span class="inote">※通常営業のご予約の可否は確認できておりません</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0813<br>
+                            山形県山形市桧町3丁目9-2
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            山形市桧町<br>
+                            <span class="inote">山形道・山形北ICから車で約15分との情報あり</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">
+                            あり（6台との情報）<br>
+                            <span class="inote">※無料・店舗専用かどうかは確認できておりません</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-600-4187">023-600-4187</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival"><a href="https://zabun.shop/" target="_blank" rel="noopener noreferrer">zabun.shop</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">Instagram</div>
+                        <div class="ival"><a href="https://www.instagram.com/zabun_yamagata/" target="_blank" rel="noopener noreferrer">@zabun_yamagata</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">テイクアウト</div>
+                        <div class="ival">
+                            肉そば・鳥中華に対応との情報あり<br>
+                            <span class="inote">※注文方法・対応メニューは店舗へご確認ください</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    お支払い方法（カード・電子マネー・QRコード決済）、禁煙・喫煙、個室の有無については、確認できておりません。詳しくは店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.instagram.com/zabun_yamagata/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（@zabun_yamagata）">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市桧町3-9-2&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="肉そば・鳥中華 ざぶんの地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=山形県山形市桧町3-9-2" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">VISIT US</div>
+        <h2 class="tit">ご来店お待ちしています</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                親鳥のうま味を、冷たくも、温かくも。<br>
+                山形名物の肉そばと、鳥中華を。<br>
+                お店でも、おうちでも、お楽しみください。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-600-4187" class="btn btn-w">
+                    <span>📞 電話で問い合わせ</span>
+                    <small>023-600-4187</small>
+                </a>
+                <a href="https://zabun.shop/items" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>🛒 お取り寄せ</span>
+                    <small>公式オンラインショップ</small>
+                </a>
+                <a href="https://www.instagram.com/zabun_yamagata/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>📷 Instagram</span>
+                    <small>@zabun_yamagata</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間: 11:30〜15:00（夜の部は休業中）<br>
+                ※定休日: 毎週月曜日・火曜日<br>
+                ※駐車場あり（6台との情報）／最新の営業情報は公式サイトでご確認ください
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">肉そば・鳥中華 ざぶん</div>
+        <div class="foot-info">
+            〒990-0813 山形県山形市桧町3丁目9-2<br>
+            TEL: 023-600-4187 / <a href="https://zabun.shop/" style="color:inherit;" target="_blank" rel="noopener noreferrer">公式サイト</a><br>
+            11:30〜15:00（夜の部は休業中） / 定休日: 毎週月曜日・火曜日<br>
+            冷たい肉そば・鳥中華・お取り寄せセット
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.instagram.com/zabun_yamagata/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（@zabun_yamagata）">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 肉そば・鳥中華 ざぶん All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
