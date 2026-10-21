@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="寿司・しゃぶしゃぶ ゆず庵 山形店。しゃぶしゃぶと寿司を一緒に楽しめる食べ放題で、ご家族やご友人とのお食事を。">
+  <title>寿司・しゃぶしゃぶ ゆず庵 山形店｜しゃぶしゃぶも寿司も食べ放題</title>
+  <style>
+    :root {
+      --ink: #30271f;
+      --muted: #6c6258;
+      --red: #a72d2a;
+      --red-dark: #7f211f;
+      --cream: #fbf7f0;
+      --paper: #fffdf9;
+      --gold: #c49a53;
+      --line: #e8ded1;
+      --green: #596b4e;
+      --shadow: 0 14px 38px rgba(57, 37, 21, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height: 1.8; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .eyebrow { color: var(--red); font-size: .78rem; letter-spacing: .2em; font-weight: 800; text-transform: uppercase; }
+    .section { padding: 88px 0; }
+    .section-head { text-align: center; margin-bottom: 42px; }
+    .section-head h2 { margin: 8px 0 12px; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.4; letter-spacing: .04em; }
+    .section-head p { color: var(--muted); margin: 0 auto; max-width: 650px; }
+    .topbar { background: var(--red-dark); color: #fff; text-align: center; padding: 7px 16px; font-size: .82rem; letter-spacing: .04em; }
+    header { background: rgba(255,253,249,.96); border-bottom: 1px solid var(--line); position: relative; z-index: 2; }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-weight: 800; line-height: 1.25; font-size: 1.2rem; }
+    .brand small { display: block; color: var(--muted); font-family: sans-serif; font-size: .68rem; letter-spacing: .12em; font-weight: 500; }
+    .navlinks { display: flex; align-items: center; gap: 22px; font-size: .88rem; }
+    .navlinks a:hover { color: var(--red); }
+    .nav-cta, .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; background: var(--red); color: white; border-radius: 3px; padding: 12px 20px; font-weight: 700; transition: .2s; }
+    .nav-cta:hover, .btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .hero { position: relative; min-height: 620px; display: flex; align-items: center; color: white; background: #35271e; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(25,18,13,.83) 0%, rgba(25,18,13,.55) 48%, rgba(25,18,13,.12) 100%); z-index: 1; }
+    .hero-photo { position: absolute; inset: 0; }
+    .hero-photo img { object-position: center; }
+    .hero-content { position: relative; z-index: 1; width: min(1120px, calc(100% - 40px)); margin: auto; padding: 85px 0; }
+    .hero-kicker { color: #f1d7a6; letter-spacing: .2em; font-weight: 700; font-size: .9rem; }
+    .hero h1 { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(2.4rem, 5.8vw, 4.6rem); line-height: 1.3; letter-spacing: .04em; margin: 18px 0; max-width: 720px; }
+    .hero h1 span { color: #f2d7a2; }
+    .hero p { max-width: 560px; font-size: 1.04rem; color: rgba(255,255,255,.9); margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-outline { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.75); color: white; padding: 11px 20px; border-radius: 3px; font-weight: 700; }
+    .hero-note { margin-top: 26px; font-size: .78rem; color: rgba(255,255,255,.75); }
+    .feature-strip { background: var(--cream); border-bottom: 1px solid var(--line); }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .feature { padding: 26px 22px; text-align: center; border-right: 1px solid var(--line); }
+    .feature:last-child { border-right: 0; }
+    .feature strong { display: block; font-family: "Yu Mincho", serif; font-size: 1.15rem; }
+    .feature span { color: var(--muted); font-size: .85rem; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
+    .story-image { height: 430px; border-radius: 4px; overflow: hidden; box-shadow: var(--shadow); }
+    .story-copy h2 { font-family: "Yu Mincho", serif; font-size: clamp(1.8rem, 3.4vw, 2.7rem); line-height: 1.5; margin: 12px 0 20px; }
+    .story-copy p { color: var(--muted); }
+    .text-link { color: var(--red); font-weight: 800; display: inline-block; margin-top: 12px; border-bottom: 1px solid var(--red); }
+    .menu-section { background: var(--cream); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .menu-card { background: white; border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(57,37,21,.04); }
+    .menu-card .photo { height: 235px; overflow: hidden; }
+    .menu-card .body { padding: 22px 22px 25px; }
+    .tag { display: inline-block; color: var(--red); background: #f8e9e4; padding: 3px 9px; font-size: .72rem; font-weight: 800; letter-spacing: .06em; }
+    .menu-card h3 { font-family: "Yu Mincho", serif; font-size: 1.35rem; margin: 12px 0 8px; }
+    .menu-card p { color: var(--muted); font-size: .92rem; margin: 0; }
+    .menu-note { color: var(--muted); text-align: center; font-size: .82rem; margin: 24px auto 0; max-width: 800px; }
+    .course-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+    .course-image { height: 450px; border-radius: 4px; overflow: hidden; }
+    .course-list { border-top: 1px solid var(--line); }
+    .course-row { padding: 22px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+    .course-row h3 { margin: 0 0 5px; font-size: 1.15rem; }
+    .course-row p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .price { color: var(--red); font-weight: 800; white-space: nowrap; }
+    .family-band { background: #354232; color: white; }
+    .family-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; }
+    .family-grid h2 { font-family: "Yu Mincho", serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.5; margin: 10px 0 18px; }
+    .family-grid p { color: rgba(255,255,255,.82); }
+    .family-grid .eyebrow { color: #e9c98f; }
+    .family-photo { height: 360px; border-radius: 4px; overflow: hidden; }
+    .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .scene { background: var(--cream); padding: 23px 17px; text-align: center; border: 1px solid var(--line); }
+    .scene .symbol { font-size: 1.6rem; color: var(--red); }
+    .scene h3 { font-size: 1rem; margin: 8px 0 4px; }
+    .scene p { color: var(--muted); font-size: .82rem; margin: 0; }
+    .access { background: var(--cream); }
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+    .access-card { background: white; border: 1px solid var(--line); padding: 28px; }
+    .access-card h3 { font-family: "Yu Mincho", serif; font-size: 1.3rem; margin: 0 0 18px; }
+    .info-row { display: grid; grid-template-columns: 105px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee6dc; }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row dt { font-weight: 800; font-size: .88rem; }
+    .info-row dd { margin: 0; color: var(--muted); font-size: .92rem; }
+    .map-placeholder { min-height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #e9e5da; color: #625a4f; padding: 30px; }
+    .map-placeholder strong { font-size: 1.2rem; }
+    .map-placeholder p { font-size: .88rem; }
+    .reserve { background: var(--red); color: white; text-align: center; padding: 68px 20px; }
+    .reserve h2 { font-family: "Yu Mincho", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 10px; }
+    .reserve p { margin: 0 auto 24px; color: rgba(255,255,255,.88); }
+    .reserve .btn { background: white; color: var(--red-dark); }
+    .reserve .btn:hover { background: #f7eee5; }
+    footer { background: #241d18; color: rgba(255,255,255,.75); padding: 34px 0; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    footer strong { color: white; font-size: 1rem; }
+    .fineprint { font-size: .75rem; color: #bdb2a7; max-width: 650px; }
+    @media (max-width: 800px) {
+      .nav { padding: 14px 0; align-items: flex-start; }
+      .navlinks { gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: .78rem; }
+      .nav-cta { padding: 8px 12px; }
+      .hero { min-height: 570px; }
+      .story-grid, .course-layout, .family-grid, .access-grid { grid-template-columns: 1fr; gap: 28px; }
+      .story-image, .course-image { height: 330px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .scene-grid { grid-template-columns: 1fr 1fr; }
+      .map-placeholder { min-height: 240px; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .section { padding: 62px 0; }
+      .nav { display: block; }
+      .brand { margin-bottom: 12px; }
+      .navlinks { justify-content: flex-start; gap: 12px; }
+      .navlinks a:not(.nav-cta) { display: none; }
+      .hero-content { width: calc(100% - 32px); }
+      .hero { min-height: 560px; }
+      .hero::before { background: linear-gradient(90deg, rgba(25,18,13,.82), rgba(25,18,13,.43)); }
+      .features { grid-template-columns: 1fr; }
+      .feature { border-right: 0; border-bottom: 1px solid var(--line); padding: 17px; }
+      .feature:last-child { border-bottom: 0; }
+      .cards { grid-template-columns: 1fr; }
+      .menu-card .photo { height: 230px; }
+      .course-row { grid-template-columns: 1fr; gap: 4px; }
+      .family-photo { height: 270px; }
+      .info-row { grid-template-columns: 85px 1fr; }
+      .footer-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">しゃぶしゃぶも、お寿司も。みんなで囲む、うれしい食べ放題。</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">寿司・しゃぶしゃぶ ゆず庵 山形店<small>SUSHI & SHABU-SHABU YUZUAN</small></a>
+      <nav class="navlinks" aria-label="メインナビゲーション">
+        <a href="#feature">ゆず庵の魅力</a>
+        <a href="#menu">おいしさ</a>
+        <a href="#course">コース</a>
+        <a href="#access">店舗情報</a>
+        <a class="nav-cta" href="https://www.shabu-yuzuan.jp/shop/4150/" target="_blank" rel="noopener">公式サイト・予約 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-photo"><img src="img/yuzuan-hero.jpg" alt="しゃぶしゃぶと寿司を囲む食卓"></div>
+      <div class="hero-content">
+        <div class="hero-kicker">SUSHI × SHABU-SHABU</div>
+        <h1>好きなものを、<br><span>好きなだけ。</span></h1>
+        <p>お肉をしゃぶしゃぶ。お寿司も一緒に。<br>それぞれの「食べたい」が集まる、ゆず庵の食べ放題を山形で。</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://www.shabu-yuzuan.jp/shop/4150/" target="_blank" rel="noopener">コース・予約はこちら ↗</a>
+          <a class="btn-outline" href="#menu">ゆず庵のおいしさを見る</a>
+        </div>
+        <div class="hero-note">※コース内容・料金・営業状況は公式サイトで最新情報をご確認ください。</div>
+      </div>
+    </section>
+
+    <div class="feature-strip" id="feature">
+      <div class="wrap features">
+        <div class="feature"><strong>しゃぶしゃぶ食べ放題</strong><span>お好みのお肉と野菜をお鍋で</span></div>
+        <div class="feature"><strong>お寿司も一緒に</strong><span>鍋も寿司も楽しめる満足感</span></div>
+        <div class="feature"><strong>家族も友人も</strong><span>ランチから夕食まで幅広く</span></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap story-grid">
+        <div class="story-image"><img src="img/yuzuan-shabu.jpg" alt="出汁の香りが広がるしゃぶしゃぶ鍋"></div>
+        <div class="story-copy">
+          <div class="eyebrow">A TABLE FULL OF HAPPINESS</div>
+          <h2>鍋を囲めば、<br>会話もおいしくなる。</h2>
+          <p>ぐつぐつと煮立つお鍋に、お好みのお肉や野菜をくぐらせて。しゃぶしゃぶを味わいながら、お寿司や一品料理も楽しめるのがゆず庵の魅力です。</p>
+          <p>家族でのランチ、友人との食事、みんなが集まる週末にも。食べたいものを選ぶ楽しさと、食卓を囲むひとときをお楽しみください。</p>
+          <a class="text-link" href="#course">食べ放題コースを見る →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">YUZUAN'S DELICIOUSNESS</div>
+          <h2>お鍋も、お寿司も、楽しみ尽くそう。</h2>
+          <p>しゃぶしゃぶを中心に、お寿司や季節の料理まで。気分に合わせて選べる楽しさが広がります。</p>
+        </div>
+        <div class="cards">
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-shabu-meat.jpg" alt="しゃぶしゃぶ用のお肉と野菜"></div>
+            <div class="body"><span class="tag">MAIN</span><h3>しゃぶしゃぶ</h3><p>お肉や野菜をお好みのだしで。素材の味わいを楽しみながら、心ゆくまでお鍋を囲んで。</p></div>
+          </article>
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-sushi.jpg" alt="彩り豊かな握り寿司の盛り合わせ"></div>
+            <div class="body"><span class="tag">SUSHI</span><h3>お寿司</h3><p>お鍋の合間に味わいたいお寿司も、食べ放題の楽しみのひとつ。いろいろな味をお楽しみください。</p></div>
+          </article>
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-seasonal.jpg" alt="季節の食材を使った料理"></div>
+            <div class="body"><span class="tag">SEASONAL</span><h3>季節の料理</h3><p>季節ごとに変わるコースや限定メニューもお楽しみ。訪れるたびに新しい味との出会いがあります。</p></div>
+          </article>
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-premium-sushi.jpg" alt="少し贅沢な寿司の盛り合わせ"></div>
+            <div class="body"><span class="tag">PREMIUM</span><h3>上寿司も楽しむ</h3><p>コースによって楽しめるメニューが異なります。上寿司などの対象商品は、最新のコース内容をご確認ください。</p></div>
+          </article>
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-kushiage.jpg" alt="揚げたての串揚げ"></div>
+            <div class="body"><span class="tag">SIDE MENU</span><h3>一品料理・串揚げ</h3><p>お鍋やお寿司と組み合わせて、食卓をさらににぎやかに。対象メニューはコースにより異なります。</p></div>
+          </article>
+          <article class="menu-card">
+            <div class="photo"><img src="img/yuzuan-dessert.jpg" alt="食後に楽しむデザート"></div>
+            <div class="body"><span class="tag">DESSERT</span><h3>食後のデザート</h3><p>食事の締めくくりには甘いひと皿を。デザートの種類や注文条件は公式メニューでご確認ください。</p></div>
+          </article>
+        </div>
+        <p class="menu-note">※掲載画像はイメージです。実際の提供商品・盛り付け・食べ放題対象メニューは、時期やコースによって異なる場合があります。</p>
+      </div>
+    </section>
+
+    <section class="section" id="course">
+      <div class="wrap course-layout">
+        <div class="course-image"><img src="img/yuzuan-course-table.jpg" alt="しゃぶしゃぶと寿司が並ぶ食卓"></div>
+        <div>
+          <div class="eyebrow">ALL-YOU-CAN-EAT COURSES</div>
+          <h2 style="font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.5;margin:8px 0 12px;">今日の気分に合わせて、<br>コースを選ぶ。</h2>
+          <p style="color:var(--muted);">お手軽な食べ放題から、季節の味や上寿司を楽しむコースまで。内容を比べて、お好みのコースをお選びください。</p>
+          <div class="course-list">
+            <div class="course-row">
+              <div><h3>ランチ食べ放題</h3><p>お昼からしっかり楽しみたい日に。</p></div>
+              <div class="price">料金は公式確認</div>
+            </div>
+            <div class="course-row">
+              <div><h3>季節のゆず庵コース</h3><p>定番に季節の味わいをプラス。</p></div>
+              <div class="price">料金は公式確認</div>
+            </div>
+            <div class="course-row">
+              <div><h3>贅沢コース</h3><p>上寿司など、より充実した内容を楽しみたい方に。</p></div>
+              <div class="price">料金は公式確認</div>
+            </div>
+          </div>
+          <p class="menu-note" style="text-align:left;">※調査時点で掲載されていた価格は、改装後の改定や税込表記の確認が必要なため、ここでは固定表示していません。最新料金・制限時間・対象メニューは公式サイトをご確認ください。</p>
+          <a class="text-link" href="https://www.shabu-yuzuan.jp/shop/4150/" target="_blank" rel="noopener">最新のコース情報を公式サイトで確認 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section family-band">
+      <div class="wrap family-grid">
+        <div>
+          <div class="eyebrow">GOOD TIMES TOGETHER</div>
+          <h2>家族で、友人と、<br>みんなの「おいしい」を。</h2>
+          <p>食べたいものが違っても、同じテーブルでそれぞれの楽しみ方ができる。お子さまとのお食事や友人同士の集まりなど、幅広いシーンにぴったりです。</p>
+          <p>車でのお出かけにも便利な駐車場あり。ご来店前に営業状況やコース内容をご確認ください。</p>
+        </div>
+        <div class="family-photo"><img src="img/yuzuan-family.jpg" alt="家族でしゃぶしゃぶを囲む食事風景"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">FOR EVERY OCCASION</div>
+          <h2>こんな日に、ゆず庵へ。</h2>
+          <p>日常のランチから、みんなで集まる食事まで。</p>
+        </div>
+        <div class="scene-grid">
+          <div class="scene"><div class="symbol">⌂</div><h3>家族でランチ</h3><p>家族みんなで好きな料理を。</p></div>
+          <div class="scene"><div class="symbol">♧</div><h3>友人との食事</h3><p>お鍋とお寿司を囲んで楽しく。</p></div>
+          <div class="scene"><div class="symbol">◷</div><h3>ゆっくり夕食</h3><p>営業時間を確認して夜のお食事に。</p></div>
+          <div class="scene"><div class="symbol">◎</div><h3>グループ利用</h3><p>好みが違う仲間との集まりにも。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access" id="access">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">SHOP INFORMATION</div>
+          <h2>店舗情報・アクセス</h2>
+          <p>ご来店前に、営業状況と予約方法をご確認ください。</p>
+        </div>
+        <div class="access-grid">
+          <div class="access-card">
+            <h3>寿司・しゃぶしゃぶ ゆず庵 山形店</h3>
+            <dl>
+              <div class="info-row"><dt>住所</dt><dd>〒990-2461<br>山形県山形市南館5丁目3-47</dd></div>
+              <div class="info-row"><dt>電話番号</dt><dd><a href="tel:05031889045">050-3188-9045</a></dd></div>
+              <div class="info-row"><dt>営業時間</dt><dd>11:00～24:00（調査時点の掲載情報）<br>最終入店・ラストオーダーは公式情報をご確認ください。</dd></div>
+              <div class="info-row"><dt>定休日</dt><dd>なし（年末年始・臨時休業を除くとの情報）</dd></div>
+              <div class="info-row"><dt>駐車場</dt><dd>あり</dd></div>
+              <div class="info-row"><dt>アクセス</dt><dd>山形駅から徒歩約25分（約1.98km）との情報</dd></div>
+              <div class="info-row"><dt>予約</dt><dd>電話・公式サイトからご確認ください。</dd></div>
+            </dl>
+            <a class="btn" style="margin-top:20px;" href="https://www.shabu-yuzuan.jp/shop/4150/" target="_blank" rel="noopener">公式店舗ページへ ↗</a>
+          </div>
+          <div class="map-placeholder">
+            <strong>ゆず庵 山形店</strong>
+            <p>山形県山形市南館5丁目3-47</p>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=山形県山形市南館5丁目3-47" target="_blank" rel="noopener">Google マップでルートを確認 ↗</a>
+            <p class="fineprint">地図は外部サービスでご確認いただけます。</p>
+          </div>
+        </div>
+        <p class="menu-note">【公開前の確認事項】調査メモでは2026年9月28日～10月21日が改装休業期間とされています。営業再開日・現在の営業時間・電話番号・料金は、公開前に必ず公式店舗ページで最新情報をご確認ください。</p>
+      </div>
+    </section>
+
+    <section class="reserve">
+      <div class="eyebrow" style="color:#f2d7a2;">MAKE YOUR NEXT MEAL SPECIAL</div>
+      <h2>次のお食事は、ゆず庵で。</h2>
+      <p>最新の営業情報やコースを確認して、ご家族・ご友人とのお食事をお楽しみください。</p>
+      <a class="btn" href="https://www.shabu-yuzuan.jp/shop/4150/" target="_blank" rel="noopener">公式サイト・予約はこちら ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>寿司・しゃぶしゃぶ ゆず庵 山形店</strong><br>〒990-2461 山形県山形市南館5丁目3-47</div>
+      <div class="fineprint">本ページはLPデザイン案です。画像は差し替え用の相対パスを指定しています。掲載内容・価格・営業時間は公開前に公式情報で確認してください。<br>© YUZUAN Yamagata LP Draft</div>
+    </div>
+  </footer>
+</body>
+</html>

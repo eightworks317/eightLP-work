@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="山形市七日町の「金澤屋牛肉店」。明治26年創業の老舗精肉店が営む、山形牛・米沢牛のすき焼き・しゃぶしゃぶ・ステーキ。平日限定ランチ、コース、お弁当・お惣菜も。">
+    <meta property="og:title" content="金澤屋牛肉店 - 明治26年創業、山形牛のすき焼き・しゃぶしゃぶ">
+    <meta property="og:description" content="創業130余年の老舗精肉店が営む牛肉料理店。ランチ・コース・お弁当まで。">
+    <meta property="og:image" content="img/sukiyaki.jpg">
+    <meta property="og:type" content="website">
+    <title>金澤屋牛肉店 - 明治26年創業の山形牛すき焼き・しゃぶしゃぶ｜山形市七日町</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beef: #8a1f27;
+            --deep-beef: #5a1218;
+            --kuro: #1b1412;
+            --kin: #c9a050;
+            --light-kin: #e4c982;
+            --shiro: #fbf1e6;
+            --kinari: #f6efe2;
+            --white: #ffffff;
+            --charcoal: #2d2d2d;
+            --silver: #76767a;
+            --head-font: 'Zen Antique', 'Noto Sans JP', serif;
+            /* 霜降り（サシ）の模様 */
+            --sashi: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='240' viewBox='0 0 360 240'><g fill='none' stroke='%23fbf1e6' stroke-linecap='round' opacity='.2'><path d='M-10 40 C60 10 100 80 170 50 S290 20 370 60' stroke-width='5'/><path d='M-10 110 C50 90 120 150 190 120 S300 80 370 130' stroke-width='3'/><path d='M-10 180 C70 150 110 210 200 175 S310 150 370 195' stroke-width='6'/><path d='M40 -10 C20 60 90 90 70 150 S40 210 60 250' stroke-width='2'/><path d='M250 -10 C280 50 230 100 270 160 S300 210 280 250' stroke-width='3'/></g></svg>");
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--charcoal);
+            background: var(--kinari);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* ═══ Hero ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg { position: absolute; inset: 0; z-index: 1; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg-fallback {
+            background-image: var(--sashi), linear-gradient(135deg, var(--kuro) 0%, var(--deep-beef) 45%, var(--beef) 100%);
+            background-size: 360px 240px, cover;
+        }
+        .hero-ov { position: absolute; inset: 0; background: rgba(0,0,0,0.42); z-index: 2; }
+
+        .seal {
+            position: absolute;
+            top: 13%;
+            right: max(7%, 1.5rem);
+            z-index: 3;
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            background: var(--beef);
+            color: white;
+            border: 3px double rgba(255,255,255,.75);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--head-font);
+            font-size: 0.82rem;
+            letter-spacing: 0.15em;
+            line-height: 1.4;
+            box-shadow: 0 6px 20px rgba(0,0,0,.4);
+            transform: rotate(-6deg);
+            animation: fadeUp 1s ease-out 1s both;
+        }
+        .seal b { font-size: 1.5rem; font-weight: 400; letter-spacing: 0.02em; }
+
+        .hero-con {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.7rem 2.3rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(228,201,130,0.65);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 2.6rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform: translateY(20px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+
+        .hero-sub {
+            font-family: var(--head-font);
+            font-size: 1.3rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 0.4rem;
+            animation: fadeUp 1s ease-out 0.15s both;
+        }
+
+        .hero-tit {
+            font-family: var(--head-font);
+            font-size: 6.6rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            animation: fadeUp 1s ease-out 0.25s both;
+        }
+        .hero-tit small {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.17em;
+            letter-spacing: 0.4em;
+            margin-top: 0.8rem;
+            opacity: 0.85;
+        }
+
+        .hero-div {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--kin), transparent);
+            margin: 2.2rem auto;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            line-height: 2.5;
+            max-width: 680px;
+            margin: 0 auto 3.2rem;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease-out 0.8s both;
+        }
+        .hero-tag {
+            font-size: 0.92rem;
+            letter-spacing: 0.15em;
+            padding: 0.55rem 1.7rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(228,201,130,0.5);
+            border-radius: 50px;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            z-index: 3;
+            animation: fadeUp 1s ease-out 1s both, float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(10px); }
+        }
+        .scroll::after { content:'↓'; display:block; font-size:1.4rem; margin-top:0.4rem; }
+
+        /* ═══ Layout ═══ */
+        .con { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7.5rem 0; }
+        .hero { padding: 0; }
+
+        .lab { text-align: center; font-size: 0.78rem; letter-spacing: 0.55em; color: var(--beef); font-weight: 700; margin-bottom: 0.9rem; }
+
+        .tit {
+            font-family: var(--head-font);
+            font-size: 3.2rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: var(--kuro);
+            letter-spacing: 0.14em;
+        }
+
+        .sub { text-align: center; font-size: 1.02rem; color: var(--silver); line-height: 2.25; max-width: 700px; margin: 0 auto 4.6rem; }
+
+        /* ═══ About ═══ */
+        .about { background: white; }
+        .about-lead { max-width: 880px; margin: 0 auto 4rem; text-align: center; font-size: 1.1rem; line-height: 2.6; }
+        .hl { background: linear-gradient(transparent 66%, rgba(201,160,80,.4) 66%); font-weight: 700; padding: 0 0.3em; }
+
+        .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.3rem; }
+        .feat {
+            text-align: center;
+            padding: 2.8rem 2rem;
+            background: var(--kinari);
+            border-radius: 6px;
+            border-top: 4px solid var(--beef);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .feat:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+        .feat .fi { font-size: 2.8rem; display: block; margin-bottom: 1.2rem; }
+        .feat h3 { font-family: var(--head-font); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.8rem; color: var(--kuro); }
+        .feat p { font-size: 0.93rem; line-height: 2.05; }
+
+        /* ═══ History ═══ */
+        .history { background: var(--deep-beef); background-image: var(--sashi); color: white; }
+        .history .lab { color: var(--light-kin); }
+        .history .tit { color: white; }
+        .history .sub { color: rgba(255,255,255,.82); }
+
+        .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1000px; margin: 0 auto; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 38px; left: 12.5%; right: 12.5%;
+            height: 2px;
+            background: var(--light-kin);
+            opacity: .7;
+        }
+        .era { position: relative; text-align: center; padding: 0 1rem; }
+        .era .dot {
+            position: relative;
+            z-index: 2;
+            width: 76px; height: 76px;
+            border-radius: 50%;
+            background: var(--kuro);
+            border: 3px solid var(--light-kin);
+            color: var(--light-kin);
+            font-family: var(--head-font);
+            font-size: 1.05rem;
+            line-height: 1.3;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            margin: 0 auto 1.3rem;
+        }
+        .era .dot small { font-size: 0.62rem; letter-spacing: 0.05em; }
+        .era h3 { font-family: var(--head-font); font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .era p { font-size: 0.86rem; line-height: 1.95; color: rgba(255,255,255,.85); }
+
+        .motto { max-width: 760px; margin: 4rem auto 0; text-align: center; font-family: var(--head-font); font-size: 1.35rem; line-height: 2.2; letter-spacing: 0.08em; color: var(--light-kin); }
+
+        /* ═══ Specialty ═══ */
+        .spec { background: var(--kinari); }
+        .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; }
+        .spec-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,.1);
+            transition: transform .3s, box-shadow .3s;
+            display: flex; flex-direction: column;
+        }
+        .spec-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.16); }
+        .spec-img { aspect-ratio: 4/3; overflow: hidden; }
+        .spec-img img { width: 100%; height: 100%; object-fit: cover; }
+        .spec-body { padding: 2.1rem 1.8rem 2.3rem; flex: 1; display: flex; flex-direction: column; }
+        .spec-num { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--kin); font-weight: 700; margin-bottom: 0.6rem; }
+        .spec-body h3 { font-family: var(--head-font); font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: var(--kuro); line-height: 1.5; }
+        .spec-body p { font-size: 0.92rem; line-height: 2.05; margin-bottom: 0.9rem; }
+        .spec-chip {
+            margin-top: auto;
+            align-self: flex-start;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--kuro);
+            background: var(--light-kin);
+            padding: 0.35rem 1.1rem;
+            border-radius: 50px;
+        }
+
+        /* ═══ Menu ═══ */
+        .menu { background: white; }
+        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.4rem; max-width: 1060px; margin: 0 auto; }
+
+        .panel { background: var(--kinari); border-radius: 8px; overflow: hidden; box-shadow: 0 8px 26px rgba(0,0,0,.07); }
+        .panel-head {
+            background: var(--beef);
+            background-image: var(--sashi);
+            color: white;
+            padding: 1.2rem 1.8rem;
+            display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .panel-head h3 { font-family: var(--head-font); font-size: 1.45rem; font-weight: 400; letter-spacing: 0.1em; }
+        .panel-head span { font-size: 0.8rem; opacity: 0.9; }
+        .panel-body { padding: 1.4rem 1.8rem 1.6rem; }
+
+        .row { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.7rem 0; }
+        .row .nm { font-weight: 500; font-size: 0.97rem; }
+        .row .nm small { display: block; font-size: 0.76rem; color: var(--silver); font-weight: 400; line-height: 1.6; }
+        .row .ld { flex: 1; border-bottom: 1px dotted rgba(27,20,18,.35); transform: translateY(-4px); min-width: 0.8rem; }
+        .row .pr { font-weight: 700; color: var(--kuro); white-space: nowrap; }
+        .row .pr small { display: block; font-size: 0.72rem; font-weight: 400; color: var(--silver); text-align: right; }
+        .sub-h { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; color: var(--beef); margin: 1rem 0 0.2rem; padding-top: 0.9rem; border-top: 1px dashed rgba(27,20,18,.25); }
+        .sub-h:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+        .reco { display: inline-block; font-size: 0.68rem; font-weight: 700; color: white; background: var(--beef); padding: 0.05rem 0.6rem; border-radius: 50px; margin-left: 0.4rem; vertical-align: middle; }
+        .panel-note { font-size: 0.8rem; color: var(--silver); line-height: 1.9; margin-top: 0.8rem; }
+
+        .menu-note { max-width: 1060px; margin: 2rem auto 0; text-align: center; font-size: 0.85rem; color: var(--silver); line-height: 2; }
+
+        .kodawari { max-width: 1060px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 1.6rem; }
+        .kod { background: var(--kuro); color: white; border-radius: 8px; padding: 1.8rem 1.6rem; }
+        .kod h4 { font-family: var(--head-font); font-size: 1.1rem; font-weight: 400; color: var(--light-kin); margin-bottom: 0.6rem; letter-spacing: 0.08em; }
+        .kod p { font-size: 0.85rem; line-height: 1.95; color: rgba(255,255,255,.85); }
+
+        /* ═══ Course ═══ */
+        .course { background: var(--kinari); }
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 960px; margin: 0 auto 3rem; }
+        .tier {
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+            padding: 2.4rem 1.4rem;
+            border-top: 5px solid var(--kin);
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        }
+        .tier.top { border-top-color: var(--beef); }
+        .tier .nm { font-family: var(--head-font); font-size: 1.5rem; line-height: 1.4; color: var(--kuro); }
+        .tier .nm small { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 0.78rem; color: var(--silver); letter-spacing: 0.08em; }
+        .tier .ds { font-size: 0.88rem; margin: 0.9rem 0 1rem; color: var(--charcoal); }
+        .tier .pr { font-family: var(--head-font); font-size: 2rem; color: var(--beef); }
+        .tier .pr small { font-size: 0.5em; margin-left: 0.2em; }
+
+        .flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.8rem; max-width: 960px; margin: 0 auto 1.4rem; }
+        .flow-s { text-align: center; background: var(--kuro); color: white; border-radius: 6px; padding: 1.1rem 0.5rem; }
+        .flow-s b { display: block; font-family: var(--head-font); font-size: 0.78rem; font-weight: 400; color: var(--light-kin); letter-spacing: 0.15em; margin-bottom: 0.2rem; }
+        .flow-s span { font-size: 0.86rem; font-weight: 500; line-height: 1.5; display: block; }
+        .flow-note { max-width: 960px; margin: 0 auto; text-align: center; font-size: 0.85rem; color: var(--silver); line-height: 2; }
+
+        .steak-wrap { max-width: 760px; margin: 3.2rem auto 0; background: white; border-radius: 8px; padding: 2rem 2.2rem; box-shadow: 0 8px 26px rgba(0,0,0,.07); }
+        .steak-wrap h3 { font-family: var(--head-font); font-size: 1.35rem; font-weight: 400; text-align: center; margin-bottom: 1.2rem; color: var(--kuro); }
+        .steak-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+        .steak-table th, .steak-table td { padding: 0.7rem 0.6rem; border-bottom: 1px dotted rgba(27,20,18,.3); text-align: center; }
+        .steak-table th { font-weight: 700; color: var(--beef); }
+        .steak-table td:first-child, .steak-table th:first-child { text-align: left; }
+
+        .occasions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; }
+        .occasions span { font-size: 0.9rem; font-weight: 700; color: var(--beef); border: 2px solid var(--beef); border-radius: 50px; padding: 0.35rem 1.3rem; background: white; }
+
+        /* ═══ Scenes ═══ */
+        .scenes { background: white; }
+        .scene-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+        .scene { background: var(--kinari); border-radius: 6px; padding: 2.4rem 1.6rem; text-align: center; transition: transform .3s, box-shadow .3s; }
+        .scene:hover { transform: translateY(-6px); box-shadow: 0 16px 38px rgba(0,0,0,.1); }
+        .scene .si { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
+        .scene h3 { font-family: var(--head-font); font-size: 1.2rem; font-weight: 400; color: var(--kuro); margin-bottom: 0.7rem; }
+        .scene p { font-size: 0.88rem; line-height: 2; }
+
+        /* ═══ Gallery ═══ */
+        .gal { background: var(--kinari); }
+        .gal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; }
+        .gal-it { aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.14); transition: transform .3s; }
+        .gal-it:hover { transform: translateY(-5px); }
+        .gal-it img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══ Info ═══ */
+        .info { background: var(--kuro); color: white; }
+        .info .lab { color: var(--light-kin); }
+        .info .tit { color: white; }
+        .info .sub { color: rgba(255,255,255,.82); }
+
+        .info-wrap { background: rgba(255,255,255,.05); border: 1px solid rgba(201,160,80,.28); border-radius: 8px; padding: 3.8rem; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.8rem; margin-bottom: 2.8rem; }
+        .info-block h3 {
+            font-family: var(--head-font);
+            font-size: 1.45rem; font-weight: 400;
+            margin-bottom: 1.9rem; padding-bottom: 0.9rem;
+            border-bottom: 2px solid var(--kin);
+            color: var(--light-kin); letter-spacing: 0.1em;
+        }
+        .ir { display: grid; grid-template-columns: 118px 1fr; gap: 1.3rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,.09); }
+        .ir:last-child { border-bottom: none; }
+        .ilab { font-weight: 700; color: var(--light-kin); font-size: 0.9rem; }
+        .ival { line-height: 2; font-size: 0.94rem; }
+        .ival a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); transition: border-color .3s; }
+        .ival a:hover { border-color: var(--light-kin); }
+        .inote { font-size: 0.8rem; color: rgba(255,255,255,.62); margin-top: .3rem; display: block; }
+
+        .info-alert { background: rgba(201,160,80,.13); border-left: 4px solid var(--kin); border-radius: 6px; padding: 1.4rem 1.6rem; margin-top: 1.5rem; }
+        .info-alert-title { font-weight: 700; color: var(--light-kin); margin-bottom: 0.45rem; }
+        .info-alert-text { font-size: 0.92rem; line-height: 2; color: rgba(255,255,255,.92); }
+
+        .sns-row { display: flex; gap: 1.1rem; justify-content: center; margin-top: 2.4rem; }
+        .sns-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+        .sns-btn:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+        .sns-btn svg { width: 22px; height: 22px; fill: white; }
+        .sns-btn.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+        .map { margin-top: 2.8rem; }
+        .map-tit { font-family: var(--head-font); font-size: 1.4rem; font-weight: 400; margin-bottom: 1.3rem; color: var(--light-kin); text-align: center; }
+        .map-box { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.4); margin-bottom: 1.3rem; }
+        .map-box iframe { width: 100%; height: 440px; border: none; }
+        .map-btn { display: inline-block; padding: 1rem 2.1rem; background: var(--beef); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; letter-spacing: 0.1em; transition: all .3s; font-size: 0.93rem; }
+        .map-btn:hover { background: var(--kin); color: var(--kuro); transform: translateY(-2px); }
+
+        /* ═══ CTA ═══ */
+        .cta { background: var(--deep-beef); background-image: var(--sashi); color: white; text-align: center; }
+        .cta .lab { color: var(--light-kin); }
+        .cta .tit { color: white; }
+        .cta-wrap { max-width: 780px; margin: 0 auto; }
+        .cta-txt { font-size: 1.12rem; line-height: 2.5; margin-bottom: 3rem; }
+        .cta-btns { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 1.2rem 2.4rem; font-size: 1.04rem; font-weight: 700;
+            text-decoration: none; border-radius: 50px; transition: all .3s;
+            letter-spacing: 0.1em; min-width: 230px; line-height: 1.5;
+        }
+        .btn small { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; opacity: 0.85; }
+        .btn-w { background: white; color: var(--beef); box-shadow: 0 14px 38px rgba(0,0,0,.3); }
+        .btn-w:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+        .btn-t { background: transparent; color: white; border: 2px solid white; }
+        .btn-t:hover { background: white; color: var(--beef); }
+        .cta-note { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.3); font-size: 0.92rem; line-height: 2.2; }
+
+        /* ═══ Footer ═══ */
+        footer { background: var(--kuro); color: white; padding: 4rem 2rem 2.2rem; }
+        .foot { max-width: 1160px; margin: 0 auto; text-align: center; }
+        .foot-name { font-family: var(--head-font); font-size: 2rem; letter-spacing: 0.25em; margin-bottom: 1.8rem; }
+        .foot-info { font-size: 0.92rem; line-height: 2.4; color: rgba(255,255,255,.8); margin-bottom: 1.8rem; }
+        .foot-sns { display: flex; justify-content: center; margin-bottom: 1.8rem; }
+        .foot-hr { width: 60px; height: 1px; background: rgba(201,160,80,.55); margin: 1.9rem auto; }
+        .foot-copy { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+
+        /* ═══ Responsive ═══ */
+        @media (max-width: 1024px) {
+            .hero-tit { font-size: 4.8rem; }
+            .tit { font-size: 2.6rem; }
+            section { padding: 6rem 0; }
+            .spec-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .scene-grid { grid-template-columns: repeat(2, 1fr); }
+            .menu-grid { grid-template-columns: 1fr; max-width: 640px; }
+            .kodawari { grid-template-columns: 1fr; max-width: 640px; }
+            .flow { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-tit { font-size: 3rem; }
+            .hero-sub { font-size: 1.05rem; }
+            .seal { top: 9%; width: 78px; height: 78px; font-size: 0.62rem; }
+            .seal b { font-size: 1.1rem; }
+            .tit { font-size: 2.1rem; }
+            .hero-tags { gap: 0.8rem; }
+            .features, .info-grid, .scene-grid, .tier-grid { grid-template-columns: 1fr; }
+            .gal-grid { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: 1fr; gap: 2rem; }
+            .timeline::before { display: none; }
+            .era { display: grid; grid-template-columns: 76px 1fr; gap: 1.2rem; text-align: left; align-items: center; padding: 0; }
+            .era .dot { margin: 0; }
+            .motto { font-size: 1.1rem; }
+            .info-grid { gap: 3rem; }
+            .info-wrap { padding: 2.5rem 1.3rem; }
+            .ir { grid-template-columns: 1fr; gap: .4rem; }
+            .flow { grid-template-columns: repeat(2, 1fr); }
+            .steak-wrap { padding: 1.6rem 1rem; }
+            .panel-body { padding: 1.2rem 1.2rem 1.4rem; }
+            .cta-btns { flex-direction: column; align-items: stretch; }
+            .btn { min-width: auto; }
+            section { padding: 4.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg hero-bg-fallback">
+        <img src="img/hero.jpg" alt="金澤屋牛肉店 - すき焼きと店舗" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-ov"></div>
+    <div class="seal" aria-hidden="true">創業<b>明治26年</b></div>
+    <div class="hero-con">
+        <div class="hero-badge">山形市七日町</div>
+        <p class="hero-sub">老舗精肉店の牛肉料理</p>
+        <h1 class="hero-tit">
+            金澤屋牛肉店
+            <small>KANAZAWAYA GYUNIKUTEN</small>
+        </h1>
+        <div class="hero-div"></div>
+        <p class="hero-desc">
+            明治26年から続く、130余年の精肉店が営む牛肉料理店。<br>
+            山形牛・米沢牛のすき焼き、しゃぶしゃぶ、ステーキ。<br>
+            ランチには、平日限定の牛鍋やステーキ丼も。
+        </p>
+        <div class="hero-tags">
+            <div class="hero-tag">すき焼き</div>
+            <div class="hero-tag">しゃぶしゃぶ</div>
+            <div class="hero-tag">ステーキ</div>
+        </div>
+    </div>
+    <div class="scroll">SCROLL</div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about">
+    <div class="con">
+        <div class="lab">ABOUT</div>
+        <h2 class="tit">金澤屋とは</h2>
+        <p class="sub">
+            山形市七日町にある、創業130余年の精肉店。<br>
+            肉のプロが営む、牛肉料理店です。
+        </p>
+
+        <div class="about-lead">
+            <p>
+                肉を見極め、品質を守る。<span class="hl">老舗の精肉店だからできる牛肉料理</span>を、<br>
+                すき焼き・しゃぶしゃぶ・ステーキでお届けします。<br>
+                ご家族で、ビジネスで、<span class="hl">少し特別な日</span>にもご利用いただいています。
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feat">
+                <span class="fi">🥩</span>
+                <h3>精肉店ならではの肉</h3>
+                <p>山形牛と米沢牛。部位ごとの違いを、お好みで選べます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">🍲</span>
+                <h3>名物のすき焼き</h3>
+                <p>山形牛の骨とテールを煮出した、代々受け継ぐ割り下で仕立てます。</p>
+            </div>
+            <div class="feat">
+                <span class="fi">👶</span>
+                <h3>お子様連れも歓迎</h3>
+                <p>乳児もOK。子ども用の椅子やベビーベッドも用意しています。完全禁煙です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HISTORY ═══ -->
+<section class="history">
+    <div class="con">
+        <div class="lab">HISTORY</div>
+        <h2 class="tit">130余年の歩み</h2>
+        <p class="sub">
+            明治26年（1893年）、この地に暖簾を掲げてから、四代。
+        </p>
+
+        <div class="timeline">
+            <div class="era">
+                <div class="dot">初代<small>明治26年</small></div>
+                <div>
+                    <h3>暖簾を掲げる</h3>
+                    <p>七日町の地に、精肉店として創業しました。</p>
+                </div>
+            </div>
+            <div class="era">
+                <div class="dot">二代</div>
+                <div>
+                    <h3>卸業に力を注ぐ</h3>
+                    <p>より多くの場所へ肉を届けるため、卸業を広げました。</p>
+                </div>
+            </div>
+            <div class="era">
+                <div class="dot">三代</div>
+                <div>
+                    <h3>料理屋への道</h3>
+                    <p>料理屋として新たな道を開き、事業の幅を広げました。</p>
+                </div>
+            </div>
+            <div class="era">
+                <div class="dot">四代<small>現在</small></div>
+                <div>
+                    <h3>志を受け継ぐ</h3>
+                    <p>四代目が、その志を受け継ぎ、着実に歩んでいます。</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="motto">
+            肉を見極め、品質を守ること。<br>
+            誠実な商いを貫くこと。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ SPECIALTY ═══ -->
+<section class="spec">
+    <div class="con">
+        <div class="lab">SPECIALTY</div>
+        <h2 class="tit">金澤屋の看板</h2>
+        <p class="sub">
+            名物のすき焼き・しゃぶしゃぶ、平日限定のランチ、<br>
+            そして精肉店のお弁当とお惣菜。
+        </p>
+
+        <div class="spec-grid">
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/sukiyaki.jpg" alt="山形牛のすき焼き" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 01</div>
+                    <h3>すき焼き・しゃぶしゃぶ</h3>
+                    <p>名物のすき焼きは、山形牛の骨とテールを3日間煮出した割り下で。しゃぶしゃぶは自家製のポン酢とごまだれで味わいます。</p>
+                    <p>部位は、もも・ウデ・ロース・米沢牛から選べます（2名様から）。</p>
+                    <div class="spec-chip">150g 5,000円〜</div>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/lunch.jpg" alt="平日限定ランチの牛鍋とステーキ丼" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 02</div>
+                    <h3>平日限定ランチ</h3>
+                    <p>一人前の牛鍋と、霜降り肉をのせたステーキ丼は、どちらも限定20食。牛めし、ハンバーグ、ダブルメンチもあります。</p>
+                    <p>お肉が2倍になるメニューも選べます。</p>
+                    <div class="spec-chip">牛鍋・ステーキ丼 1,400円</div>
+                </div>
+            </article>
+
+            <article class="spec-card">
+                <div class="spec-img">
+                    <img src="img/menchi.jpg" alt="精肉店のメンチカツとお弁当" loading="lazy">
+                </div>
+                <div class="spec-body">
+                    <div class="spec-num">POINT 03</div>
+                    <h3>お弁当・お惣菜</h3>
+                    <p>上質な肉を使った、メンチカツやハンバーグなどのお惣菜。ステーキ弁当や牛めし弁当は、お集まりや会議にも好評です。</p>
+                    <p>お弁当は、前営業日の17時までにご注文ください。</p>
+                    <div class="spec-chip">メンチカツ 210円</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MENU ═══ -->
+<section class="menu">
+    <div class="con">
+        <div class="lab">MENU</div>
+        <h2 class="tit">お品書き</h2>
+        <p class="sub">
+            すき焼き、ステーキ、ランチ、お弁当・お惣菜。<br>
+            価格はすべて税込です。
+        </p>
+
+        <div class="menu-grid">
+            <div class="panel">
+                <div class="panel-head"><h3>すき焼き・しゃぶしゃぶ</h3><span>各部位150g／2名様から</span></div>
+                <div class="panel-body">
+                    <div class="row"><span class="nm">もも肉<span class="reco">すき焼きのおすすめ</span><small>赤身の旨味をしっかり。手頃な価格です</small></span><span class="ld"></span><span class="pr">5,000円</span></div>
+                    <div class="row"><span class="nm">ウデ・肩<span class="reco">しゃぶしゃぶのおすすめ</span><small>良質な赤身に、適度なサシと脂</small></span><span class="ld"></span><span class="pr">5,500円</span></div>
+                    <div class="row"><span class="nm">ロース<small>やわらかい肉質で、ほどよく脂が乗っています</small></span><span class="ld"></span><span class="pr">6,500円</span></div>
+                    <div class="row"><span class="nm">米沢牛<small>四大和牛の一つ。きめ細かなサシと、なめらかな口どけ</small></span><span class="ld"></span><span class="pr">8,000円</span></div>
+                    <div class="sub-h">すき焼きの追加</div>
+                    <div class="row"><span class="nm">野菜<small>一人前</small></span><span class="ld"></span><span class="pr">650円</span></div>
+                    <div class="row"><span class="nm">うどん<small>一皿。〆にどうぞ</small></span><span class="ld"></span><span class="pr">450円</span></div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head"><h3>ステーキ</h3><span>追加の一品にも</span></div>
+                <div class="panel-body">
+                    <div class="row"><span class="nm">ヒレ<small>150g</small></span><span class="ld"></span><span class="pr">9,000円</span></div>
+                    <div class="row"><span class="nm">ロース<small>200g</small></span><span class="ld"></span><span class="pr">9,000円</span></div>
+                    <div class="row"><span class="nm">ヒレ（最上部位）<small>150g</small></span><span class="ld"></span><span class="pr">10,500円</span></div>
+                    <div class="row"><span class="nm">ヒレ<small>200g</small></span><span class="ld"></span><span class="pr">12,000円</span></div>
+                    <div class="row"><span class="nm">ロース<small>300g</small></span><span class="ld"></span><span class="pr">12,000円</span></div>
+                    <div class="row"><span class="nm">ヒレ（最上部位）<small>200g</small></span><span class="ld"></span><span class="pr">14,000円</span></div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head"><h3>お昼のお品書き</h3><span>平日限定メニューあり</span></div>
+                <div class="panel-body">
+                    <div class="sub-h">平日限定ランチ</div>
+                    <div class="row"><span class="nm">牛鍋<small>限定20食／お肉2倍 2,150円</small></span><span class="ld"></span><span class="pr">1,400円</span></div>
+                    <div class="row"><span class="nm">ステーキ丼<small>限定20食／お肉2倍 2,250円</small></span><span class="ld"></span><span class="pr">1,400円</span></div>
+                    <div class="row"><span class="nm">牛めし<small>サラダ付き</small></span><span class="ld"></span><span class="pr">1,300円</span></div>
+                    <div class="row"><span class="nm">ハンバーグ</span><span class="ld"></span><span class="pr">1,300円</span></div>
+                    <div class="row"><span class="nm">ダブルメンチ</span><span class="ld"></span><span class="pr">1,040円</span></div>
+                    <div class="sub-h">少し贅沢なランチ</div>
+                    <div class="row"><span class="nm">すき焼き<small>山形牛モモ100g・野菜・ごはん・卵／2人前から</small></span><span class="ld"></span><span class="pr">3,400円</span></div>
+                    <div class="row"><span class="nm">カットステーキ<small>山形牛ランプ100g・サラダ・ごはん・味噌汁・漬物／お肉2倍 5,000円</small></span><span class="ld"></span><span class="pr">2,900円</span></div>
+                    <p class="panel-note">※すき焼き・カットステーキは提供に時間がかかる場合があるため、事前のご予約がおすすめです。</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head"><h3>お弁当・お惣菜</h3><span>お持ち帰り</span></div>
+                <div class="panel-body">
+                    <div class="sub-h">お弁当</div>
+                    <div class="row"><span class="nm">牛めし弁当</span><span class="ld"></span><span class="pr">1,500円</span></div>
+                    <div class="row"><span class="nm">特上牛めし弁当</span><span class="ld"></span><span class="pr">2,100円</span></div>
+                    <div class="row"><span class="nm">ハンバーグ弁当</span><span class="ld"></span><span class="pr">1,500円</span></div>
+                    <div class="row"><span class="nm">霜降り漬け弁当</span><span class="ld"></span><span class="pr">2,100円</span></div>
+                    <div class="row"><span class="nm">ステーキ弁当</span><span class="ld"></span><span class="pr">2,100円</span></div>
+                    <div class="row"><span class="nm">特上ステーキ弁当</span><span class="ld"></span><span class="pr">3,600円</span></div>
+                    <div class="sub-h">お惣菜</div>
+                    <div class="row"><span class="nm">メンチカツ</span><span class="ld"></span><span class="pr">210円</span></div>
+                    <div class="row"><span class="nm">コロッケ</span><span class="ld"></span><span class="pr">190円</span></div>
+                    <div class="row"><span class="nm">豚カツ</span><span class="ld"></span><span class="pr">450円</span></div>
+                    <div class="row"><span class="nm">ハンバーグ</span><span class="ld"></span><span class="pr">480円</span></div>
+                    <p class="panel-note">※お弁当は前営業日の17時までにご注文ください。5,000円以上のご注文で、山形市内（蔵王温泉地区を除く）へ配達も承ります。揚げ物は調理に30分ほどかかる場合があります。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="kodawari">
+            <div class="kod">
+                <h4>割り下</h4>
+                <p>山形牛の骨とテールを3日間かけて煮出し、山形産の醤油と砂糖を加えて一晩寝かせます。代々受け継がれてきた味です。</p>
+            </div>
+            <div class="kod">
+                <h4>具材と〆のうどん</h4>
+                <p>地元産の野菜を中心に、しらたきやお麩を含め、約10種類を盛り付けます。〆は、太くコシの強い生麺のうどんです。</p>
+            </div>
+            <div class="kod">
+                <h4>自家製のタレ</h4>
+                <p>ポン酢は、地元の醤油に国産の削り節と昆布を1週間漬け込みます。ごまだれは、ラー油を隠し味にした濃厚な味わいです。</p>
+            </div>
+        </div>
+
+        <p class="menu-note">
+            ※メニュー・価格は変更になる場合があります。精肉の販売メニューは、店舗へお問い合わせください。
+        </p>
+    </div>
+</section>
+
+<!-- ═══ COURSE ═══ -->
+<section class="course">
+    <div class="con">
+        <div class="lab">COURSE</div>
+        <h2 class="tit">コース</h2>
+        <p class="sub">
+            すき焼き・しゃぶしゃぶ・ステーキに、一品料理を組み合わせて。<br>
+            お集まりや慶事、法事にも。2名様からお受けします。
+        </p>
+
+        <div class="tier-grid">
+            <div class="tier">
+                <div class="nm">蔵王<small>ざおう</small></div>
+                <div class="ds">山形牛使用</div>
+                <div class="pr">7,500<small>円</small></div>
+            </div>
+            <div class="tier">
+                <div class="nm">月山<small>がっさん</small></div>
+                <div class="ds">山形牛ロース肉使用</div>
+                <div class="pr">9,000<small>円</small></div>
+            </div>
+            <div class="tier top">
+                <div class="nm">置賜<small>おきたま</small></div>
+                <div class="ds">米沢牛使用</div>
+                <div class="pr">11,500<small>円</small></div>
+            </div>
+        </div>
+
+        <div class="flow" role="list" aria-label="コースの流れ">
+            <div class="flow-s" role="listitem"><b>1</b><span>突出し<br>前菜盛り合わせ</span></div>
+            <div class="flow-s" role="listitem"><b>2</b><span>小鉢<br>旬野菜のお浸し等</span></div>
+            <div class="flow-s" role="listitem"><b>3</b><span>煮物<br>芋煮等</span></div>
+            <div class="flow-s" role="listitem"><b>4</b><span>揚げ物<br>季節により変わります</span></div>
+            <div class="flow-s" role="listitem"><b>5</b><span>メイン<br>すき焼き or しゃぶしゃぶ</span></div>
+            <div class="flow-s" role="listitem"><b>6</b><span>お食事<br>肉巻きおにぎり・お漬物</span></div>
+        </div>
+        <p class="flow-note">
+            ※上記はすき焼き・しゃぶしゃぶのコースです。メイン以外の内容は共通で、内容・食材は季節により変わります。
+        </p>
+
+        <div class="steak-wrap">
+            <h3>ステーキのコース</h3>
+            <table class="steak-table">
+                <thead>
+                    <tr><th scope="col">部位</th><th scope="col">山形牛</th><th scope="col">米沢牛</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>吾妻（あずま） ヒレ150g</td><td>11,500円</td><td>13,500円</td></tr>
+                    <tr><td>鳥海（ちょうかい） ヒレ200g</td><td>14,500円</td><td>16,500円</td></tr>
+                    <tr><td>朝日（あさひ） ロース200g</td><td>11,500円</td><td>13,500円</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="occasions">
+            <span>忘年会・新年会</span>
+            <span>慶事・法事</span>
+            <span>接待・ご会食</span>
+            <span>記念日</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SCENES ═══ -->
+<section class="scenes">
+    <div class="con">
+        <div class="lab">SCENE</div>
+        <h2 class="tit">ご利用シーン</h2>
+        <p class="sub">
+            ご家族の食事から、お仕事のランチ、お集まりまで。<br>
+            こんな時にご利用ください。
+        </p>
+
+        <div class="scene-grid">
+            <div class="scene">
+                <span class="si">👨‍👩‍👧</span>
+                <h3>ご家族で</h3>
+                <p>お子様連れ歓迎（乳児も可）。子ども用の椅子とベビーベッド（1台）があります。</p>
+            </div>
+            <div class="scene">
+                <span class="si">💼</span>
+                <h3>ランチ・観光に</h3>
+                <p>ビジネスランチにも、観光の途中にも。地元の方の少し贅沢な昼にも選ばれています。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🥂</span>
+                <h3>お集まり・慶事に</h3>
+                <p>忘新年会、法事、接待に。着席で最大28名まで。10名様以上のご予約は電話で承ります。</p>
+            </div>
+            <div class="scene">
+                <span class="si">🥡</span>
+                <h3>お持ち帰りに</h3>
+                <p>お弁当やお惣菜、精肉の販売があります。ご家庭用にも、贈り物にも。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gal">
+    <div class="con">
+        <div class="lab">GALLERY</div>
+        <h2 class="tit">お店の様子</h2>
+        <p class="sub">
+            2階建ての店内は、全席椅子・テーブル席。<br>
+            精肉店のショーケースも、ぜひご覧ください。
+        </p>
+
+        <div class="gal-grid">
+            <div class="gal-it">
+                <img src="img/exterior.jpg" alt="金澤屋牛肉店 外観" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/interior.jpg" alt="店内の様子 - テーブル席" loading="lazy">
+            </div>
+            <div class="gal-it">
+                <img src="img/showcase.jpg" alt="精肉店のショーケース" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info">
+    <div class="con">
+        <div class="lab">INFORMATION</div>
+        <h2 class="tit">店舗情報</h2>
+        <p class="sub">
+            山形市七日町。JR山形駅から車で10分、徒歩25分。<br>
+            ご予約は電話・WEBで承ります。
+        </p>
+
+        <div class="info-wrap">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3>営業案内</h3>
+                    <div class="ir">
+                        <div class="ilab">店名</div>
+                        <div class="ival">金澤屋牛肉店（かなざわやぎゅうにくてん）<span class="inote">明治26年（1893年）創業の精肉店</span></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">営業時間</div>
+                        <div class="ival">
+                            ランチ 平日 11:30〜13:30（L.O.13:00）<br>
+                            　　　 土日祝 11:30〜14:00（L.O.13:30）<br>
+                            ディナー 平日・土 17:00〜21:00（L.O.20:30）<br>
+                            　　　　 日祝 17:00〜20:30（L.O.20:00）<br>
+                            <span class="inote">※公式サイトの別ページには、ランチ11:30〜14:00、ディナー17:00〜21:30の表記もあります。ご来店前にご確認ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">定休日</div>
+                        <div class="ival">
+                            火曜日<br>
+                            <span class="inote">※臨時休業あり。Instagramで随時お知らせしています</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">予算目安</div>
+                        <div class="ival">
+                            昼 1,040〜3,400円（メニューにより）<br>
+                            夜 すき焼き・しゃぶしゃぶ150g 5,000円〜、コース7,500円〜
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">席</div>
+                        <div class="ival">
+                            総席数42席（1階14名・2階28名）<br>
+                            全席椅子・テーブル席<br>
+                            <span class="inote">※最大予約人数は着席28名。個室はありません</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">貸切</div>
+                        <div class="ival">
+                            可（要相談）<br>
+                            <span class="inote">※フロア貸切：昼33,000円／夜55,000円（税込）</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">その他</div>
+                        <div class="ival">
+                            完全禁煙<br>
+                            お子様連れ歓迎（乳児も可）
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>アクセス・ご予約</h3>
+                    <div class="ir">
+                        <div class="ilab">住所</div>
+                        <div class="ival">
+                            〒990-0042<br>
+                            山形県山形市七日町3-4-16
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">アクセス</div>
+                        <div class="ival">
+                            JR山形駅から車で10分<br>
+                            JR山形駅から徒歩25分
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">駐車場</div>
+                        <div class="ival">
+                            なし<br>
+                            <span class="inote">近隣の駐車場をご利用ください</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">電話番号</div>
+                        <div class="ival"><a href="tel:023-631-2106">023-631-2106</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">ご予約</div>
+                        <div class="ival">
+                            電話・WEB予約<br>
+                            <span class="inote">※10名様以上は電話で承ります。キャンセルは前日までにお願いします（当日は料金の100％をいただく場合があります）</span>
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">お支払い</div>
+                        <div class="ival">
+                            クレジットカード（VISA、Master、AMEX、JCB、Diners）<br>
+                            電子マネー（PayPay、QUICPay、iD、Alipay、d払い、au PAY、交通系ICカード）
+                        </div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">公式サイト</div>
+                        <div class="ival"><a href="https://www.kanazawaya-gyunikuten.com/" target="_blank" rel="noopener noreferrer">kanazawaya-gyunikuten.com</a></div>
+                    </div>
+                    <div class="ir">
+                        <div class="ilab">Instagram</div>
+                        <div class="ival"><a href="https://www.instagram.com/kanazawaya_yamagata/" target="_blank" rel="noopener noreferrer">@kanazawaya_yamagata</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-alert">
+                <div class="info-alert-title">ℹ️ ご来店前にご確認ください</div>
+                <p class="info-alert-text">
+                    営業時間は、公式サイトのページによって表記が異なります。最新の情報は、公式サイトまたはお電話でご確認ください。精肉店の販売時間は、店舗へお問い合わせください。
+                </p>
+            </div>
+
+            <div class="sns-row">
+                <a href="https://www.instagram.com/kanazawaya_yamagata/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（@kanazawaya_yamagata）">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="map">
+                <h3 class="map-tit">📍 アクセスマップ</h3>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps?q=山形県山形市七日町3-4-16&hl=ja&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="金澤屋牛肉店の地図"></iframe>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://maps.app.goo.gl/MH43fwwoxNXDnKqb8" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        🗺️ Google Mapで開く
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+    <div class="con">
+        <div class="lab">RESERVATION</div>
+        <h2 class="tit">ご予約・お問い合わせ</h2>
+
+        <div class="cta-wrap">
+            <p class="cta-txt">
+                明治26年から続く、老舗精肉店の牛肉料理。<br>
+                すき焼き、しゃぶしゃぶ、ステーキ、そして平日のランチも。<br>
+                ご来店を、心よりお待ちしております。
+            </p>
+
+            <div class="cta-btns">
+                <a href="tel:023-631-2106" class="btn btn-w">
+                    <span>📞 電話で予約</span>
+                    <small>023-631-2106</small>
+                </a>
+                <a href="https://www.tablecheck.com/kanazawaya-gyunikuten/reserve/message?utm_source=homepage" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>💻 WEB予約</span>
+                    <small>TableCheck</small>
+                </a>
+                <a href="https://www.instagram.com/kanazawaya_yamagata/" target="_blank" rel="noopener noreferrer" class="btn btn-t">
+                    <span>📷 Instagram</span>
+                    <small>@kanazawaya_yamagata</small>
+                </a>
+            </div>
+
+            <p class="cta-note">
+                ※営業時間はページにより表記が異なります。ご来店前に公式サイトまたはお電話でご確認ください<br>
+                ※定休日: 火曜日（臨時休業あり）／10名様以上のご予約は電話で承ります<br>
+                ※駐車場なし（近隣の駐車場をご利用ください）／完全禁煙
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot">
+        <div class="foot-name">金澤屋牛肉店</div>
+        <div class="foot-info">
+            〒990-0042 山形県山形市七日町3-4-16<br>
+            JR山形駅から車で10分・徒歩25分 / 駐車場なし<br>
+            TEL: 023-631-2106 / <a href="https://www.kanazawaya-gyunikuten.com/" style="color:inherit;" target="_blank" rel="noopener noreferrer">公式サイト</a><br>
+            定休日: 火曜日（臨時休業あり）<br>
+            明治26年創業の精肉店／山形牛・米沢牛のすき焼き・しゃぶしゃぶ・ステーキ
+        </div>
+        <div class="foot-sns">
+            <a href="https://www.instagram.com/kanazawaya_yamagata/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" aria-label="Instagram（@kanazawaya_yamagata）">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.42-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="foot-hr"></div>
+        <div class="foot-copy">© 金澤屋牛肉店 All Rights Reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
