@@ -1,0 +1,13 @@
+Built-in ImageGen, 2026-10-22. No reference photographs supplied. Original concept images; not actual restaurant photography.
+
+HERO
+Use case: ads-marketing. Asset type: wide website hero for a Japanese sushi restaurant design concept. Create an original editorial food photograph of three exquisite nigiri (tuna, silver-skinned fish, translucent white fish) on a matte black irregular ceramic plate, on textured dark charcoal washi surface, subtle soft warm side lighting, refined Japanese minimalism, deep ink blue shadows, natural restrained food colors, rich but believable textures. Horizontal wide composition, plate sits in right two thirds, generous dark negative space at left for text, elegant premium restaurant art direction. Generic illustrative food only, no specific restaurant, no replica of any existing photography. No writing, no logos, no watermark, no people. This will be labeled an AI generated concept image.
+
+COURSE
+Use case: ads-marketing. Asset type: restaurant website food illustration photograph. Original editorial still life of a small Japanese seasonal appetizer in a pale ceramic bowl beside a second small dish and chopsticks on warm ivory linen. Muted natural green, amber, white, soft side daylight, exquisite contemporary Japanese magazine photography, close 3/4 viewpoint, asymmetrical airy composition. Landscape. Generic concept, not an actual restaurant menu or restaurant interior. No sushi plate, no logos, no words, no watermark, no people.
+
+SAKE
+Use case: ads-marketing. Asset type: restaurant website gallery image. Original photographic still life: one handmade ceramic sake flask and two tiny ceramic sake cups on a dark wooden table, a soft shadow of maple branch, soft autumn evening side lighting, deep charcoal blue, sand and warm off-white palette, sophisticated Japanese editorial magazine aesthetic, precise believable pottery texture. Landscape. Generic nonbranded objects, not a real restaurant setting. No bottle labels, no logos, no writing, no watermark, no people.
+
+CRAFT
+Use case: ads-marketing. Asset type: restaurant website gallery photograph. Create an original quiet Japanese culinary still life, clean folded ivory linen cloth, a pair of unbranded wooden chopsticks on a small ceramic chopstick rest, a gently curved empty celadon plate, dark textured washi and linen surface, intimate warm natural sidelight, generous negative space, sophisticated minimal editorial photograph. Landscape, premium subtle colors, sand and charcoal. Not any restaurant's actual tableware. No hands, no knives, no fish, no food, no writing, no logos, no watermark.
