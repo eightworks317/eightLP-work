@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "hero": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-59210c7e-3a9b-432c-a8c5-cfaa65f9a9ee.png",
+    "liver": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-1a8c4fef-ac54-41a1-98fe-a9e6267108e3.png",
+    "sagari": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-f0c785bd-8f70-48a2-9d4d-f90801faa059.png",
+    "heart": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-21346f6e-64f6-4ad9-a822-ac92193ca65f.png",
+    "kobukuro": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-96ac8228-a5c6-4681-87ad-9926bd5e5e36.png",
+    "sake": "C:\\Users\\user\\.codex\\generated_images\\01a16691-1f47-77c1-976d-182844a31fff\\exec-ad9503fe-d242-4d93-a423-aedc50e20ff9.png"
+  },
+  "briefs": [
+    [
+      "hero",
+      "Landscape 3:2 hero photograph. Tight low angle view of several bamboo skewers of pork offal, liver and pork diaphragm cooking above glowing binchotan charcoal on a narrow black rectangular grill. Some skewers alternate pale leek with irregular folded pork offal, some consist of brown liver chunks. Beautiful crisp char and modest sheen, thin natural smoke, dark soft background, no hands, no room visible. Food fills right two thirds, upper left dark negative space."
+    ],
+    [
+      "liver",
+      "Landscape 4:3 close up of two bamboo skewers of fully cooked pork liver, brown angular substantial pieces with delicate charred edges and subtle glaze, lying on a small plain ivory oval porcelain plate. No greens or garnish. Modest worn brown wooden table, camera at 40 degrees, shallow depth of field. Clearly liver, not chicken."
+    ],
+    [
+      "sagari",
+      "Landscape 4:3 close up of two bamboo skewers of grilled pork diaphragm meat (sagari), irregular lean meat pieces, browned crust, light salt, on a small ivory rectangular ceramic plate. No scallions, no garnish, low three quarter angle, simple tavern tabletop."
+    ],
+    [
+      "heart",
+      "Landscape 4:3 close up of two bamboo skewers of fully cooked pork heart, dense small burgundy-brown angular pieces grilled with light salt, thin charred edges, on a small plain white oval porcelain plate. No vegetables, no garnish. Eye level food photography, brown wooden table."
+    ],
+    [
+      "kobukuro",
+      "Landscape 4:3 macro food photograph of two skewers of fully cooked pork kobukuro offal, small irregular folded tubular off-white beige pieces with brown seared marks, with one short pale leek segment, on a small plain ivory plate. No raw food, no garnish. Warm amber light, old wood table."
+    ],
+    [
+      "sake",
+      "Landscape 3:2 still life closeup: a simple small white ceramic sake flask and matching white cup with clear sake on a modest brown wooden tabletop, blurred warm dark background, one pair of wooden chopsticks resting horizontally, no food, no people, no interior, no written characters. Warm inviting unpretentious Japanese tavern mood."
+    ]
+  ]
+}
