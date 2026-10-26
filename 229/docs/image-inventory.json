@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero-aimori.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 225754
+  },
+  {
+    "file": "assets/images/sarashina.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 120896
+  },
+  {
+    "file": "assets/images/inaka.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 159556
+  },
+  {
+    "file": "assets/images/tenzaru.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 157464
+  },
+  {
+    "file": "assets/images/hot-tempura.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 144242
+  },
+  {
+    "file": "assets/images/kamo.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 153066
+  },
+  {
+    "file": "assets/images/kaimochi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 185940
+  },
+  {
+    "file": "assets/images/niku-chuka.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 168940
+  }
+]
