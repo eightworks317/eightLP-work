@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero-kaiseki.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 229520
+  },
+  {
+    "file": "assets/images/sashimi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 97274
+  },
+  {
+    "file": "assets/images/grilled-fish.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 113160
+  },
+  {
+    "file": "assets/images/simmered.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 110336
+  },
+  {
+    "file": "assets/images/shokado.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 132964
+  },
+  {
+    "file": "assets/images/hamo-sushi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 100222
+  },
+  {
+    "file": "assets/images/sujiko.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 121476
+  },
+  {
+    "file": "assets/images/beef-koji.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 129838
+  }
+]

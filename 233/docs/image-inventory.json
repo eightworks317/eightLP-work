@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero-omelette.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 226830
+  },
+  {
+    "file": "assets/images/hamburg.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 115102
+  },
+  {
+    "file": "assets/images/salad.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 128476
+  },
+  {
+    "file": "assets/images/chicken.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 126730
+  },
+  {
+    "file": "assets/images/pasta.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 135540
+  },
+  {
+    "file": "assets/images/cheesecake.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 81720
+  },
+  {
+    "file": "assets/images/apple-tart.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 96710
+  },
+  {
+    "file": "assets/images/coffee.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 70602
+  }
+]

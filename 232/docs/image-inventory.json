@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero-kobachi.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 302132
+  },
+  {
+    "file": "assets/images/sashimi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 136668
+  },
+  {
+    "file": "assets/images/grilled-fish.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 162442
+  },
+  {
+    "file": "assets/images/nishime.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 171408
+  },
+  {
+    "file": "assets/images/tonjiru.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 145832
+  },
+  {
+    "file": "assets/images/yamagata-dashi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 115486
+  },
+  {
+    "file": "assets/images/bean-kobachi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 150762
+  },
+  {
+    "file": "assets/images/sake-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 132018
+  }
+]

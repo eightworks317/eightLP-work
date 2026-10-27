@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero-flour.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 268798
+  },
+  {
+    "file": "assets/images/buckwheat-grain.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 139126
+  },
+  {
+    "file": "assets/images/flour-textures.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 137818
+  },
+  {
+    "file": "assets/images/dewa-flour.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 113408
+  },
+  {
+    "file": "assets/images/mashu-flour.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 150442
+  },
+  {
+    "file": "assets/images/soba-use.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 113596
+  },
+  {
+    "file": "assets/images/sobagaki-use.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 110858
+  },
+  {
+    "file": "assets/images/galette-use.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 169212
+  }
+]
