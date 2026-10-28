@@ -1,0 +1,44 @@
+[
+  {
+    "file": "assets/images/hero-v2.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 236584
+  },
+  {
+    "file": "assets/images/mori-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 131984
+  },
+  {
+    "file": "assets/images/geso-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 140946
+  },
+  {
+    "file": "assets/images/cold-torisoba.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 122488
+  },
+  {
+    "file": "assets/images/cold-chuka.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 134264
+  },
+  {
+    "file": "assets/images/tanuki.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 126978
+  },
+  {
+    "file": "assets/images/warm-torisoba.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 126262
+  }
+]

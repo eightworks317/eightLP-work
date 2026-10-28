@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 255802
+  },
+  {
+    "file": "assets/images/sashimi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 159970
+  },
+  {
+    "file": "assets/images/yakizakana.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 193530
+  },
+  {
+    "file": "assets/images/kobachi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 167926
+  },
+  {
+    "file": "assets/images/gyunabe.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 178082
+  },
+  {
+    "file": "assets/images/imoni.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 182870
+  },
+  {
+    "file": "assets/images/sake-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 144316
+  },
+  {
+    "file": "assets/images/wine-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 150236
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "file": "assets/images/hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 104498
+  },
+  {
+    "file": "assets/images/starter-v2.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 74610
+  },
+  {
+    "file": "assets/images/soup.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 71638
+  },
+  {
+    "file": "assets/images/fish.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 66720
+  },
+  {
+    "file": "assets/images/meat.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 91804
+  },
+  {
+    "file": "assets/images/sushi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 67346
+  },
+  {
+    "file": "assets/images/dessert.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 48348
+  }
+]
