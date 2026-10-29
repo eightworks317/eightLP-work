@@ -1,0 +1,50 @@
+[
+  {
+    "file": "assets/images/hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 239720
+  },
+  {
+    "file": "assets/images/basket.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 176758
+  },
+  {
+    "file": "assets/images/sukiyaki.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 182832
+  },
+  {
+    "file": "assets/images/seafood.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 142130
+  },
+  {
+    "file": "assets/images/imoni.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 110974
+  },
+  {
+    "file": "assets/images/soba.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 154292
+  },
+  {
+    "file": "assets/images/sashimi.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 130304
+  },
+  {
+    "file": "assets/images/steak.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 189188
+  }
+]

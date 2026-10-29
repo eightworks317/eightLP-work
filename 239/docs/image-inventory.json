@@ -1,0 +1,38 @@
+[
+  {
+    "file": "assets/images/hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 247478
+  },
+  {
+    "file": "assets/images/noodles.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 141678
+  },
+  {
+    "file": "assets/images/abura.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 118188
+  },
+  {
+    "file": "assets/images/mazesoba.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 140686
+  },
+  {
+    "file": "assets/images/broth.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 98088
+  },
+  {
+    "file": "assets/images/plain.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 165464
+  }
+]

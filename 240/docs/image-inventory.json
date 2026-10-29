@@ -1,0 +1,38 @@
+[
+  {
+    "file": "assets/images/hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 240238
+  },
+  {
+    "file": "assets/images/tori.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 162494
+  },
+  {
+    "file": "assets/images/ita.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 180374
+  },
+  {
+    "file": "assets/images/torisoba.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 159364
+  },
+  {
+    "file": "assets/images/chuka.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 171646
+  },
+  {
+    "file": "assets/images/broth.webp",
+    "width": 1100,
+    "height": 733,
+    "bytes": 149694
+  }
+]

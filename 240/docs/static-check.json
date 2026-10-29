@@ -1,0 +1,15 @@
+{
+  "errors": [],
+  "h1": 1,
+  "images": 6,
+  "unique_images": 6,
+  "local_references": 9,
+  "links": 20,
+  "ids": 8,
+  "contrast_ratios": {
+    "#263331 on #f2f3ea": 11.74,
+    "#58645f on #e1e8dd": 4.93,
+    "#fffdf7 on #30584e": 7.85
+  },
+  "scope": "static only; not browser rendering or interaction"
+}
