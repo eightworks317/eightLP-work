@@ -1,0 +1,65 @@
+:root { color-scheme: light; --ink:#152d29; --soft:#42615a; --green:#155747; --milk:#f1f6f2; --line:#c0d3ca; --dark:#0d3530; font-family:"Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; color:var(--ink); background:var(--milk); line-height:1.75; }
+* { box-sizing:border-box; }
+body, h1, h2, h3, p, figure, dl, dd { margin:0; }
+a { color:inherit; text-underline-offset:.25em; }
+a:focus-visible { outline:3px solid #b47909; outline-offset:4px; }
+img { display:block; width:100%; height:auto; }
+.wrap { width:min(1200px,calc(100% - 88px)); margin-inline:auto; }
+.bar { display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:70px; }
+.header { border-bottom:1px solid var(--line); }
+.brand, nav a { font-weight:800; text-decoration:none; }
+nav { display:flex; gap:24px; font-size:.875rem; white-space:nowrap; }
+nav a:hover { text-decoration:underline; }
+.hero { padding-block:45px 0; }
+.hero-intro { display:grid; grid-template-columns:1.1fr .9fr; gap:28px 52px; align-items:end; margin-bottom:28px; }
+.hero-intro > div:last-child { max-width:29rem; justify-self:end; padding-bottom:7px; }
+.kicker { font-weight:800; color:var(--green); margin-bottom:10px; font-size:.9375rem; }
+h1 { font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.17; letter-spacing:-.055em; overflow-wrap:anywhere; }
+h2 { font-size:clamp(1.8rem,3.9vw,3rem); letter-spacing:-.05em; line-height:1.24; }
+.button { display:inline-flex; min-height:52px; align-items:center; justify-content:center; color:#fff; background:var(--green); font-weight:800; text-decoration:none; padding:8px 21px; border-radius:4px; }
+.button:hover { background:#0b4134; }
+.hero .button { margin-top:17px; }
+figure img { aspect-ratio:2.72; object-fit:cover; object-position:center 59%; border-radius:5px; }
+figcaption { color:var(--soft); font-size:.875rem; margin-top:6px; }
+.section { padding-block:66px; scroll-margin-top:10px; }
+.section-heading { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:baseline; gap:10px 32px; margin-bottom:23px; }
+.section-heading p, .services p, .contact p, address { color:var(--soft); }
+.services { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-block:1px solid var(--line); }
+.services article { padding:22px 24px; }
+.services article:first-child { padding-left:0; }
+.services article + article { border-left:1px solid var(--line); }
+h3 { font-size:1.25rem; line-height:1.4; margin-bottom:8px; }
+.services a { display:block; width:fit-content; color:var(--green); font-weight:800; margin-top:10px; }
+.use-cases { background:var(--dark); color:#fff; }
+.case-grid { display:grid; grid-template-columns:.48fr 1fr; gap:22px 60px; }
+.more { display:inline-block; margin-top:12px; }
+.case-grid dl { border-top:1px solid #779e94; }
+.case-grid dl div { padding-block:14px; border-bottom:1px solid #779e94; }
+.case-grid dt { font-size:1.125rem; font-weight:800; }
+.case-grid dd { color:#d7e7e0; }
+.contact { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:23px; }
+.contact p { margin-top:12px; font-weight:800; }
+address { font-style:normal; }
+.contact-links { display:grid; justify-items:start; gap:9px; }
+.phone { color:var(--green); font-weight:800; }
+footer { background:#e1ece6; color:#34534c; font-size:.875rem; padding-block:9px; }
+@media (max-width:850px) {
+  .wrap { width:calc(100% - 44px); }
+  .hero-intro, .case-grid { grid-template-columns:1fr; }
+  .hero-intro > div:last-child { justify-self:start; padding-bottom:0; }
+  figure img { aspect-ratio:1.75; object-position:center 55%; }
+  .section { padding-block:43px; }
+  .services { grid-template-columns:1fr; }
+  .services article { padding-inline:0; }
+  .services article + article { border-left:0; border-top:1px solid var(--line); }
+}
+@media (max-width:590px) {
+  .wrap { width:calc(100% - 32px); }
+  .brand { font-size:.875rem; }
+  nav { gap:12px; }
+  nav a:first-child { display:none; }
+  .hero { padding-top:30px; }
+  .hero-intro { gap:15px; }
+  .contact { grid-template-columns:1fr; }
+  footer .bar { flex-direction:column; align-items:flex-start; justify-content:center; gap:3px; }
+}

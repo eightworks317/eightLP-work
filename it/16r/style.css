@@ -1,0 +1,65 @@
+:root { color-scheme:light; --ink:#28213f; --muted:#564c69; --accent:#542f86; --hover:#3e1f68; --wash:#ede4f8; --line:#d5c8e4; font-family:"Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; color:var(--ink); background:#fbf8ff; line-height:1.7; }
+* { box-sizing:border-box; }
+body,h1,h2,h3,p,figure,dl,dd { margin:0; }
+a { color:inherit; text-underline-offset:.24em; }
+a:focus-visible { outline:3px solid #0d7d7e; outline-offset:3px; }
+img { display:block; width:100%; height:auto; }
+.wrap { width:min(1160px,calc(100% - 88px)); margin-inline:auto; }
+.bar { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+header { border-bottom:1px solid var(--line); }
+.brand, nav a { font-weight:800; text-decoration:none; }
+nav { display:flex; gap:24px; font-size:.875rem; white-space:nowrap; }
+nav a:hover { text-decoration:underline; }
+.hero { margin-block:36px 0; display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); border-radius:24px; overflow:hidden; background:var(--wash); }
+.hero-copy { padding:clamp(22px,3.6vw,52px); align-self:center; }
+.kicker { font-size:.9375rem; font-weight:800; color:var(--accent); margin-bottom:8px; }
+h1 { font-size:clamp(2.26rem,4.25vw,3.65rem); letter-spacing:-.06em; line-height:1.14; }
+.hero-copy > p:not(.kicker) { font-size:1.0625rem; margin-top:17px; }
+.button { display:inline-flex; align-items:center; justify-content:center; text-align:center; min-height:52px; background:var(--accent); color:#fff; border-radius:28px; padding:8px 23px; font-weight:800; text-decoration:none; }
+.button:hover { background:var(--hover); }
+.hero .button { margin-top:23px; }
+figure { position:relative; min-height:100%; }
+figure img { height:100%; object-fit:cover; object-position:center; }
+figcaption { position:absolute; bottom:10px; right:10px; padding:3px 9px; font-size:.875rem; border-radius:8px; color:#fff; background:#292139ed; }
+.section { padding-block:52px; scroll-margin-top:12px; }
+.section-title { display:flex; align-items:baseline; flex-wrap:wrap; justify-content:space-between; gap:10px 23px; margin-bottom:19px; }
+.section-title p, .conditions-grid > div p, .apply p { color:var(--muted); }
+h2 { font-size:clamp(1.8rem,3.5vw,2.85rem); line-height:1.24; letter-spacing:-.05em; }
+.positions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.positions article { display:flex; flex-direction:column; padding:clamp(18px,2.6vw,32px); border:1px solid var(--line); border-radius:18px; background:#fff; }
+h3 { font-size:clamp(1.3rem,2.45vw,1.75rem); line-height:1.3; letter-spacing:-.035em; }
+h3 span { display:inline-block; margin-left:9px; color:var(--accent); font-size:1rem; }
+.pay-label { color:var(--muted); font-size:.875rem; margin-top:14px; font-weight:800; }
+.pay { font-size:clamp(1.5rem,2.85vw,2.3rem); color:var(--accent); font-weight:800; letter-spacing:-.035em; line-height:1.3; font-variant-numeric:tabular-nums; }
+.positions dl { margin:15px 0; }
+.positions dl div, .conditions dl div { border-top:1px solid var(--line); padding:12px 0; }
+dt { font-weight:800; }
+.official { margin-top:auto; font-weight:800; color:var(--accent); }
+.conditions { background:#f1eafa; }
+.conditions-grid { display:grid; grid-template-columns:minmax(0,.46fr) minmax(0,1fr); gap:27px 55px; }
+.conditions-grid > div p { margin-top:10px; }
+.conditions dl div { display:grid; grid-template-columns:7em minmax(0,1fr); gap:13px; }
+.apply { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:22px 45px; }
+.apply p { margin-top:10px; }
+.apply-links { display:grid; justify-items:start; gap:9px; color:var(--accent); font-weight:800; }
+footer { border-top:1px solid var(--line); font-size:.875rem; color:var(--muted); padding-block:8px; }
+@media(max-width:875px) {
+  .wrap { width:calc(100% - 44px); }
+  .hero { margin-top:24px; }
+  .conditions-grid { grid-template-columns:1fr; }
+}
+@media(max-width:700px) {
+  .hero,.positions,.apply { grid-template-columns:1fr; }
+  figure img { height:auto; aspect-ratio:1.75; }
+  .section { padding-block:38px; }
+}
+@media(max-width:480px) {
+  .wrap { width:calc(100% - 32px); }
+  .brand { font-size:.875rem; }
+  nav a:last-child { display:none; }
+  .hero { border-radius:16px; }
+  .hero-copy { padding:22px 17px; }
+  .hero .button { margin-top:18px; }
+  .conditions dl div { grid-template-columns:1fr; gap:3px; }
+  footer .bar { align-items:flex-start; justify-content:center; flex-direction:column; gap:3px; }
+}
